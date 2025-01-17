@@ -71,7 +71,7 @@
 
   <br>
 
-  - **$ R - $ Relation (Quan hệ)**
+  - **$R -$ Relation (Quan hệ)**
 
     - Là tập hợp các mối quan hệ giữa các khái niệm với nhau.
 
@@ -80,7 +80,7 @@
     - Cấu trúc của một quan hệ được biểu diễn như sau:
 
     $$
-       r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
+        r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
     $$
 
     - Với:
@@ -110,7 +110,7 @@
 
     - Giải thích về "**bắt cầu**" và "**đối xứng**"
 
-      - **Bắt cầu**: Một mối quan hệ được gọi là bắc cầu nếu khi $ A \rightarrow B $ và $ B \rightarrow C $ thì có thể suy ra $ A \rightarrow C $ (với $ A, B, C$ là các khái niệm concepts).
+      - **Bắt cầu**: Một mối quan hệ được gọi là bắc cầu nếu khi $A \rightarrow B$ và $B \rightarrow C$ thì có thể suy ra $ A \rightarrow C $ (với $ A, B, C$ là các khái niệm concepts).
         
         - Trong ví dụ trên, Relation "**sử dụng**" không bắt cầu khi:
 
