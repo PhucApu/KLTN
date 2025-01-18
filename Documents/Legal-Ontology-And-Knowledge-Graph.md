@@ -79,9 +79,7 @@ $$
 
   - Cấu trúc của một quan hệ được biểu diễn như sau:
 
-  $$
-       r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
-  $$
+  $$r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)$$
 
   - Với:
 
