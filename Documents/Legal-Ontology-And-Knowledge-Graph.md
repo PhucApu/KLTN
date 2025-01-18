@@ -252,19 +252,15 @@ $$
   - Từ "xe máy" xuất hiện:
 
     - Trong $d1$: 1 lần, tổng số từ là 6.
-    $$
-        TF(``xe máy",d1) = \frac{1}{6} = 0.167
-    $$
+
+      $$TF(``xe máy",d1) = \frac{1}{6} = 0.167$$
 
     - Trong $d2$: 1 lần, tổng số từ là 8.
-    $$
-        TF(``xe máy",d2) = \frac{1}{8} = 0.125
-    $$
+      
+      $$TF(``xe máy",d2) = \frac{1}{8} = 0.125$$
 
     - Trong $d3$: 1 lần, tổng số từ là 99.
-    $$
-        TF(``xe máy",d3) = \frac{1}{9} = 0.111
-    $$
+      $$TF(``xe máy",d3) = \frac{1}{9} = 0.111$$
 
   **Bước 2**: Tính IDF (Inverse Document Frequency) 
 
