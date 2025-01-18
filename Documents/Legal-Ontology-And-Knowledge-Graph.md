@@ -47,7 +47,7 @@
 - **Công thức tổng quát:**
 
 $$
-     K = (C,R,Rules) + (Cons,Rel)
+    K = (C,R,Rules) + (Cons,Rel)
 $$
 
   <br>
@@ -79,56 +79,58 @@ $$
 
   - Cấu trúc của một quan hệ được biểu diễn như sau:
 
-  $$r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)$$
+$$
+      r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
+$$
 
-  - Với:
+- Với:
 
-    - **Name**: Là tên của mối quan hệ.
+  - **Name**: Là tên của mối quan hệ.
 
-    - **Meaning**: Là khái niệm, ý nghĩa của tên mối quan hệ.
+  - **Meaning**: Là khái niệm, ý nghĩa của tên mối quan hệ.
 
-    - **ConckeyS**: Là chủ ngữ trong mối quan hệ.
+  - **ConckeyS**: Là chủ ngữ trong mối quan hệ.
 
-    - **ConckeyO**: Là tân ngữ trong mối quan hệ.
+  - **ConckeyO**: Là tân ngữ trong mối quan hệ.
 
-    - **Prop**: Thuộc tính của quan hệ (ví dụ: bắc cầu, đối xứng).
+  - **Prop**: Thuộc tính của quan hệ (ví dụ: bắc cầu, đối xứng).
 
-    - **Keywords**: Các từ khóa liên quan.
+  - **Keywords**: Các từ khóa liên quan.
 
-  - Ví dụ về **Relation "sử dụng"** được biểu diễn trong mô hình Legel-Onto:
+- Ví dụ về **Relation "sử dụng"** được biểu diễn trong mô hình Legel-Onto:
 
-    | Element      | Type       | Value                                                                                                                                                    |
-    | :----------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Name**     | String     | sử dụng                                                                                                                                                  |
-    | **Meaning**  | String     | Người **sử dụng một trong các đối tượng trong danh sách ConcKeyO** làm phương tiện phục vụ nhu cầu hoặc mục đích nhất định khi tham gia trong giao thông |
-    | **ConckeyS** | Key phrase | Người                                                                                                                                                    |
-    | **ConckeyO** | List       | Xe máy, Nón bảo hiểm, Ô tô                                                                                                                               |
-    | **Prop**     | Set        | ["Không bắt cầu","Không đối xứng"]                                                                                                                       |
-    | **Keywords** | Set        | ["sử dụng","điều khiển"]                                                                                                                                 |
+  | Element      | Type       | Value                                                                                                                                                    |
+  | :----------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | **Name**     | String     | sử dụng                                                                                                                                                  |
+  | **Meaning**  | String     | Người **sử dụng một trong các đối tượng trong danh sách ConcKeyO** làm phương tiện phục vụ nhu cầu hoặc mục đích nhất định khi tham gia trong giao thông |
+  | **ConckeyS** | Key phrase | Người                                                                                                                                                    |
+  | **ConckeyO** | List       | Xe máy, Nón bảo hiểm, Ô tô                                                                                                                               |
+  | **Prop**     | Set        | ["Không bắt cầu","Không đối xứng"]                                                                                                                       |
+  | **Keywords** | Set        | ["sử dụng","điều khiển"]                                                                                                                                 |
 
-  - Giải thích về "**bắt cầu**" và "**đối xứng**"
+- Giải thích về "**bắt cầu**" và "**đối xứng**"
 
-    - **Bắt cầu**: Một mối quan hệ được gọi là bắc cầu nếu khi $A \rightarrow B$ và $B \rightarrow C$ thì có thể suy ra $A \rightarrow C$ (với $A, B, C$ là các khái niệm concepts).
+  - **Bắt cầu**: Một mối quan hệ được gọi là bắc cầu nếu khi $A \rightarrow B$ và $B \rightarrow C$ thì có thể suy ra $A \rightarrow C$ (với $A, B, C$ là các khái niệm concepts).
 
-      - Trong ví dụ trên, Relation "**sử dụng**" không bắt cầu khi:
+    - Trong ví dụ trên, Relation "**sử dụng**" không bắt cầu khi:
 
-        - $A = ``Người \ lái \ xe \ máy"$
+      - $A = ``Người \ lái \ xe \ máy"$
 
-        - $B = ``Xe \ máy"$
+      - $B = ``Xe \ máy"$
 
-        - $C = ``Đường \ bộ"$
+      - $C = ``Đường \ bộ"$
 
-        - Nếu "Người lái xe" sử dụng "Xe máy" và "Xe máy" di chuyển trên "Đường bộ", không thể suy ra "Người lái xe" sử dụng "Đường bộ".
+      - Nếu "Người lái xe" sử dụng "Xe máy" và "Xe máy" di chuyển trên "Đường bộ", không thể suy ra "Người lái xe" sử dụng "Đường bộ".
 
-    - **Đối xứng**: Một mối quan hệ được gọi là đối xứng nếu mối quan hệ đó **tồn tại theo cả hai chiều**. Tức là $A \rightarrow B$ thì $B \rightarrow A$ (với $A, B$ là các khái niệm concept)
+  - **Đối xứng**: Một mối quan hệ được gọi là đối xứng nếu mối quan hệ đó **tồn tại theo cả hai chiều**. Tức là $A \rightarrow B$ thì $B \rightarrow A$ (với $A, B$ là các khái niệm concept)
 
-      - Ví dụ Relation "sử dụng" giữa "Người lái xe máy" và "xe máy":
+    - Ví dụ Relation "sử dụng" giữa "Người lái xe máy" và "xe máy":
 
-        - $A = ``Người \ lái \ xe \ máy"$
+      - $A = ``Người \ lái \ xe \ máy"$
 
-        - $A = ``Xe \ máy"$
+      - $A = ``Xe \ máy"$
 
-        - Nếu "Người lái xe" sử dụng "Xe máy", điều này không có nghĩa là "Xe máy" sử dụng "Người lái xe".
+      - Nếu "Người lái xe" sử dụng "Xe máy", điều này không có nghĩa là "Xe máy" sử dụng "Người lái xe".
 
   <br>
 
