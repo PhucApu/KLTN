@@ -80,7 +80,7 @@
     - Cấu trúc của một quan hệ được biểu diễn như sau:
 
     $$
-        r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
+       r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
     $$
 
     - Với:
@@ -114,21 +114,21 @@
         
         - Trong ví dụ trên, Relation "**sử dụng**" không bắt cầu khi:
 
-          - $ A = ``Người \ lái \ xe \ máy" $
+          - $A = ``Người \ lái \ xe \ máy"$
           
-          - $ B = ``Xe \ máy" $
+          - $B = ``Xe \ máy"$
 
-          - $ C = ``Đường \ bộ" $
+          - $C = ``Đường \ bộ"$
 
           - Nếu "Người lái xe" sử dụng "Xe máy" và "Xe máy" di chuyển trên "Đường bộ", không thể suy ra "Người lái xe" sử dụng "Đường bộ".
 
-      - **Đối xứng**: Một mối quan hệ được gọi là đối xứng nếu mối quan hệ đó **tồn tại theo cả hai chiều**. Tức là $ A \rightarrow B $ thì $ B \rightarrow A $ (với $ A, B$ là các khái niệm concept)
+      - **Đối xứng**: Một mối quan hệ được gọi là đối xứng nếu mối quan hệ đó **tồn tại theo cả hai chiều**. Tức là $A \rightarrow B$ thì $B \rightarrow A$ (với $A, B$ là các khái niệm concept)
 
         - Ví dụ Relation "sử dụng" giữa "Người lái xe máy" và "xe máy":
           
-          - $ A = ``Người \ lái \ xe \ máy" $
+          - $A = ``Người \ lái \ xe \ máy"$
 
-          - $ A = ``Xe \ máy" $
+          - $A = ``Xe \ máy"$
 
           - Nếu "Người lái xe" sử dụng "Xe máy", điều này không có nghĩa là "Xe máy" sử dụng "Người lái xe".
 
