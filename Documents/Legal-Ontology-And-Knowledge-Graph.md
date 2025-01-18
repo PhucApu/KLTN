@@ -80,7 +80,7 @@
     - Cấu trúc của một quan hệ được biểu diễn như sau:
 
     $$
-       r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
+         r=(Name,Meaning,ConckeyS,ConckeyO,Prop,Keywords)
     $$
 
     - Với:
@@ -150,7 +150,7 @@
 
     - Là 2 thành phần chính trong việc xây dựng đồ thị tri thức.
 
-    - Đồ thị tri thức sẽ bao gồm các node là các $ Conc $ (có thể lấy giá trị **Name** của **Concept** hoặc lấy trong danh sách **Keyphrases**) được nối với nhau bởi các cạnh $ Rel $ (có thể lấy giá trị **Name** của **Relation** hoặc lấy trong danh sách **Keywords** sao cho ý nghĩa phù hợp giữa 2 khái niệm).
+    - Đồ thị tri thức sẽ bao gồm các node là các $Conc$ (có thể lấy giá trị **Name** của **Concept** hoặc lấy trong danh sách **Keyphrases**) được nối với nhau bởi các cạnh $Rel$ (có thể lấy giá trị **Name** của **Relation** hoặc lấy trong danh sách **Keywords** sao cho ý nghĩa phù hợp giữa 2 khái niệm).
 
     - Ngoài ra còn có thể có thêm các thuộc tính (**attributes**): Cung cấp thông tin bổ sung về các nút và cạnh, ví dụ: loại khái niệm, ý nghĩa mối quan hệ, hoặc trọng số.
 
@@ -161,9 +161,9 @@
 
   - **Đồ thị tri thức (Knowledge Graph)** là một cách tổ chức và biểu diễn tri thức dưới dạng các nút (nodes) và cạnh (edges), trong đó:
 
-    - Các **node là các khái niệm** $ Conc $ (có thể lấy giá trị **Name** của **Concept** hoặc lấy trong danh sách **Keyphrases**).
+    - Các **node là các khái niệm** $Conc$ (có thể lấy giá trị **Name** của **Concept** hoặc lấy trong danh sách **Keyphrases**).
 
-    - Các **cạnh là các quan hệ** giữa các khái niệm $ Rel $ (có thể lấy giá trị **Name** của **Relation** hoặc lấy trong danh sách **Keywords** sao cho ý nghĩa phù hợp giữa 2 khái niệm).
+    - Các **cạnh là các quan hệ** giữa các khái niệm $Rel$ (có thể lấy giá trị **Name** của **Relation** hoặc lấy trong danh sách **Keywords** sao cho ý nghĩa phù hợp giữa 2 khái niệm).
 
     - Các thuộc tính (**attributes**): Cung cấp thông tin bổ sung về các nút và cạnh, ví dụ: loại khái niệm, ý nghĩa mối quan hệ, hoặc trọng số.
 
