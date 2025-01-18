@@ -166,3 +166,113 @@ $$
 - Ví dụ về sơ đồ tri thức:
 
   ![Knowledge Graphics Example](/images/Knowledge-Graphics-Example.jpg)
+
+<br>
+
+## 3. Công thức TF-IDF
+
+- **Công dụng:**
+
+  - **TF-IDF (Term Frequency - Inverse Document Frequency)** là một công thức dùng để đánh giá tầm quan trọng của một từ (term) trong một tài liệu (document) thuộc một tập hợp tài liệu (corpus).
+
+  - TF-IDF được sử dụng rộng rãi trong xử lý ngôn ngữ tự nhiên (NLP), khai thác dữ liệu văn bản (text mining), và các ứng dụng tìm kiếm thông tin (information retrieval).
+
+- **Ý nghĩa:**
+
+  - **TF (Term Frequency)**: Đo lường mức độ xuất hiện của từ trong một tài liệu cụ thể.
+
+  - **IDF (Inverse Document Frequency)**: Đo lường mức độ đặc biệt của từ trong toàn bộ tập tài liệu.
+
+  - **TF-IDF**: Kết hợp cả hai yếu tố trên, nhằm đánh giá: Từ quan trọng trong tài liệu nhưng ít phổ biến trong tập dữ liệu lớn sẽ có giá trị TF-IDF cao.
+
+### 3.1. Công thức tần suất từ (TF - Term Frequency):
+
+$$
+    TF(t,d) = \frac{f(t,d)}{\left| d \right|}
+$$
+
+- Trong đó:
+
+  - $f(t,d)$: là số lần từ $t$ xuất hiện trong tài liệu $d$.
+
+  - $\left| d \right|$: Tổng số từ trong tài liệu $d$.
+
+- **Ý nghĩa:**
+
+  - Đo lường **tần suất xuất hiện của từ $\textbf{t}$ trong tài liệu cụ thể**.
+
+  - **Từ xuất hiện nhiều lần trong một tài liệu sẽ có giá trị $\textbf{TF}$ cao**.
+
+### 3.2. Tần suất nghịch đảo tài liệu (IDF - Inverse Document Frequency):
+
+$$
+    IDF(t,D) = \log(\frac{\left| D \right|}{ 1 + \left| d \in D : t \in D \right|})
+$$
+
+- Trong đó:
+
+  - $\left| D \right|$: Tổng số tài liệu trong tập dữ liệu $D$.
+
+  - $\left| d \in D : t \in D \right|$: Số tài liệu chứa từ $t$.
+
+- **Ý nghĩa:**
+
+  - IDF **giảm giá trị của những từ phổ biến** trong toàn bộ tập tài liệu (như "và", "là", "của").
+
+  - **Từ xuất hiện ở ít tài liệu (độc đáo) sẽ có giá trị IDF cao hơn**.
+
+### 3.3. Công thức TF-IDF
+
+$$
+    TF-IDF(t,d,D) = TF(t,d) \times IDF(t,D)
+$$
+
+- **Ý nghĩa:**
+
+  - Kết hợp TF và IDF để đo lường mức độ quan trọng của từ $t$ trong tài liệu $d$ so với toàn bộ tập dữ liệu $D$.
+
+  - Một từ có **tần suất xuất hiện ít trong một tài liệu (TF thấp) và độ phổ biến thấp trong toàn bộ tập tài liệu (IDF cao) thường được coi là một từ quan trọng**. Đây là từ đặc trưng của tài liệu đó và có khả năng giúp phân biệt tài liệu này với các tài liệu khác trong tập dữ liệu.
+
+### 3.4. Ví dụ
+
+- Giả sử chúng ta có tập tài liệu gồm 3 tài liệu:
+
+  - **Tài liệu 1 (d1)**: "Xe máy là phương tiện giao thông phổ biến."
+
+  - **Tài liệu 2 (d2)**: "Người lái xe cần bằng lái để điều khiển xe máy."
+
+  - **Tài liệu 3 (d3)**: "Luật quy định người điều khiển xe máy phải đủ tuổi."
+
+- Cần tính từ "**xe máy**" xem nó có phải là một từ quan trọng hay không:
+
+  <br>
+
+  **Bước 1**: Tính TF (Term Frequency)
+
+  - Từ "xe máy" xuất hiện:
+
+    - Trong $d1$: 1 lần, tổng số từ là 6.
+    $$
+        TF(``xe máy",d1) = \frac{1}{6} = 0.167
+    $$
+
+    - Trong $d2$: 1 lần, tổng số từ là 8.
+    $$
+        TF(``xe máy",d2) = \frac{1}{8} = 0.125
+    $$
+
+    - Trong $d3$: 1 lần, tổng số từ là 99.
+    $$
+        TF(``xe máy",d3) = \frac{1}{9} = 0.111
+    $$
+
+  **Bước 2**: Tính IDF (Inverse Document Frequency) 
+
+  - Tổng số tài liệu $\left| D \right| = 3$
+
+  - Số tài liệu chứa từ "xe máy": $\left| d \in D : t \in d \right| = 3$
+
+  - Công thức IDF:
+  $$
+    IDF(``xe \ máy",D) = \log(\frac{3}{3+1}) = \log(0.75) \approx -0.125
+  $$
