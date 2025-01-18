@@ -52,7 +52,7 @@
 
   <br>
 
-  - **$C - $ Concepts** (Khái niệm)
+  - **$C -$ Concepts** (Khái niệm)
     
     - Là **tập hợp các khái niệm trong pháp luật**.
 
