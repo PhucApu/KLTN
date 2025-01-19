@@ -292,7 +292,7 @@ $$
 
   - Trong $d1$:
     
-    $TF-IDF(``xe \ máy",d1,D) = TF(``xe \ máy",d1) \times IDF(``xe \ máy",D) = 0.167 \times - 0.125 \approx -0.021$
+    $$TF-IDF(``xe \ máy",d1,D) = TF(``xe \ máy",d1) \times IDF(``xe \ máy",D) = 0.167 \times - 0.125 \approx -0.021$$
 
   - Trong $d2$:
     
