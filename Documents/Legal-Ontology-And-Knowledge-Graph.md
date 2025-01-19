@@ -4,15 +4,26 @@
 
 1. [Legal-Ontology](#1-mô-hình-legal-ontology)
 
-   1.1. [Khái niệm](#11-khái-niệm)
+    1.1. [Khái niệm](#11-khái-niệm)
 
-   1.2. [Ontology](#12-ontology)
+    1.2. [Ontology](#12-ontology)
 
-   1.3. [Legal-Onto](#13-legal-onto)
+    1.3. [Legal-Onto](#13-legal-onto)
 
-   1.4. [Thành phần chính của Legal-Onto](#14-thành-phần-chính-của-legal-onto)
+    1.4. [Thành phần chính của Legal-Onto](#14-thành-phần-chính-của-legal-onto)
 
 2. [Đồ thị tri thức](#2-đồ-thị-tri-thức-knowledge-graphics)
+    
+3. [Công thức TF-IDF](#3-công-thức-tf-idf)
+
+    3.1. [Công thức tuần suất từ TF (Term Frequency)](#31-công-thức-tần-suất-từ-tf---term-frequency)
+
+    3.2. [Công thức tần suất nghịch đảo tài liệu IDF (Inverse Document Frequency)](#32-tần-suất-nghịch-đảo-tài-liệu-idf---inverse-document-frequency)
+
+    3.3. [Công thức TF - IDF](#33-công-thức-tf-idf)
+
+    3.4 [Ví dụ](#34-ví-dụ)
+
 
 ## 1. Mô hình Legal-Ontology
 
@@ -132,13 +143,11 @@ $$
 
       - Nếu "Người lái xe" sử dụng "Xe máy", điều này không có nghĩa là "Xe máy" sử dụng "Người lái xe".
 
-
   <br>
 
 - **$ Rules -$ Luật suy diễn**
 
-  - Các quy tắc
-   để suy luận tri thức mới từ các quan hệ hiện có.
+  - Các quy tắc để suy luận tri thức mới từ các quan hệ hiện có.
 
   - Ví dụ: "Nếu một người điều khiển xe máy, họ cần có bằng lái hợp lệ".
 
@@ -190,14 +199,12 @@ $$
 ### 3.1. Công thức tần suất từ (TF - Term Frequency):
 
 $$
-    TF(t,d) = \frac{f(t,d)}{\left| d \ri
-    ght|}
+    TF(t,d) = \frac{f(t,d)}{\left| d \right|}
 $$
 
 - Trong đó:
 
-  - $f(t,d)$: là số
-   lần từ $t$ xuất hiện trong tài liệu $d$.
+  - $f(t,d)$: là số lần từ $t$ xuất hiện trong tài liệu $d$.
 
   - $\left| d \right|$: Tổng số từ trong tài liệu $d$.
 
@@ -205,11 +212,9 @@ $$
 
   - Đo lường **tần suất xuất hiện của từ $\textbf{t}$ trong tài liệu cụ thể**.
 
-  - **Từ xuất hiện nhiều lần trong một tài liệu sẽ có giá trị $\textbf{TF}$ cao
-  **.
+  - **Từ xuất hiện nhiều lần trong một tài liệu sẽ có giá trị $\textbf{TF}$ cao**.
 
-### 3.2. Tần suất nghịch đảo tài liệu (IDF - Inverse Document
- Frequency):
+### 3.2. Tần suất nghịch đảo tài liệu (IDF - Inverse Document Frequency):
 
 $$
     IDF(t,D) = \log(\frac{\left| D \right|}{ 1 + \left| d \in D : t \in D \right|})
@@ -239,6 +244,10 @@ $$
 
   - Một từ có **tần suất xuất hiện ít trong một tài liệu (TF thấp) và độ phổ biến thấp trong toàn bộ tập tài liệu (IDF cao) thường được coi là một từ quan trọng**. Đây là từ đặc trưng của tài liệu đó và có khả năng giúp phân biệt tài liệu này với các tài liệu khác trong tập dữ liệu.
 
+  - Một từ có **giá trị TF - IDF cao** được xem là một từ quan trọng.
+
+  - Bạn có thể dùng công thức **TF-IDF** để xem các khái niệm (concepts) nào là quan trọng, từ đó tối giản đồ thị tri thức sao cho đồ thị tối ưu nhất (**các node đồ thị là các từ quan trọng**)
+
 ### 3.4. Ví dụ
 
 - Giả sử chúng ta có tập tài liệu gồm 3 tài liệu:
@@ -259,24 +268,37 @@ $$
 
     - Trong $d1$: 1 lần, tổng số từ là 6.
 
-      $$
-      TF(``xe máy",d1) = \frac{1}{6} = 0.167
-      $$ 
+      $$TF(``xe máy",d1) = \frac{1}{6} = 0.167$$
 
     - Trong $d2$: 1 lần, tổng số từ là 8.
-      
+
       $$TF(``xe máy",d2) = \frac{1}{8} = 0.125$$
 
     - Trong $d3$: 1 lần, tổng số từ là 99.
-      
+
       $$TF(``xe máy",d3) = \frac{1}{9} = 0.111$$
 
-  **Bước 2**: Tính IDF (Inverse Document Frequency) 
+  **Bước 2**: Tính IDF (Inverse Document Frequency)
 
   - Tổng số tài liệu $\left| D \right| = 3$
 
   - Số tài liệu chứa từ "xe máy": $\left| d \in D : t \in d \right| = 3$
 
   - Công thức IDF:
-  
-  $$IDF(``xe \ máy",D) = \log(\frac{3}{3+1}) = \log(0.75) \approx -0.125$$
+
+    $$IDF(``xe \ máy",D) = \log(\frac{3}{3+1}) = \log(0.75) \approx -0.125$$
+
+  **Bước 3: Tính TF-IDF**
+
+  - Trong $d1$:
+    $$TF-IDF(``xe \ máy",d1,D) = TF(``xe \ máy",d1) \times IDF(``xe \ máy",D) = 0.167 \times - 0.125 \approx -0.021$$
+
+  - Trong $d2$:
+    $$TF-IDF(``xe \ máy",d2,D) = TF(``xe \ máy",d2) \times IDF(``xe \ máy",D) = 0.125 \times - 0.125 \approx -0.016$$
+
+  - Trong $d3$:
+    $$TF-IDF(``xe \ máy",d3,D) = TF(``xe \ máy",d3) \times IDF(``xe \ máy",D) = 0.111 \times - 0.125 \approx -0.014$$
+
+  **Bước 4: Kết luận**
+
+  - Từ "xe máy" **có giá trị TF-IDF thấp** trong cả 3 tài liệu, cho thấy đây là một từ phổ biến và không đặc biệt quan trọng khi phân tích nội dung.

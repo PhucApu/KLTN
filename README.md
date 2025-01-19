@@ -18,4 +18,4 @@
 
 - Nghiên cứu các tài liệu được cung cấp (14)
 
-- Tìm hiểu về [**Mô hình Ontology Legal-Onto** và **Đồ thị tri thức**](./Documents/Legal-Ontology-And-Knowledge-Graph.md) (17 $ \rightarrow $ ..)
+- Tìm hiểu về [**Mô hình Ontology Legal-Onto** và **Đồ thị tri thức**](./Documents/Legal-Ontology-And-Knowledge-Graph.md) (17 $ \rightarrow $ 19)
