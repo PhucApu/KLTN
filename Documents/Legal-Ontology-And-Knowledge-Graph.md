@@ -291,12 +291,15 @@ $$
   **Bước 3: Tính TF-IDF**
 
   - Trong $d1$:
+    
     $$TF-IDF(``xe \ máy",d1,D) = TF(``xe \ máy",d1) \times IDF(``xe \ máy",D) = 0.167 \times - 0.125 \approx -0.021$$
 
   - Trong $d2$:
+    
     $$TF-IDF(``xe \ máy",d2,D) = TF(``xe \ máy",d2) \times IDF(``xe \ máy",D) = 0.125 \times - 0.125 \approx -0.016$$
 
   - Trong $d3$:
+    
     $$TF-IDF(``xe \ máy",d3,D) = TF(``xe \ máy",d3) \times IDF(``xe \ máy",D) = 0.111 \times - 0.125 \approx -0.014$$
 
   **Bước 4: Kết luận**
