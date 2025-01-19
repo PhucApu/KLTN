@@ -132,11 +132,13 @@ $$
 
       - Nếu "Người lái xe" sử dụng "Xe máy", điều này không có nghĩa là "Xe máy" sử dụng "Người lái xe".
 
+
   <br>
 
 - **$ Rules -$ Luật suy diễn**
 
-  - Các quy tắc để suy luận tri thức mới từ các quan hệ hiện có.
+  - Các quy tắc
+   để suy luận tri thức mới từ các quan hệ hiện có.
 
   - Ví dụ: "Nếu một người điều khiển xe máy, họ cần có bằng lái hợp lệ".
 
@@ -188,12 +190,14 @@ $$
 ### 3.1. Công thức tần suất từ (TF - Term Frequency):
 
 $$
-    TF(t,d) = \frac{f(t,d)}{\left| d \right|}
+    TF(t,d) = \frac{f(t,d)}{\left| d \ri
+    ght|}
 $$
 
 - Trong đó:
 
-  - $f(t,d)$: là số lần từ $t$ xuất hiện trong tài liệu $d$.
+  - $f(t,d)$: là số
+   lần từ $t$ xuất hiện trong tài liệu $d$.
 
   - $\left| d \right|$: Tổng số từ trong tài liệu $d$.
 
@@ -201,9 +205,11 @@ $$
 
   - Đo lường **tần suất xuất hiện của từ $\textbf{t}$ trong tài liệu cụ thể**.
 
-  - **Từ xuất hiện nhiều lần trong một tài liệu sẽ có giá trị $\textbf{TF}$ cao**.
+  - **Từ xuất hiện nhiều lần trong một tài liệu sẽ có giá trị $\textbf{TF}$ cao
+  **.
 
-### 3.2. Tần suất nghịch đảo tài liệu (IDF - Inverse Document Frequency):
+### 3.2. Tần suất nghịch đảo tài liệu (IDF - Inverse Document
+ Frequency):
 
 $$
     IDF(t,D) = \log(\frac{\left| D \right|}{ 1 + \left| d \in D : t \in D \right|})
@@ -253,7 +259,9 @@ $$
 
     - Trong $d1$: 1 lần, tổng số từ là 6.
 
-      $$TF(``xe máy",d1) = \frac{1}{6} = 0.167$$ 
+      $$
+      TF(``xe máy",d1) = \frac{1}{6} = 0.167
+      $$ 
 
     - Trong $d2$: 1 lần, tổng số từ là 8.
       
