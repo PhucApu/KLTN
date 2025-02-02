@@ -693,6 +693,7 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
   - Như đã nói bên trên, một nơ-ron sẽ có 2 thành phần "**Hàm tính toán giá trị đầu vào**" và "**Hàm kích hoạt**":
 
     - Hàm tính toán giá trị đầu vào sẽ được tính như sau: 
+    
     $$y_1=W_hh_0 + W_xx_1 + b_h$$
 
     - 
