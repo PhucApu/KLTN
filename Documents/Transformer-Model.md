@@ -694,7 +694,7 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
 
     - Hàm tính toán giá trị đầu vào sẽ được tính như sau: 
     
-    $$y_1=W_hh_0 + W_xx_1 + b_h$$
+        $$y_1=W_hh_0 + W_xx_1 + b_h$$
 
     - 
 
