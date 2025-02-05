@@ -586,9 +586,121 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
 
 - Và các tính toán về việc cập nhật trọng số cũng y như Gradient Descent thông thường, nhưng khác ý nghĩa ngay chỗ $n$ lúc này không phải là số lượng toàn tập dữ liệu input mà là số lượng của batch.
 
-## 7. Xây dựng ví dụ cơ bản về mạng nơ-ron bằng ngôn ngữ Python
+## 7. Ma trận trọng số dữ liệu đầu vào $W_x$ và Ma trận trọng số trạng thái $W_h$
 
-### 7.1. Đề bài
+### 7.1. Ma trận trọng số dữ liệu đầu vào $W_x$
+- Trong các ví dụ lý thuyết trên ta chỉ đơn giản nói về mối liên tương quan giữa trọng số $w$ và dữ liệu input đầu vào.
+
+- Trọng số $w$ và hệ số bias $b$ thể hiện mức độ quan trọng của dữ liệu input $x$ trong quá trình huấn luyện. Có bao nhiêu dữ liệu input $x$ thì sẽ có bấy nhiêu trọng số $w$ tương ứng. Thể hiện qua công thức dưới đây: $$y_{pred} = \theta \left(\sum_{i=1}^{n} w_ix_i + w_0\right)$$
+
+  - $y_{pred}$ ở trên được xem như là kết quả giá trị đầu ra của một nơ-ron. Sau khi giá trị của hàm tính dữ liệu đầu vào đi qua hàm kích hoạt $\theta$ (có thể Sigmoid, Tanh,....)
+
+  - Trong các kiến trúc mạng RNN, LSMT,... giá trị đầu ra của nơ-ron đó có thể được ký hiệu là $h$ - Tượng trưng cho giá trị trạng thái của hidden layers; nhầm phân biệt với ký hiệu của giá trị dự đoán sau cùng của output layer.
+
+- Ma trận trọng số $W_x$ là gì ?
+
+  - **Ma trận trọng số chính là một ma trận tập hợp các trọng số của hidden layer đối với các biến $x$ đầu vào từng nơ-ron**.
+
+  - Giả sử ma trận $W_x$ có $m \times n$ chiều thì **$m$ thể hiện số no-ron có trong hidden layer hiện tại (hoặc số giá trị đầu ra của hidden layer) và $n$ chính là thể hiện đặc trưng của kiểu dữ liệu đầu vào nơ-ron**.
+
+  - Nói cách khác, ma trận $W_x$ là ma trận mà ta muốn biến đổi (phản chiếu) đặc trưng dữ liệu đầu vào hidden layer thành dữ liệu có đặc trưng khác qua phép nhân ma trận.
+
+    - Giả sử ta có ma trận đầu vào $X$.
+
+    - Công thức tính giá trị đầu ra của hidden layer sẽ được tính như sau: $$H = W_x \times X + W_b$$ với: 
+    
+      - $W_x$ là ma trận trọng số $w$ 
+      
+      - $W_b$ là ma trận trọng số bias $b$.
+
+      - $H$ là ma trận chứa các giá trị đầu ra của hidden layer.
+
+  - Để hiểu hơn ta có thể xem sơ đồ dưới đây:
+
+![](../images/ANN(9).png)
+
+  - Xem từng ma trận có trong sơ đồ:
+
+  ![](../images/ANN(7).png)
+
+  - Như ta thấy trong sơ đồ trên, tập dữ liệu đầu vào có dạng $$X = \left[ [a_1,a_2], [a_3,a_4] \right]$$ với $x_1 = [a_1,a_2]$ và $x_2 = [a_3,a_4]$
+
+    $\rightarrow$ Dữ liệu $x_1, x_2$ có đặc trưng là một mảng 1 chiều gồm 2 phần tử bên trong. Và tập $X$ có đặc trưng là một mảng $2 \times 2$.
+
+  - Lớp hidden đầu tiên, ta thiết kế có 3 nơ-ron bên trong nó. Và mỗi nơ-ron trong lớp đó sẽ nhận 2 dữ liệu đầu vào của tập $X$ là $x_1$ và $x_2$.
+
+    - Do $x_1$ và $x_2$ có đặc trưng là một mảng có 2 phần tử nên khi truyền vào nơ-ron cần có 4 trọng số tương ứng với 4 giá trị và một hệ số bias.
+
+    - Giá trị đầu ra của nơ-ron đầu tiên sẽ được tính như sau: $$h_{11} = Sigmoid(w_1a_1 + w_2a_2 + w_3a_3 + w_4a_4 + b_1)$$
+
+    - Tương tự với giá trị đầu ra của nơ-ron 2 và 3: $$h_{12} = Sigmoid(w_5a_1 + w_6a_2 + w_7a_3 + w_8a_4 + b_2)$$ $$h_{13} = Sigmoid(w_9a_1 + w_{10}a_2 + w_{11}a_3 + w_{12}a_4 + b_3)$$
+
+    - Trọng số của các biến đầu vào trong từng nơ-ron là khác nhau.
+
+    - Từ đó ta có được ma trận trọng số $W_x$ của hidden layer đầu tiên là một **mảng $3 \times 4$ với $3$ là tượng trưng số nơ-ron (hoặc số giá trị đầu ra) của hidden layer và $4$ là đặc trưng của dữ liệu biến đầu vào $x$.**
+
+    - Và có thể biểu diễn thành phép nhân ma trận như sau: $$H_{3 \times 1} = W_{3 \times 4} \times X_{4 \times 1} \ + B_{3 \times 1}$$
+
+  - Ý nghĩa tương tự với các ma trận trọng số của các hidden layer sau:
+
+    ![](../images/ANN(8).png)
+
+    - Như ta thấy giá trị đầu ra của hidden trước là $H=[h_{11},h_{12},h_{13}]$ với đặc trưng các giá trị $h_{1i}$ chỉ là một số đơn lẻ.
+
+    - Lớp hidden thứ 2 gồm có 2 nơ-ron bên trong nó. Và mỗi nơ-ron sẽ nhận 3 giá trị đầu vào từ hidden layer trước cho ra.
+
+    - Các giá trị đầu ra của hidden layer thứ 2 là: $$h_{21} = Sigmoid(w_{13}h_{11} + w_{14}h_{12} + w_{15}h_{13} + b_5)$$ $$h_{22} = Sigmoid(w_{16}h_{11} + w_{17}h_{12} + w_{18}h_{13} + b_6)$$
+
+    - Từ đó ta có được ma trận trọng số $W_x$ của hidden layer thứ 2 là một **mảng $2 \times 3$ với $2$ là tượng trưng số nơ-ron (hoặc số giá trị đầu ra) của hidden layer và $3$ là đặc trưng của dữ liệu biến đầu vào $x$.**
+
+    - Ta cũng có thể biểu diễn thành phép nhân ma trận như sau: $$H_{2 \times 1} = W_{2 \times 3} \times X_{3 \times 1} \ + B_{2 \times 1}$$
+
+
+### 7.2. Ma trận trọng số trạng thái $W_h$
+
+- Về bản chất, ma trận trọng số trạng thái cũng giống như ma trận trọng số của biến đầu vào, là tập hợp các trọng số được dùng để kết nối các giá trị đầu ra của hidden layer trước $H_{t-1}$ với giá trị đầu ra hidden layer hiện tại $H_t$.
+
+- Cũng như tính chất trọng số $w$ của tập $X$ với mỗi nơ-ron sẽ có các bộ trọng số khác nhau. Thì với mỗi kết nối các trạng thái hidden layers sẽ có các bộ trọng số khác nhau. Như $W_h$ kết nối giữa $H_0$ và $H_1$ có bộ giá trị khác với $W_x$ kết nối giữa $H_1$ và $H_2$.
+
+- Trong các kiến trúc mạng nơ-ron hồi tiếp RNN, LSMT,... thì ma trận trọng số trạng thái mới được nhắc đến nhiều cho cơ chế hoạt động hồi tiếp (xử lý trạng thái mới dựa trên dữ liệu trạng thái cũ kết hợp với dữ liệu đầu vào).
+
+- Đây là công thức được sử dụng trong cấu trúc mạng nơ-ron hồi tiếp RNN: $$H_t = W_x \times X \ + W_h \times H_{t-1} + W_b$$ 
+
+  - $H_t$: Ma trận trạng thái chứa các giá trị đầu ra của nơ-ron trong hidden layee tại thời điểm $t$.
+
+  - $W_x$ là ma trận trọng số $w$ của biến dữ liệu đầu vào. 
+      
+  - $W_b$ là ma trận trọng số bias $b$.
+
+  - $W_h$: là ma trận trọng số trạng thái kết nối giữa trạng thái đang tính hiện tại $H_t$ với trạng thái trước đó $H_{t-1}$.
+
+  - $H_{t-1}$: là ma trận chứa các giá trị đầu ra của hidden layer tại thời điểm $t-1$.
+
+### 7.3. Phân biệt ký hiệu các giá trị đầu vào hidden layer
+
+- Trong các cấu trúc mạng FNN (Feedforward Neural Network) hay còn gọi là mạng NN thông thường, các giá trị được truyền thẳng từ Input Layer qua các Hidden Layers cho đến khi ra kết quả dự đoán cuối cùng từ Output Layers.
+
+  - Có thể xem các giá trị đầu ra của hidden layer trước là các giá trị $x$ đầu vào của hidden layer sau: 
+
+    ![](../images/ANN(2).png)
+
+    - Như trong sơ đồ trên, $y_{pred-1}$ và $y_{pred-2}$ là kết quả đầu ra của hidden layer đầu tiên.
+
+    - Về bản chất, $y_{pred-1}$ và $y_{pred-2}$ có thể được xem là biến đầu vào $x$ của hidden layer thứ 2.
+
+    - $pred$ ở đây là viết tắt của $predict \ - \ dự \ đoán$.
+
+    - Trong quá trình vẽ lại luồng hoạt động của FNN, bạn nên sử dụngký hiệu $h$ cho các kết quả đầu ra của các hidden layer, nhằm phân biệt ký hiệu kết quả đầu ra cuối cùng của mô hình.
+
+      ![alt text](../images/ANN(10).png)
+
+- Trong các cấu trúc mạng hồi tiếp (RNN,LSMT,...). Ký hiệu $h$ cho các kết quả đầu ra của hidden layers được sử dụng nhiều hơn để phần biệt với biến giá trị đầu vào $x$ của tập huấn luyện.
+
+  ![](../images/RNN.png)
+
+## 8. Xây dựng ví dụ cơ bản về mạng nơ-ron bằng ngôn ngữ Python
+
+### 8.1. Đề bài
 
 - Xây dựng một mô hình mạng nơ-ron cơ bản giải quyết bài toán cộng với tập dữ liệu:
 
@@ -598,7 +710,7 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
 
 - Giải thích: giả sử với giá trị input[0] = [1, 1] thì kết quả output mong muốn mô hình đoán được là output_true = 2. Vì phép toán cộng $1+1 = 2$.
 
-### 7.2. Ý tưởng giải quyết bài toán
+### 8.2. Ý tưởng giải quyết bài toán
 
 - **Các công thức sử dụng:**
 
@@ -626,21 +738,21 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
 
     - **Output Layer**: 1 layer neural có một 1 nơ-ron bên trong. Nhận 4 giá trị từ hidden layers.
 
-### 7.3. Code
+### 8.3. Code
 
 - Chi tiết code xem tại [ANN_Example](../Documents/ANN_Example.ipynb)
 
-## 6. Xử lý chuỗi và dữ liệu tuần tự
+## 9. Xử lý chuỗi và dữ liệu tuần tự
 
-### 6.1. Xử lý dữ liệu tuần tự trong mạng nơ-ron hồi tiếp (RNN)
+### 9.1. Xử lý dữ liệu tuần tự trong mạng nơ-ron hồi tiếp (RNN)
 
 **Mạng nơ-ron hồi tiếp (RNN)** là một loại mạng nơ-ron nhân tạo dùng để xử lý dữ liệu tuần tự, như văn bản, chuỗi thời gian, âm thanh hoặc video. Khác với mạng nơ-ron thông thường (Feedforward Neural Network - FNN), RNN có các kết nối hồi tiếp, giúp lưu trữ thông tin từ các bước trước đó để sử dụng trong các bước sau.
 
-### 6.1.1. Kiến trúc của RNN
+### 9.1.1. Kiến trúc của RNN
 
 - Trong kiến trúc mạng NN thông thường:
 
-  ![](../images/ANN(4).png)
+  ![](../images/ANN(10).png)
 
 - Trong kiến trúc mạng RNN:
 
@@ -666,9 +778,11 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
 
     - **Dữ liệu đầu vào của lớp hidden tại thời điểm $t$ là dữ liệu $x$ trong tập Input Layer kết hợp với kết quả đầu ra của lớp hidden được xử lý trước đó tại thời điểm $t - 1$.**
 
-### 6.1.2. Cơ chế hoạt động của mạng RNN
+### 9.1.2. Cơ chế hoạt động của mạng RNN
 
 - Giả sử ta có tập input đầu vào là $X= \{x_1,x_2,...,x_n\}$ được dùng để huấn luyện cho mô hình.
+
+- **Giả sử trong mô hình RNN chỉ có một Hidden Layer và chỉ có một nơ-ron thuộc hidden layer đó.**
 
 - Trạng thái đầu tiên của mạng RNN là $\bf h_0$.
 
@@ -680,21 +794,162 @@ Mỗi tầng bao gồm một tập hợp các "nơ-ron" (neurons) được kết
 
 - **Tại mỗi thời điểm $t$ chỉ có một dữ liệu $x_i \in X$ được vào xử lý ở hidden layers**, đây cũng là cơ chế khác biệt của cấu trúc mạng RNN so với mạng NN thông thường là có thể truyền cùng lúc nhiều tập dữ liệu $x$.
 
-- Giả sử trong Hidden Layers chỉ có một nơ-ron.
-
 - Tại thời điểm $t=1$
 
   - Dữ liệu $x_1$ làm dữ liệu đầu vào cho các Hidden Layers.
 
   - Trạng thái khởi tạo đầu tiên là $h_0$.
 
-  - Như vậy sẽ có 2 dữ liệu đầu vào $x_1$ và $h_0$ nơ-ron.
+  - Như vậy, nơ-ron sẽ nhận 2 dữ liệu đầu vào $x_1$ và $h_0$.
 
   - Như đã nói bên trên, một nơ-ron sẽ có 2 thành phần "**Hàm tính toán giá trị đầu vào**" và "**Hàm kích hoạt**":
 
-    - Hàm tính toán giá trị đầu vào sẽ được tính như sau: $$\\ y_1=W_hh_0 + W_xx_1 + b_h$$
+    - Hàm tính toán giá trị đầu vào sẽ được tính như sau: $$y_1=W_hh_0 + W_xx_1 + b_h$$
 
-    - Hàm kích hoạt được sử dụng trong nơ-ron của cấu trúc RNN là: $$$$
+      - $W_h$: là ma trận trọng số kết nối trạng thái hidden layer được xử lý trước đó, ở đây là trạng thái được khởi tạo ban đầu $h_0$ với trạng thái hiện tại là $h_1$.
+
+      - $W_x$: là ma trận trọng số của dữ liệu đầu vào $x_1$. 
+
+      - $b_h$: là trọng số bias tại thời điểm $t$.
+
+    - Hàm kích hoạt được sử dụng trong nơ-ron của cấu trúc RNN thường là hàm **Tanh** hoặc **RLeU** là: $$h_1=tanh(y_1)$$ hay $$h_1=tanh(W_hh_0 + W_xx_1 + b_h)$$
+
+    - Và đó cũng là công thức tính trạng thái $h_1$ của hidden layer tại thời điểm $t=1$
+
+- Tại thời điểm $t=2$
+
+  - Dữ liệu $x_2$ làm dữ liệu đầu vào cho các Hidden Layers.
+
+  - Trạng thái hidden trước đó là $h_1$.
+
+  - Như vậy, nơ-ron sẽ nhận 2 dữ liệu đầu vào $x_2$ và $h_1$.
+
+  - Công thức tính $h_2$ là: $$h_2=tanh(W_hh_1 + W_xx_2 + b_h)$$
+
+    - $W_h$: là ma trận trọng số kết nối trạng thái hidden trước đó $h_1$ với trạng thái hiện tại là $h_2$.
+
+    - $W_x$: là ma trận trọng số của biến đầu vào $x_2$.
+
+- Tương tự với thời điểm $t=3$, $t=4$, . . . 
+
+  $$h_3=tanh(W_hh_2 + W_xx_3 + b_h)$$
+
+  $$h_4=tanh(W_hh_3 + W_xx_4 + b_h)$$
+
+  $$...$$
+
+- **Công thức tổng quát để tính giá trị trạng thái $h_t$** của hidden tại thời điểm $t$ $$h_t=tanh(W_hh_{t-1} + W_xx_i + b_h)$$
+
+  - $W_h$: là ma trận trọng số kết nối trạng thái $h_{t-1}$ và $h_t$. (kết nối trạng thái hidden được xử lý trước đó vói trạng thái hiện tại).
+
+  - $W_x$: là ma trận trọng số của dữ liệu đầu vào $x_i$ tại thời điểm t. 
+
+  - $b_h$: là trọng số bias.
+
+- **Lưu ý**:
+
+  - $W_h$ và $W_x$ không khác nhau qua các thời điểm $t$. (giá trị không đổi qua các thời điểm $t$). Trừ khi chúng được cập nhật bởi "**lan truyền ngược**".
+
+  - $W_h$ chỉ khác nhau thông qua các trạng thái ẩn kết nối với nhau.
+
+    - $W_h$ kết nối giữa trạng thái $h_0$ và $h_1$ sẽ khác với $W_h$ kết nối giữa $h_1$ và $h_2$.
+
+
+### 9.1.3. Mở rộng vấn đề
+
+- **Vấn đề:**
+
+  - Giả sử ta có một tập dữ liệu input $X = [ x_1=[a_1,a_2],\ x_2=[a_3,a_4]]$
+
+  - Ta có cấu trúc mạng RNN được xây dựng bao gồm:
+
+    - 2 Hidden layers và 1 Ouput Layer.
+
+    - Hidden Layer đầu tiên: có 2 nơ-ron bên trong.
+
+    - Hidden Layer thứ hai: có 3 nơ-ron bên trong.
+
+    - Ouput Layer: có 1 nơ-ron bên trong.
+
+  - Sử dụng hàm kích hoạt **tanh**.
+
+- **Phân tích các ma trận trọng số $W_x,W_h,W_b$:**
+
+  - Tập dữ liệu $X$ có dữ liệu $x_1,x_2$. Và mỗi dữ liệu $x_i$ có 2 đặc trưng.
+
+    - $x_1=[a_1,a_2]$
+
+    - $x_2=[a_3,a_4]$
+
+  - Tại mỗi thời điểm $t$, chỉ có một dữ liệu trong tập $X$ vào lớp hidden layer.
+
+  - Hidden Layer đầu tiên có **2 nơ-ron** và là Hidden Layer tiếp nhận các giá trị đầu vào của tập $X$ mà mỗi dữ liệu $x_i$ có **2 đặc trưng**. Nên:
+
+    - $W_x(1)$ là ma trận có $2 \times 2$ chiều.
+
+    - $W_b(1)$ là ma trận có $2 \times 1$ chiều.
+
+    - Ma trận trạng thái $H_0$ được khởi tạo là một mảng $H_0(1) = [0,0]$ để phù hợp với 2 nơ-ron.
+
+    - Ma trận trọng số trạng thái $W_h(1)$ kết nối trạng thái $H_0(1)$ với trạng thái tại thời điểm $t$ là ma trận có dạng $2 \times 2$ chiều. (vì ma trận trạng thái $H_0(1)$ có 2 đặc trưng và lớp hidden có 2 nơ-ron)
+
+    - Công thức tính ma trận trạng thái $H(1)$ tại thời điểm $t$: $$H^{t}(1)_{2 \times 1} = Tanh \left( W_x(1)_{2 \times 2} \times x^i_{2 \times 1} \ + W_h(1)_{2 \times 2} \times H^{t-1}_{2 \times 1} \ + B(1)_{2 \times 1} \right)$$
+
+  - Hidden Layer thứ hai có **3 nơ-ron** và là hidden layer tiếp nhận các giá trị đầu ra của hidden layer phía trước:
+
+    - Hidden layer phía trước cho ra **3 giá trị** $H(1) = [h_1,h_2,h_3]$ và mỗi giá trị chỉ đơn thuần là một số.
+
+    - $W_x(2)$ là ma trận có $3 \times 3$ chiều.
+
+    - $W_b(2)$ là ma trận có $3 \times 1$ chiều.
+
+    - Ma trận trạng thái $H_0$ được khởi tạo là một mảng $H_0(2) = [0,0,0]$ để phù hợp với 3 nơ-ron.
+
+    - Ma trận trọng số trạng thái $W_h(0)$ kết nối trạng thái $H_0(2)$ với trạng thái tại thời điểm $t$ là ma trận có dạng $3 \times 3$ chiều. (vì ma trận trạng thái $H_0(2)$ có 3 đặc trưng và lớp hidden có 3 nơ-ron)
+
+    - Công thức tính ma trận trạng thái $H(2)$ tại thời điểm $t$: $$H^{t}(2)_{3 \times 1} = Tanh \left(W_x(2)_{3 \times 3} \times H(1)_{3 \times 1} \ + W_h(2)_{3 \times 3} \times H^{t-1}_{3 \times 1} \ + B(1)_{3 \times 1}\right)$$
+
+  - Lớp Output Layer có một nơ-ron và là lớp trả kết quả dự đoán của mô hình nên không cần các ma trận trọng số trạng thái $W_h$ nữa:
+
+    - Có 1 nơ-ron trong Output Layer.
+
+    - Lớp output nhận 3 giá trị $H(2)=[h_1,h_2,h_3]$ được trả ra từ hidden layer thứ hai.
+
+    - $W_x(3)$ có dạng $1 \times 3$.
+
+    - $W_b(3)$ có dạng $1 \times 1$.
+
+    - Công thức tính giá trị đầu ra của Output Layer tại thời điểm t: $$y^t_{pred}=W_x(3)_{1 \times 3} \times H(3)_{3 \times 1} + B(3)_{1 \times 1}$$ 
+
+- Dưới đây là mô tả luồng hoạt động mô hình RNN bên trên với tập dữ liệu $X$:
+
+  - Tại thời điểm $t=1$: dữ liệu $x_1$ sẽ đi vào hidden layers.
+
+    ![](../images/RNN(2).png)
+
+    - Hàm $f_w$ được xem là hàm tính giá trị đầu vào.
+
+    - **Lớp hidden đầu tiên** sẽ nhận 2 input đầu vào là $x_1 = [a_1,a_2]$ và $H_0=[0,0]$.
+
+      - Hàm tính giá trị đầu vào sẽ có dạng như sau: $$fw^{t=1}(1)_{2 \times 1} = W_x(1)_{2 \times 2} \times x^1_{2 \times 1} \ + W_h(1)_{2 \times 2} \times H^{0}_{2 \times 1} \ + B(1)_{2 \times 1}$$
+
+      - Hàm kích hoạt cho giá trị đầu ra sẽ là: $$H^{1}(1)_{2 \times 1} = Tanh \left( fw^{t=1}(1)_{2 \times 1} \right)$$ hay $$H^{1}(1)_{2 \times 1} = Tanh \left( W_x(1)_{2 \times 2} \times x^1_{2 \times 1} \ + W_h(1)_{2 \times 2} \times H^{0}_{2 \times 1} \ + B(1)_{2 \times 1} \right)$$
+
+      - $H^1(1)$ sẽ là ma trận chứa 2 kết quả đầu ra của hidden đầu tiên $H^1(1) = [h_{11},h_{12}]$.
+
+      - Được tính như sau: $$h_{11} = Tanh \left( w_{11}a_{1} \ + w_{12}a_{2} \ + w_{h_{11}} \times 0 \ + w_{h_{12}} \times 0 \ + b_{11} \right)$$ $$h_{12} = Tanh \left( w_{13}a_{1} \ + w_{14}a_{2} \ + w_{h_{13}} \times 0 \ + w_{h_{14}} \times 0 \ + b_{12} \right)$$
+
+    - Lớp hidden layer thứ hai sẽ nhận 2 input đầu vào là $H^1(1) = [h_{11},h_{12}]$ và $H_0$
+
+      - 
+
+  
+
+
+
+
+
+  
 
 
 
