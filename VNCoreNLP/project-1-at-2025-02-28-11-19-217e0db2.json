@@ -1,0 +1,184 @@
+[
+  {
+    "id": 1,
+    "annotations": [
+      {
+        "id": 1,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 20,
+              "text": "Bản đồ địa chính ",
+              "labels": ["Concept"]
+            },
+            "meta": { "text": ["thể hiện"] },
+            "id": "x7Xig2Au8X",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 43,
+              "end": 51,
+              "text": "thửa đất",
+              "labels": ["Concept"]
+            },
+            "id": "NxQF2l74lk",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 59,
+              "end": 88,
+              "text": "đối tượng địa lý có liên quan",
+              "labels": ["Concept"]
+            },
+            "id": "_Q1EKv4xYw",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 99,
+              "end": 123,
+              "text": "đơn vị hành chính cấp xã",
+              "labels": ["Concept"]
+            },
+            "id": "lEuGDwyjqR",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 134,
+              "end": 161,
+              "text": "đơn vị hành chính cấp huyện",
+              "labels": ["Concept"]
+            },
+            "id": "o_g3WWZgzG",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 166,
+              "end": 207,
+              "text": "không thành lập đơn vị hành chính cấp xã,",
+              "labels": ["Concept"]
+            },
+            "id": "Ajgvy5wqHy",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 213,
+              "end": 243,
+              "text": "cơ quan nhà nước có thẩm quyền",
+              "labels": ["Concept"]
+            },
+            "id": "12nQSjvsJh",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "x7Xig2Au8X",
+            "to_id": "NxQF2l74lk",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thể hiện"]
+          },
+          {
+            "from_id": "x7Xig2Au8X",
+            "to_id": "_Q1EKv4xYw",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thể hiện"]
+          },
+          {
+            "from_id": "x7Xig2Au8X",
+            "to_id": "lEuGDwyjqR",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["lập"]
+          },
+          {
+            "from_id": "x7Xig2Au8X",
+            "to_id": "o_g3WWZgzG",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["lập"]
+          },
+          {
+            "from_id": "o_g3WWZgzG",
+            "to_id": "Ajgvy5wqHy",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "x7Xig2Au8X",
+            "to_id": "12nQSjvsJh",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["xác nhận"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-02-28T03:57:22.025221Z",
+        "updated_at": "2025-02-28T04:19:12.142840Z",
+        "draft_created_at": "2025-02-28T03:56:23.345280Z",
+        "lead_time": 677.735,
+        "prediction": {},
+        "result_count": 8,
+        "unique_id": "be926728-0118-40ce-9d6e-61d75fdba318",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 1,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "1. Bản đồ địa chính là bản đồ thể hiện các thửa đất và các đối tượng địa lý có liên quan, lập theo đơn vị hành chính cấp xã hoặc theo đơn vị hành chính cấp huyện nơi không thành lập đơn vị hành chính cấp xã, được cơ quan nhà nước có thẩm quyền xác nhận."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.993490Z",
+    "updated_at": "2025-02-28T04:19:12.191423Z",
+    "inner_id": 1,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  }
+]

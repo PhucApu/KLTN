@@ -1,0 +1,1332 @@
+[
+  {
+    "id": 1,
+    "annotations": [
+      {
+        "id": 3,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 19,
+              "text": "Bản đồ địa chính",
+              "labels": ["Concept"]
+            },
+            "id": "07FX0mevhv",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 43,
+              "end": 51,
+              "text": "thửa đất",
+              "labels": ["Concept"]
+            },
+            "id": "mgPp_L6dFM",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 59,
+              "end": 88,
+              "text": "đối tượng địa lý có liên quan",
+              "labels": ["Concept"]
+            },
+            "id": "5AA9OANW_m",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 99,
+              "end": 123,
+              "text": "đơn vị hành chính cấp xã",
+              "labels": ["Concept"]
+            },
+            "id": "SiGMxXH6P5",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 134,
+              "end": 161,
+              "text": "đơn vị hành chính cấp huyện",
+              "labels": ["Concept"]
+            },
+            "id": "_pNL_X53VB",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 213,
+              "end": 244,
+              "text": "cơ quan nhà nước có thẩm quyền ",
+              "labels": ["Concept"]
+            },
+            "id": "rdjX567RZD",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "07FX0mevhv",
+            "to_id": "mgPp_L6dFM",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thể hiện"]
+          },
+          {
+            "from_id": "07FX0mevhv",
+            "to_id": "5AA9OANW_m",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thể hiện"]
+          },
+          {
+            "from_id": "07FX0mevhv",
+            "to_id": "SiGMxXH6P5",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["lập"]
+          },
+          {
+            "from_id": "07FX0mevhv",
+            "to_id": "_pNL_X53VB",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["lập"]
+          },
+          {
+            "from_id": "07FX0mevhv",
+            "to_id": "rdjX567RZD",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["xác nhận"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T09:35:30.018448Z",
+        "updated_at": "2025-03-02T09:35:30.018448Z",
+        "draft_created_at": "2025-03-02T08:31:45.275338Z",
+        "lead_time": 3826.384,
+        "prediction": {},
+        "result_count": 7,
+        "unique_id": "71402064-4823-4974-b8d5-3fc989a7bac4",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 1,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "1. Bản đồ địa chính là bản đồ thể hiện các thửa đất và các đối tượng địa lý có liên quan, lập theo đơn vị hành chính cấp xã hoặc theo đơn vị hành chính cấp huyện nơi không thành lập đơn vị hành chính cấp xã, được cơ quan nhà nước có thẩm quyền xác nhận."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.993490Z",
+    "updated_at": "2025-03-02T14:02:59.732439Z",
+    "inner_id": 1,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 3,
+    "annotations": [
+      {
+        "id": 4,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 2,
+              "end": 32,
+              "text": "Bản đồ hiện trạng sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "Hy3sj1NWdU",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 52,
+              "end": 75,
+              "text": "sự phân bố các loại đất",
+              "labels": ["Concept"]
+            },
+            "id": "E7YB6ztfrX",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 84,
+              "end": 102,
+              "text": "thời điểm xác định",
+              "labels": ["Concept"]
+            },
+            "id": "9Lkm5iZI_2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 123,
+              "end": 148,
+              "text": "đơn vị hành chính các cấp",
+              "labels": ["Concept"]
+            },
+            "id": "pL-IDA1N61",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 160,
+              "end": 182,
+              "text": "vùng kinh tế - xã hội.",
+              "labels": ["Concept"]
+            },
+            "id": "Q5MsWApNbC",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "Hy3sj1NWdU",
+            "to_id": "E7YB6ztfrX",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thể hiện"]
+          },
+          {
+            "from_id": "E7YB6ztfrX",
+            "to_id": "9Lkm5iZI_2",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "Hy3sj1NWdU",
+            "to_id": "pL-IDA1N61",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["lập"]
+          },
+          {
+            "from_id": "Hy3sj1NWdU",
+            "to_id": "Q5MsWApNbC",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["tại"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T09:42:31.892676Z",
+        "updated_at": "2025-03-02T09:47:39.402444Z",
+        "draft_created_at": "2025-03-01T12:14:06.849192Z",
+        "lead_time": 460.26599999999996,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "c116873f-8c1a-4ab2-ba1e-d5ee8be8a619",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 3,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "2. Bản đồ hiện trạng sử dụng đất là bản đồ thể hiện sự phân bố các loại đất tại một thời điểm xác định, được lập theo từng đơn vị hành chính các cấp, theo từng vùng kinh tế - xã hội."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.993490Z",
+    "updated_at": "2025-03-02T09:47:39.440065Z",
+    "inner_id": 3,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 5,
+    "annotations": [
+      {
+        "id": 5,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 31,
+              "text": "Bản đồ quy hoạch sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "qHjknC-xwH",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 55,
+              "end": 81,
+              "text": "thời điểm đầu kỳ quy hoạch",
+              "labels": ["Concept"]
+            },
+            "id": "26MoL2n0rd",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 92,
+              "end": 121,
+              "text": "nội dung phân bố các loại đất",
+              "labels": ["Concept"]
+            },
+            "id": "462RpvoPuJ",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 126,
+              "end": 167,
+              "text": "thời điểm cuối kỳ quy hoạch của quy hoạch",
+              "labels": ["Concept"]
+            },
+            "id": "sqtm5ZqVWX",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "qHjknC-xwH",
+            "to_id": "26MoL2n0rd",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["lập"]
+          },
+          {
+            "from_id": "qHjknC-xwH",
+            "to_id": "462RpvoPuJ",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thể hiện"]
+          },
+          {
+            "from_id": "462RpvoPuJ",
+            "to_id": "sqtm5ZqVWX",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["tại"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T09:48:52.802474Z",
+        "updated_at": "2025-03-02T09:48:52.802474Z",
+        "draft_created_at": "2025-03-02T09:45:03.725968Z",
+        "lead_time": 239.00600000000003,
+        "prediction": {},
+        "result_count": 5,
+        "unique_id": "e8e53dd4-fa93-4c42-b022-aca8160163de",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 5,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "3. Bản đồ quy hoạch sử dụng đất là bản đồ được lập tại thời điểm đầu kỳ quy hoạch, thể hiện nội dung phân bố các loại đất tại thời điểm cuối kỳ quy hoạch của quy hoạch đó."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.993490Z",
+    "updated_at": "2025-03-02T09:48:52.839344Z",
+    "inner_id": 5,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 7,
+    "annotations": [
+      {
+        "id": 6,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 32,
+              "text": "Bảo vệ, cải tạo, phục hồi đất",
+              "labels": ["Concept"]
+            },
+            "id": "fhYedWB3KG",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 41,
+              "end": 107,
+              "text": "áp dụng các biện pháp quản lý, kỹ thuật, cơ giới, sinh học, hữu cơ",
+              "labels": ["Concept"]
+            },
+            "id": "cZ-DAaSEgB",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 134,
+              "end": 175,
+              "text": "đất bị ô nhiễm, phục hồi đất bị thoái hóa",
+              "labels": ["Concept"]
+            },
+            "id": "Y5mfT2LM2T",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "fhYedWB3KG",
+            "to_id": "cZ-DAaSEgB",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "fhYedWB3KG",
+            "to_id": "Y5mfT2LM2T",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["tác động"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T09:54:03.103593Z",
+        "updated_at": "2025-03-02T09:55:33.797070Z",
+        "draft_created_at": "2025-03-02T09:51:17.660358Z",
+        "lead_time": 225.039,
+        "prediction": {},
+        "result_count": 4,
+        "unique_id": "87e7dfd3-5062-4961-8807-ab72787ddf91",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 7,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "4. Bảo vệ, cải tạo, phục hồi đất là việc áp dụng các biện pháp quản lý, kỹ thuật, cơ giới, sinh học, hữu cơ tác động vào đất để xử lý đất bị ô nhiễm, phục hồi đất bị thoái hóa."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.993490Z",
+    "updated_at": "2025-03-02T09:55:33.832915Z",
+    "inner_id": 7,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 9,
+    "annotations": [
+      {
+        "id": 7,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 20,
+              "text": "Bồi thường về đất",
+              "labels": ["Concept"]
+            },
+            "id": "OQEOCYPFP3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 29,
+              "end": 37,
+              "text": "Nhà nước",
+              "labels": ["Concept"]
+            },
+            "id": "qLE4HF8NN8",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 46,
+              "end": 71,
+              "text": "giá trị quyền sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "QqsqFP-5th",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 76,
+              "end": 97,
+              "text": "diện tích đất thu hồi",
+              "labels": ["Concept"]
+            },
+            "id": "iqx6FzGtda",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 102,
+              "end": 122,
+              "text": "người có đất thu hồi",
+              "labels": ["Concept"]
+            },
+            "id": "Km4dbCTXAz",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "OQEOCYPFP3",
+            "to_id": "qLE4HF8NN8",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "qLE4HF8NN8",
+            "to_id": "QqsqFP-5th",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["trả lại"]
+          },
+          {
+            "from_id": "QqsqFP-5th",
+            "to_id": "iqx6FzGtda",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["xác định"]
+          },
+          {
+            "from_id": "QqsqFP-5th",
+            "to_id": "Km4dbCTXAz",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["cho"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T09:58:15.073327Z",
+        "updated_at": "2025-03-02T09:59:59.987638Z",
+        "draft_created_at": "2025-03-02T09:56:38.307258Z",
+        "lead_time": 194.62400000000002,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "91e59572-325b-4bc4-a514-c358458e3986",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 9,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "5. Bồi thường về đất là việc Nhà nước trả lại giá trị quyền sử dụng đất của diện tích đất thu hồi cho người có đất thu hồi."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.993490Z",
+    "updated_at": "2025-03-02T10:00:00.044422Z",
+    "inner_id": 9,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 11,
+    "annotations": [
+      {
+        "id": 8,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 41,
+              "text": "Cá nhân trực tiếp sản xuất nông nghiệp",
+              "labels": ["Concept"]
+            },
+            "id": "r0A2Yz4l2w",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 61,
+              "end": 133,
+              "text": "Nhà nước giao đất, cho thuê đất, công nhận quyền sử dụng đất nông nghiệp",
+              "labels": ["Concept"]
+            },
+            "id": "qBpF8NVSWe",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 147,
+              "end": 176,
+              "text": "quyền sử dụng đất nông nghiệp",
+              "labels": ["Concept"]
+            },
+            "id": "IlocvpRQWY",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 195,
+              "end": 224,
+              "text": "sản xuất nông nghiệp trên đất",
+              "labels": ["Concept"]
+            },
+            "id": "cdP5TkglM0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 233,
+              "end": 255,
+              "text": "quy định của Chính phủ",
+              "labels": ["Concept"]
+            },
+            "id": "-CiEQ2ErAh",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "r0A2Yz4l2w",
+            "to_id": "qBpF8NVSWe",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["đã được"]
+          },
+          {
+            "from_id": "r0A2Yz4l2w",
+            "to_id": "IlocvpRQWY",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["xác nhận"]
+          },
+          {
+            "from_id": "r0A2Yz4l2w",
+            "to_id": "cdP5TkglM0",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["đã được"]
+          },
+          {
+            "from_id": "cdP5TkglM0",
+            "to_id": "-CiEQ2ErAh",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["theo"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T10:04:55.503381Z",
+        "updated_at": "2025-03-02T10:07:33.784112Z",
+        "draft_created_at": "2025-03-02T10:03:27.269327Z",
+        "lead_time": 305.514,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "8b850463-fc01-4ec1-8b0b-9171673378d9",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 11,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "6. Cá nhân trực tiếp sản xuất nông nghiệp là cá nhân đã được Nhà nước giao đất, cho thuê đất, công nhận quyền sử dụng đất nông nghiệp; nhận chuyển quyền sử dụng đất nông nghiệp mà có thu nhập từ sản xuất nông nghiệp trên đất đó theo quy định của Chính phủ."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.994494Z",
+    "updated_at": "2025-03-02T10:07:33.818145Z",
+    "inner_id": 11,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 13,
+    "annotations": [
+      {
+        "id": 9,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 33,
+              "text": "Chi phí đầu tư vào đất còn lại",
+              "labels": ["Concept"]
+            },
+            "id": "yTwB_RNlGW",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 37,
+              "end": 51,
+              "text": "chi phí hợp lý",
+              "labels": ["Concept"]
+            },
+            "id": "sKYj3kYbB2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 55,
+              "end": 72,
+              "text": "người sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "Wud4UsYNmp",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 76,
+              "end": 133,
+              "text": "đầu tư trực tiếp vào đất phù hợp với mục đích sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "BlDZLaXmvk",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 154,
+              "end": 174,
+              "text": "Nhà nước thu hồi đất",
+              "labels": ["Concept"]
+            },
+            "id": "vk1LNnUV0x",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "yTwB_RNlGW",
+            "to_id": "sKYj3kYbB2",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "sKYj3kYbB2",
+            "to_id": "Wud4UsYNmp",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["đầu tư"]
+          },
+          {
+            "from_id": "Wud4UsYNmp",
+            "to_id": "BlDZLaXmvk",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["đầu tư"]
+          },
+          {
+            "from_id": "yTwB_RNlGW",
+            "to_id": "vk1LNnUV0x",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["đến"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T13:36:17.894428Z",
+        "updated_at": "2025-03-02T13:39:42.779133Z",
+        "draft_created_at": "2025-03-02T13:34:09.843257Z",
+        "lead_time": 391.065,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "57a91259-0f0a-448c-9e7e-9a4fd95c8f8f",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 13,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "7. Chi phí đầu tư vào đất còn lại là chi phí hợp lý mà người sử dụng đất đã đầu tư trực tiếp vào đất phù hợp với mục đích sử dụng đất nhưng đến thời điểm Nhà nước thu hồi đất còn chưa thu hồi hết."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.994494Z",
+    "updated_at": "2025-03-02T13:39:42.829492Z",
+    "inner_id": 13,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 15,
+    "annotations": [
+      {
+        "id": 10,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 23,
+              "text": "Chỉ tiêu sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "aFOcafa5n2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 27,
+              "end": 54,
+              "text": "diện tích đất của từng loại",
+              "labels": ["Concept"]
+            },
+            "id": "u1zcQVBqu-",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 79,
+              "end": 110,
+              "text": "quy hoạch, kế hoạch sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "8jFFxmVxgR",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 122,
+              "end": 152,
+              "text": "cơ quan nhà nước có thẩm quyền",
+              "labels": ["Concept"]
+            },
+            "id": "tvymF2R9-A",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 165,
+              "end": 224,
+              "text": "phân bổ trong quá trình lập quy hoạch, kế hoạch sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "sZZ1xUqr7z",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "aFOcafa5n2",
+            "to_id": "u1zcQVBqu-",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "u1zcQVBqu-",
+            "to_id": "8jFFxmVxgR",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["xác định"]
+          },
+          {
+            "from_id": "8jFFxmVxgR",
+            "to_id": "tvymF2R9-A",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["xác định"]
+          },
+          {
+            "from_id": "aFOcafa5n2",
+            "to_id": "sZZ1xUqr7z",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T13:42:47.322931Z",
+        "updated_at": "2025-03-02T13:42:47.322931Z",
+        "draft_created_at": "2025-03-02T13:40:36.892167Z",
+        "lead_time": 168.737,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "1aa59bd8-dadd-48cc-a194-4ed37f796227",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 15,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "8. Chỉ tiêu sử dụng đất là diện tích đất của từng loại đất được xác định trong quy hoạch, kế hoạch sử dụng đất các cấp do cơ quan nhà nước có thẩm quyền xác định để phân bổ trong quá trình lập quy hoạch, kế hoạch sử dụng đất."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.994494Z",
+    "updated_at": "2025-03-02T13:42:47.365406Z",
+    "inner_id": 15,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 17,
+    "annotations": [
+      {
+        "id": 11,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 12,
+              "text": "Chiếm đất",
+              "labels": ["Concept"]
+            },
+            "id": "IJ4iOTVosv",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 69,
+              "end": 99,
+              "text": "cơ quan nhà nước có thẩm quyền",
+              "labels": ["Concept"]
+            },
+            "id": "U8EFBqwdSb",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 130,
+              "end": 156,
+              "text": "người sử dụng đất hợp pháp",
+              "labels": ["Concept"]
+            },
+            "id": "59Yye7nUxm",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 29,
+              "end": 32,
+              "text": "đất",
+              "labels": ["Concept"]
+            },
+            "id": "p3J4emirgN",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 36,
+              "end": 55,
+              "text": "Nhà nước đã quản lý",
+              "labels": ["Concept"]
+            },
+            "id": "WJiQbeGkCI",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "IJ4iOTVosv",
+            "to_id": "p3J4emirgN",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["sử dụng"]
+          },
+          {
+            "from_id": "p3J4emirgN",
+            "to_id": "WJiQbeGkCI",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["đã được"]
+          },
+          {
+            "from_id": "p3J4emirgN",
+            "to_id": "59Yye7nUxm",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["không cho phép"]
+          },
+          {
+            "from_id": "p3J4emirgN",
+            "to_id": "U8EFBqwdSb",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["không cho phép"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T13:47:30.223021Z",
+        "updated_at": "2025-03-02T13:55:57.720884Z",
+        "draft_created_at": "2025-03-02T13:43:29.356575Z",
+        "lead_time": 718.57,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "f4c99047-ef90-44d1-bc75-d0b32bb3704e",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 17,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "9. Chiếm đất là việc sử dụng đất do Nhà nước đã quản lý mà chưa được cơ quan nhà nước có thẩm quyền cho phép hoặc sử dụng đất của người sử dụng đất hợp pháp khác mà chưa được người đó cho phép."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.994494Z",
+    "updated_at": "2025-03-02T13:55:57.762802Z",
+    "inner_id": 17,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 19,
+    "annotations": [
+      {
+        "id": 12,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 4,
+              "end": 70,
+              "text": "Chủ đầu tư dự án đầu tư có sử dụng đất (sau đây gọi là chủ đầu tư)",
+              "labels": ["Concept"]
+            },
+            "id": "hUHGtQr6l_",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 74,
+              "end": 146,
+              "text": "nhà đầu tư theo quy định của pháp luật về đầu tư, pháp luật có liên quan",
+              "labels": ["Concept"]
+            },
+            "id": "9IcPD8HewH",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 177,
+              "end": 204,
+              "text": "dự án đầu tư có sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "uAE078A-ww",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "hUHGtQr6l_",
+            "to_id": "9IcPD8HewH",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["là"]
+          },
+          {
+            "from_id": "hUHGtQr6l_",
+            "to_id": "uAE078A-ww",
+            "type": "relation",
+            "direction": "right",
+            "labels": ["thực hiện"]
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-02T14:00:15.966561Z",
+        "updated_at": "2025-03-02T14:02:44.431681Z",
+        "draft_created_at": "2025-03-02T13:57:50.532346Z",
+        "lead_time": 378.49,
+        "prediction": {},
+        "result_count": 4,
+        "unique_id": "ec1196da-777e-46de-901e-5e307f906858",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 19,
+        "project": 1,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "0bf9ed35-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "10. Chủ đầu tư dự án đầu tư có sử dụng đất (sau đây gọi là chủ đầu tư) là nhà đầu tư theo quy định của pháp luật về đầu tư, pháp luật có liên quan đã được lựa chọn để thực hiện dự án đầu tư có sử dụng đất và được giao đất, cho thuê đất, chuyển mục đích sử dụng đất theo quy định của Luật này."
+    },
+    "meta": {},
+    "created_at": "2025-02-28T03:55:37.994494Z",
+    "updated_at": "2025-03-02T14:02:44.484742Z",
+    "inner_id": 19,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 1,
+    "updated_by": 1,
+    "comment_authors": []
+  }
+]

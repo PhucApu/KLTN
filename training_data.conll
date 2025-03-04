@@ -1,0 +1,624 @@
+1	1.	O
+2	Bản	B-Concept
+3	đồ	I-Concept
+4	địa	I-Concept
+5	chính	I-Concept
+6	là	O
+7	bản	O
+8	đồ	O
+9	thể	O
+10	hiện	O
+11	các	O
+12	thửa	B-Concept
+13	đất	I-Concept
+14	và	O
+15	các	O
+16	đối	B-Concept
+17	tượng	I-Concept
+18	địa	I-Concept
+19	lý	I-Concept
+20	có	I-Concept
+21	liên	I-Concept
+22	quan,	O
+23	lập	O
+24	theo	O
+25	đơn	B-Concept
+26	vị	I-Concept
+27	hành	I-Concept
+28	chính	I-Concept
+29	cấp	I-Concept
+30	xã	I-Concept
+31	hoặc	O
+32	theo	O
+33	đơn	B-Concept
+34	vị	I-Concept
+35	hành	I-Concept
+36	chính	I-Concept
+37	cấp	I-Concept
+38	huyện	I-Concept
+39	nơi	O
+40	không	O
+41	thành	O
+42	lập	O
+43	đơn	O
+44	vị	O
+45	hành	O
+46	chính	O
+47	cấp	O
+48	xã,	O
+49	được	O
+50	cơ	B-Concept
+51	quan	I-Concept
+52	nhà	I-Concept
+53	nước	I-Concept
+54	có	I-Concept
+55	thẩm	I-Concept
+56	quyền	I-Concept
+57	xác	O
+58	nhận.	O
+
+# Concepts:
+0	Bản đồ địa chính	3	19
+1	thửa đất	43	51
+2	đối tượng địa lý có liên quan	59	88
+3	đơn vị hành chính cấp xã	99	123
+4	đơn vị hành chính cấp huyện	134	161
+5	cơ quan nhà nước có thẩm quyền 	213	244
+
+# Relations:
+0	1	thể hiện
+0	2	thể hiện
+0	3	lập
+0	4	lập
+0	5	xác nhận
+
+
+1	2.	O
+2	Bản	B-Concept
+3	đồ	I-Concept
+4	hiện	I-Concept
+5	trạng	I-Concept
+6	sử	I-Concept
+7	dụng	I-Concept
+8	đất	I-Concept
+9	là	O
+10	bản	O
+11	đồ	O
+12	thể	O
+13	hiện	O
+14	sự	B-Concept
+15	phân	I-Concept
+16	bố	I-Concept
+17	các	I-Concept
+18	loại	I-Concept
+19	đất	I-Concept
+20	tại	O
+21	một	O
+22	thời	B-Concept
+23	điểm	I-Concept
+24	xác	I-Concept
+25	định,	O
+26	được	O
+27	lập	O
+28	theo	O
+29	từng	O
+30	đơn	B-Concept
+31	vị	I-Concept
+32	hành	I-Concept
+33	chính	I-Concept
+34	các	I-Concept
+35	cấp,	O
+36	theo	O
+37	từng	O
+38	vùng	B-Concept
+39	kinh	I-Concept
+40	tế	I-Concept
+41	-	I-Concept
+42	xã	I-Concept
+43	hội.	I-Concept
+
+# Concepts:
+0	Bản đồ hiện trạng sử dụng đất	2	32
+1	sự phân bố các loại đất	52	75
+2	thời điểm xác định	84	102
+3	đơn vị hành chính các cấp	123	148
+4	vùng kinh tế - xã hội.	160	182
+
+# Relations:
+0	1	thể hiện
+1	2	là
+0	3	lập
+0	4	tại
+
+
+1	3.	O
+2	Bản	B-Concept
+3	đồ	I-Concept
+4	quy	I-Concept
+5	hoạch	I-Concept
+6	sử	I-Concept
+7	dụng	I-Concept
+8	đất	I-Concept
+9	là	O
+10	bản	O
+11	đồ	O
+12	được	O
+13	lập	O
+14	tại	O
+15	thời	B-Concept
+16	điểm	I-Concept
+17	đầu	I-Concept
+18	kỳ	I-Concept
+19	quy	I-Concept
+20	hoạch,	O
+21	thể	O
+22	hiện	O
+23	nội	B-Concept
+24	dung	I-Concept
+25	phân	I-Concept
+26	bố	I-Concept
+27	các	I-Concept
+28	loại	I-Concept
+29	đất	I-Concept
+30	tại	O
+31	thời	B-Concept
+32	điểm	I-Concept
+33	cuối	I-Concept
+34	kỳ	I-Concept
+35	quy	I-Concept
+36	hoạch	I-Concept
+37	của	I-Concept
+38	quy	I-Concept
+39	hoạch	I-Concept
+40	đó.	O
+
+# Concepts:
+0	Bản đồ quy hoạch sử dụng đất	3	31
+1	thời điểm đầu kỳ quy hoạch	55	81
+2	nội dung phân bố các loại đất	92	121
+3	thời điểm cuối kỳ quy hoạch của quy hoạch	126	167
+
+# Relations:
+0	1	lập
+0	2	thể hiện
+2	3	tại
+
+
+1	4.	O
+2	Bảo	B-Concept
+3	vệ,	I-Concept
+4	cải	I-Concept
+5	tạo,	I-Concept
+6	phục	I-Concept
+7	hồi	I-Concept
+8	đất	I-Concept
+9	là	O
+10	việc	O
+11	áp	B-Concept
+12	dụng	I-Concept
+13	các	I-Concept
+14	biện	I-Concept
+15	pháp	I-Concept
+16	quản	I-Concept
+17	lý,	I-Concept
+18	kỹ	I-Concept
+19	thuật,	I-Concept
+20	cơ	I-Concept
+21	giới,	I-Concept
+22	sinh	I-Concept
+23	học,	I-Concept
+24	hữu	I-Concept
+25	cơ	I-Concept
+26	tác	O
+27	động	O
+28	vào	O
+29	đất	O
+30	để	O
+31	xử	O
+32	lý	O
+33	đất	B-Concept
+34	bị	I-Concept
+35	ô	I-Concept
+36	nhiễm,	I-Concept
+37	phục	I-Concept
+38	hồi	I-Concept
+39	đất	I-Concept
+40	bị	I-Concept
+41	thoái	I-Concept
+42	hóa.	O
+
+# Concepts:
+0	Bảo vệ, cải tạo, phục hồi đất	3	32
+1	áp dụng các biện pháp quản lý, kỹ thuật, cơ giới, sinh học, hữu cơ	41	107
+2	đất bị ô nhiễm, phục hồi đất bị thoái hóa	134	175
+
+# Relations:
+0	1	là
+0	2	tác động
+
+
+1	5.	O
+2	Bồi	B-Concept
+3	thường	I-Concept
+4	về	I-Concept
+5	đất	I-Concept
+6	là	O
+7	việc	O
+8	Nhà	B-Concept
+9	nước	I-Concept
+10	trả	O
+11	lại	O
+12	giá	B-Concept
+13	trị	I-Concept
+14	quyền	I-Concept
+15	sử	I-Concept
+16	dụng	I-Concept
+17	đất	I-Concept
+18	của	O
+19	diện	B-Concept
+20	tích	I-Concept
+21	đất	I-Concept
+22	thu	I-Concept
+23	hồi	I-Concept
+24	cho	O
+25	người	B-Concept
+26	có	I-Concept
+27	đất	I-Concept
+28	thu	I-Concept
+29	hồi.	O
+
+# Concepts:
+0	Bồi thường về đất	3	20
+1	Nhà nước	29	37
+2	giá trị quyền sử dụng đất	46	71
+3	diện tích đất thu hồi	76	97
+4	người có đất thu hồi	102	122
+
+# Relations:
+0	1	là
+1	2	trả lại
+2	3	xác định
+2	4	cho
+
+
+1	6.	O
+2	Cá	B-Concept
+3	nhân	I-Concept
+4	trực	I-Concept
+5	tiếp	I-Concept
+6	sản	I-Concept
+7	xuất	I-Concept
+8	nông	I-Concept
+9	nghiệp	I-Concept
+10	là	O
+11	cá	O
+12	nhân	O
+13	đã	O
+14	được	O
+15	Nhà	B-Concept
+16	nước	I-Concept
+17	giao	I-Concept
+18	đất,	I-Concept
+19	cho	I-Concept
+20	thuê	I-Concept
+21	đất,	I-Concept
+22	công	I-Concept
+23	nhận	I-Concept
+24	quyền	I-Concept
+25	sử	I-Concept
+26	dụng	I-Concept
+27	đất	I-Concept
+28	nông	I-Concept
+29	nghiệp;	O
+30	nhận	O
+31	chuyển	O
+32	quyền	B-Concept
+33	sử	I-Concept
+34	dụng	I-Concept
+35	đất	I-Concept
+36	nông	I-Concept
+37	nghiệp	I-Concept
+38	mà	O
+39	có	O
+40	thu	O
+41	nhập	O
+42	từ	O
+43	sản	B-Concept
+44	xuất	I-Concept
+45	nông	I-Concept
+46	nghiệp	I-Concept
+47	trên	I-Concept
+48	đất	I-Concept
+49	đó	O
+50	theo	O
+51	quy	B-Concept
+52	định	I-Concept
+53	của	I-Concept
+54	Chính	I-Concept
+55	phủ.	O
+
+# Concepts:
+0	Cá nhân trực tiếp sản xuất nông nghiệp	3	41
+1	Nhà nước giao đất, cho thuê đất, công nhận quyền sử dụng đất nông nghiệp	61	133
+2	quyền sử dụng đất nông nghiệp	147	176
+3	sản xuất nông nghiệp trên đất	195	224
+4	quy định của Chính phủ	233	255
+
+# Relations:
+0	1	đã được
+0	2	xác nhận
+0	3	đã được
+3	4	theo
+
+
+1	7.	O
+2	Chi	B-Concept
+3	phí	I-Concept
+4	đầu	I-Concept
+5	tư	I-Concept
+6	vào	I-Concept
+7	đất	I-Concept
+8	còn	I-Concept
+9	lại	I-Concept
+10	là	O
+11	chi	B-Concept
+12	phí	I-Concept
+13	hợp	I-Concept
+14	lý	I-Concept
+15	mà	O
+16	người	B-Concept
+17	sử	I-Concept
+18	dụng	I-Concept
+19	đất	I-Concept
+20	đã	O
+21	đầu	B-Concept
+22	tư	I-Concept
+23	trực	I-Concept
+24	tiếp	I-Concept
+25	vào	I-Concept
+26	đất	I-Concept
+27	phù	I-Concept
+28	hợp	I-Concept
+29	với	I-Concept
+30	mục	I-Concept
+31	đích	I-Concept
+32	sử	I-Concept
+33	dụng	I-Concept
+34	đất	I-Concept
+35	nhưng	O
+36	đến	O
+37	thời	O
+38	điểm	O
+39	Nhà	B-Concept
+40	nước	I-Concept
+41	thu	I-Concept
+42	hồi	I-Concept
+43	đất	I-Concept
+44	còn	O
+45	chưa	O
+46	thu	O
+47	hồi	O
+48	hết.	O
+
+# Concepts:
+0	Chi phí đầu tư vào đất còn lại	3	33
+1	chi phí hợp lý	37	51
+2	người sử dụng đất	55	72
+3	đầu tư trực tiếp vào đất phù hợp với mục đích sử dụng đất	76	133
+4	Nhà nước thu hồi đất	154	174
+
+# Relations:
+0	1	là
+1	2	đầu tư
+2	3	đầu tư
+0	4	đến
+
+
+1	8.	O
+2	Chỉ	B-Concept
+3	tiêu	I-Concept
+4	sử	I-Concept
+5	dụng	I-Concept
+6	đất	I-Concept
+7	là	O
+8	diện	B-Concept
+9	tích	I-Concept
+10	đất	I-Concept
+11	của	I-Concept
+12	từng	I-Concept
+13	loại	I-Concept
+14	đất	O
+15	được	O
+16	xác	O
+17	định	O
+18	trong	O
+19	quy	B-Concept
+20	hoạch,	I-Concept
+21	kế	I-Concept
+22	hoạch	I-Concept
+23	sử	I-Concept
+24	dụng	I-Concept
+25	đất	I-Concept
+26	các	O
+27	cấp	O
+28	do	O
+29	cơ	B-Concept
+30	quan	I-Concept
+31	nhà	I-Concept
+32	nước	I-Concept
+33	có	I-Concept
+34	thẩm	I-Concept
+35	quyền	I-Concept
+36	xác	O
+37	định	O
+38	để	O
+39	phân	B-Concept
+40	bổ	I-Concept
+41	trong	I-Concept
+42	quá	I-Concept
+43	trình	I-Concept
+44	lập	I-Concept
+45	quy	I-Concept
+46	hoạch,	I-Concept
+47	kế	I-Concept
+48	hoạch	I-Concept
+49	sử	I-Concept
+50	dụng	I-Concept
+51	đất.	O
+
+# Concepts:
+0	Chỉ tiêu sử dụng đất	3	23
+1	diện tích đất của từng loại	27	54
+2	quy hoạch, kế hoạch sử dụng đất	79	110
+3	cơ quan nhà nước có thẩm quyền	122	152
+4	phân bổ trong quá trình lập quy hoạch, kế hoạch sử dụng đất	165	224
+
+# Relations:
+0	1	là
+1	2	xác định
+2	3	xác định
+0	4	là
+
+
+1	9.	O
+2	Chiếm	B-Concept
+3	đất	I-Concept
+4	là	O
+5	việc	O
+6	sử	O
+7	dụng	O
+8	đất	B-Concept
+9	do	O
+10	Nhà	B-Concept
+11	nước	I-Concept
+12	đã	I-Concept
+13	quản	I-Concept
+14	lý	I-Concept
+15	mà	O
+16	chưa	O
+17	được	O
+18	cơ	B-Concept
+19	quan	I-Concept
+20	nhà	I-Concept
+21	nước	I-Concept
+22	có	I-Concept
+23	thẩm	I-Concept
+24	quyền	I-Concept
+25	cho	O
+26	phép	O
+27	hoặc	O
+28	sử	O
+29	dụng	O
+30	đất	O
+31	của	O
+32	người	B-Concept
+33	sử	I-Concept
+34	dụng	I-Concept
+35	đất	I-Concept
+36	hợp	I-Concept
+37	pháp	I-Concept
+38	khác	O
+39	mà	O
+40	chưa	O
+41	được	O
+42	người	O
+43	đó	O
+44	cho	O
+45	phép.	O
+
+# Concepts:
+0	Chiếm đất	3	12
+1	đất	29	32
+2	Nhà nước đã quản lý	36	55
+3	cơ quan nhà nước có thẩm quyền	69	99
+4	người sử dụng đất hợp pháp	130	156
+
+# Relations:
+0	1	sử dụng
+1	2	đã được
+1	4	không cho phép
+1	3	không cho phép
+
+
+1	10.	O
+2	Chủ	B-Concept
+3	đầu	I-Concept
+4	tư	I-Concept
+5	dự	I-Concept
+6	án	I-Concept
+7	đầu	I-Concept
+8	tư	I-Concept
+9	có	I-Concept
+10	sử	I-Concept
+11	dụng	I-Concept
+12	đất	I-Concept
+13	(sau	I-Concept
+14	đây	I-Concept
+15	gọi	I-Concept
+16	là	I-Concept
+17	chủ	I-Concept
+18	đầu	I-Concept
+19	tư)	I-Concept
+20	là	O
+21	nhà	B-Concept
+22	đầu	I-Concept
+23	tư	I-Concept
+24	theo	I-Concept
+25	quy	I-Concept
+26	định	I-Concept
+27	của	I-Concept
+28	pháp	I-Concept
+29	luật	I-Concept
+30	về	I-Concept
+31	đầu	I-Concept
+32	tư,	I-Concept
+33	pháp	I-Concept
+34	luật	I-Concept
+35	có	I-Concept
+36	liên	I-Concept
+37	quan	I-Concept
+38	đã	O
+39	được	O
+40	lựa	O
+41	chọn	O
+42	để	O
+43	thực	O
+44	hiện	O
+45	dự	B-Concept
+46	án	I-Concept
+47	đầu	I-Concept
+48	tư	I-Concept
+49	có	I-Concept
+50	sử	I-Concept
+51	dụng	I-Concept
+52	đất	I-Concept
+53	và	O
+54	được	O
+55	giao	O
+56	đất,	O
+57	cho	O
+58	thuê	O
+59	đất,	O
+60	chuyển	O
+61	mục	O
+62	đích	O
+63	sử	O
+64	dụng	O
+65	đất	O
+66	theo	O
+67	quy	O
+68	định	O
+69	của	O
+70	Luật	O
+71	này.	O
+
+# Concepts:
+0	Chủ đầu tư dự án đầu tư có sử dụng đất (sau đây gọi là chủ đầu tư)	4	70
+1	nhà đầu tư theo quy định của pháp luật về đầu tư, pháp luật có liên quan	74	146
+2	dự án đầu tư có sử dụng đất	177	204
+
+# Relations:
+0	1	là
+0	2	thực hiện
+
+
