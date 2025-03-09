@@ -1,0 +1,43 @@
+[
+  {
+    "sentence": "Người đại diện theo pháp luật của tổ chức trong nước, tổ chức kinh tế có vốn đầu tư nước ngoài; người đứng đầu của tổ chức nước ngoài có chức năng ngoại giao đối với việc sử dụng đất của tổ chức mình.",
+    "reference": {
+      "type": "Clause",
+      "id": "clause_6_1",
+      "chapter_id": "chapter_I",
+      "article_id": "article_6"
+    },
+    "concepts": [
+      { "id": "c1", "khái niệm": "Người đại diện theo pháp luật" },
+      { "id": "c2", "khái niệm": "Tổ chức trong nước" },
+      { "id": "c3", "khái niệm": "Việc sử dụng đất" }
+    ],
+    "relations": [
+      { "id": "r1", "khái niệm": "đối với" },
+      { "id": "r2", "khái niệm": "của" }
+    ],
+    "relation_pairs": [
+      { "concept1": "c1", "relation": "r1", "concept2": "c3" },
+      { "concept1": "c2", "relation": "r2", "concept2": "c1" }
+    ]
+  },
+  {
+    "sentence": "Cá nhân trong nước, người Việt Nam định cư ở nước ngoài là công dân Việt Nam (sau đây gọi là cá nhân);",
+    "reference": {
+      "type": "Clause",
+      "id": "clause_4_3",
+      "chapter_id": "chapter_I",
+      "article_id": "article_4"
+    },
+    "concepts": [
+      { "id": "c1", "khái niệm": "Người đại diện theo pháp luật" },
+      { "id": "c3", "khái niệm": "Việc sử dụng đất" }
+    ],
+    "relations": [
+      { "id": "r1", "khái niệm": "đối với" }
+    ],
+    "relation_pairs": [
+      { "concept1": "c1", "relation": "r1", "concept2": "c3" }
+    ]
+  }
+]

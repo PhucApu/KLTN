@@ -2,3 +2,4 @@ phobert-joint/
 phobert-joint-finetuned/
 phobert-ner/
 phobert-ner-finetuned/
+joint_model_full.pth

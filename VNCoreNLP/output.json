@@ -1,3439 +1,2244 @@
 [
   {
-    "text": "1. Bản đồ địa chính là bản đồ thể hiện các thửa đất và các đối tượng địa lý có liên quan, lập theo đơn vị hành chính cấp xã hoặc theo đơn vị hành chính cấp huyện nơi không thành lập đơn vị hành chính cấp xã, được cơ quan nhà nước có thẩm quyền xác nhận.",
+    "text": "1. Người đại diện theo pháp luật của tổ chức trong nước, tổ chức kinh tế có vốn đầu tư nước ngoài; người đứng đầu của tổ chức nước ngoài có chức năng ngoại giao đối với việc sử dụng đất của tổ chức mình.",
     "tokens": [
       {
-        "token": "1.",
+        "token": "1",
         "start_char": 0,
+        "end_char": 1,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 1,
         "end_char": 2,
-        "label": "O"
+        "concept_label": "O",
+        "relation_label": "O"
       },
       {
-        "token": "Bản",
+        "token": "Người",
         "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đồ",
-        "start_char": 7,
-        "end_char": 9,
-        "label": "I-Concept"
-      },
-      {
-        "token": "địa",
-        "start_char": 10,
-        "end_char": 13,
-        "label": "I-Concept"
-      },
-      {
-        "token": "chính",
-        "start_char": 14,
-        "end_char": 19,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 20,
-        "end_char": 22,
-        "label": "O"
-      },
-      {
-        "token": "bản",
-        "start_char": 23,
-        "end_char": 26,
-        "label": "O"
-      },
-      {
-        "token": "đồ",
-        "start_char": 27,
-        "end_char": 29,
-        "label": "O"
-      },
-      {
-        "token": "thể",
-        "start_char": 30,
-        "end_char": 33,
-        "label": "O"
-      },
-      {
-        "token": "hiện",
-        "start_char": 34,
-        "end_char": 38,
-        "label": "O"
-      },
-      {
-        "token": "các",
-        "start_char": 39,
-        "end_char": 42,
-        "label": "O"
-      },
-      {
-        "token": "thửa",
-        "start_char": 43,
-        "end_char": 47,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 48,
-        "end_char": 51,
-        "label": "I-Concept"
-      },
-      {
-        "token": "và",
-        "start_char": 52,
-        "end_char": 54,
-        "label": "O"
-      },
-      {
-        "token": "các",
-        "start_char": 55,
-        "end_char": 58,
-        "label": "O"
-      },
-      {
-        "token": "đối",
-        "start_char": 59,
-        "end_char": 62,
-        "label": "B-Concept"
-      },
-      {
-        "token": "tượng",
-        "start_char": 63,
-        "end_char": 68,
-        "label": "I-Concept"
-      },
-      {
-        "token": "địa",
-        "start_char": 69,
-        "end_char": 72,
-        "label": "I-Concept"
-      },
-      {
-        "token": "lý",
-        "start_char": 73,
-        "end_char": 75,
-        "label": "I-Concept"
-      },
-      {
-        "token": "có",
-        "start_char": 76,
-        "end_char": 78,
-        "label": "I-Concept"
-      },
-      {
-        "token": "liên",
-        "start_char": 79,
-        "end_char": 83,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quan,",
-        "start_char": 84,
-        "end_char": 89,
-        "label": "O"
-      },
-      {
-        "token": "lập",
-        "start_char": 90,
-        "end_char": 93,
-        "label": "O"
-      },
-      {
-        "token": "theo",
-        "start_char": 94,
-        "end_char": 98,
-        "label": "O"
-      },
-      {
-        "token": "đơn",
-        "start_char": 99,
-        "end_char": 102,
-        "label": "B-Concept"
-      },
-      {
-        "token": "vị",
-        "start_char": 103,
-        "end_char": 105,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hành",
-        "start_char": 106,
-        "end_char": 110,
-        "label": "I-Concept"
-      },
-      {
-        "token": "chính",
-        "start_char": 111,
-        "end_char": 116,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cấp",
-        "start_char": 117,
-        "end_char": 120,
-        "label": "I-Concept"
-      },
-      {
-        "token": "xã",
-        "start_char": 121,
-        "end_char": 123,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoặc",
-        "start_char": 124,
-        "end_char": 128,
-        "label": "O"
-      },
-      {
-        "token": "theo",
-        "start_char": 129,
-        "end_char": 133,
-        "label": "O"
-      },
-      {
-        "token": "đơn",
-        "start_char": 134,
-        "end_char": 137,
-        "label": "B-Concept"
-      },
-      {
-        "token": "vị",
-        "start_char": 138,
-        "end_char": 140,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hành",
-        "start_char": 141,
-        "end_char": 145,
-        "label": "I-Concept"
-      },
-      {
-        "token": "chính",
-        "start_char": 146,
-        "end_char": 151,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cấp",
-        "start_char": 152,
-        "end_char": 155,
-        "label": "I-Concept"
-      },
-      {
-        "token": "huyện",
-        "start_char": 156,
-        "end_char": 161,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nơi",
-        "start_char": 162,
-        "end_char": 165,
-        "label": "O"
-      },
-      {
-        "token": "không",
-        "start_char": 166,
-        "end_char": 171,
-        "label": "O"
-      },
-      {
-        "token": "thành",
-        "start_char": 172,
-        "end_char": 177,
-        "label": "O"
-      },
-      {
-        "token": "lập",
-        "start_char": 178,
-        "end_char": 181,
-        "label": "O"
-      },
-      {
-        "token": "đơn",
-        "start_char": 182,
-        "end_char": 185,
-        "label": "O"
-      },
-      {
-        "token": "vị",
-        "start_char": 186,
-        "end_char": 188,
-        "label": "O"
-      },
-      {
-        "token": "hành",
-        "start_char": 189,
-        "end_char": 193,
-        "label": "O"
-      },
-      {
-        "token": "chính",
-        "start_char": 194,
-        "end_char": 199,
-        "label": "O"
-      },
-      {
-        "token": "cấp",
-        "start_char": 200,
-        "end_char": 203,
-        "label": "O"
-      },
-      {
-        "token": "xã,",
-        "start_char": 204,
-        "end_char": 207,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 208,
-        "end_char": 212,
-        "label": "O"
-      },
-      {
-        "token": "cơ",
-        "start_char": 213,
-        "end_char": 215,
-        "label": "B-Concept"
-      },
-      {
-        "token": "quan",
-        "start_char": 216,
-        "end_char": 220,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nhà",
-        "start_char": 221,
-        "end_char": 224,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 225,
-        "end_char": 229,
-        "label": "I-Concept"
-      },
-      {
-        "token": "có",
-        "start_char": 230,
-        "end_char": 232,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thẩm",
-        "start_char": 233,
-        "end_char": 237,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quyền",
-        "start_char": 238,
-        "end_char": 243,
-        "label": "I-Concept"
-      },
-      {
-        "token": "xác",
-        "start_char": 244,
-        "end_char": 247,
-        "label": "O"
-      },
-      {
-        "token": "nhận.",
-        "start_char": 248,
-        "end_char": 253,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "07FX0mevhv",
-        "text": "Bản đồ địa chính",
-        "start": 3,
-        "end": 19
-      },
-      {
-        "id": "mgPp_L6dFM",
-        "text": "thửa đất",
-        "start": 43,
-        "end": 51
-      },
-      {
-        "id": "5AA9OANW_m",
-        "text": "đối tượng địa lý có liên quan",
-        "start": 59,
-        "end": 88
-      },
-      {
-        "id": "SiGMxXH6P5",
-        "text": "đơn vị hành chính cấp xã",
-        "start": 99,
-        "end": 123
-      },
-      {
-        "id": "_pNL_X53VB",
-        "text": "đơn vị hành chính cấp huyện",
-        "start": 134,
-        "end": 161
-      },
-      {
-        "id": "rdjX567RZD",
-        "text": "cơ quan nhà nước có thẩm quyền ",
-        "start": 213,
-        "end": 244
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "thể hiện"
-      },
-      {
-        "source": 0,
-        "target": 2,
-        "label": "thể hiện"
-      },
-      {
-        "source": 0,
-        "target": 3,
-        "label": "lập"
-      },
-      {
-        "source": 0,
-        "target": 4,
-        "label": "lập"
-      },
-      {
-        "source": 0,
-        "target": 5,
-        "label": "xác nhận"
-      }
-    ]
-  },
-  {
-    "text": "2. Bản đồ hiện trạng sử dụng đất là bản đồ thể hiện sự phân bố các loại đất tại một thời điểm xác định, được lập theo từng đơn vị hành chính các cấp, theo từng vùng kinh tế - xã hội.",
-    "tokens": [
-      {
-        "token": "2.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Bản",
-        "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đồ",
-        "start_char": 7,
-        "end_char": 9,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hiện",
-        "start_char": 10,
-        "end_char": 14,
-        "label": "I-Concept"
-      },
-      {
-        "token": "trạng",
-        "start_char": 15,
-        "end_char": 20,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 21,
-        "end_char": 23,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 24,
-        "end_char": 28,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 29,
-        "end_char": 32,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 33,
-        "end_char": 35,
-        "label": "O"
-      },
-      {
-        "token": "bản",
-        "start_char": 36,
-        "end_char": 39,
-        "label": "O"
-      },
-      {
-        "token": "đồ",
-        "start_char": 40,
-        "end_char": 42,
-        "label": "O"
-      },
-      {
-        "token": "thể",
-        "start_char": 43,
-        "end_char": 46,
-        "label": "O"
-      },
-      {
-        "token": "hiện",
-        "start_char": 47,
-        "end_char": 51,
-        "label": "O"
-      },
-      {
-        "token": "sự",
-        "start_char": 52,
-        "end_char": 54,
-        "label": "B-Concept"
-      },
-      {
-        "token": "phân",
-        "start_char": 55,
-        "end_char": 59,
-        "label": "I-Concept"
-      },
-      {
-        "token": "bố",
-        "start_char": 60,
-        "end_char": 62,
-        "label": "I-Concept"
-      },
-      {
-        "token": "các",
-        "start_char": 63,
-        "end_char": 66,
-        "label": "I-Concept"
-      },
-      {
-        "token": "loại",
-        "start_char": 67,
-        "end_char": 71,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 72,
-        "end_char": 75,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tại",
-        "start_char": 76,
-        "end_char": 79,
-        "label": "O"
-      },
-      {
-        "token": "một",
-        "start_char": 80,
-        "end_char": 83,
-        "label": "O"
-      },
-      {
-        "token": "thời",
-        "start_char": 84,
-        "end_char": 88,
-        "label": "B-Concept"
-      },
-      {
-        "token": "điểm",
-        "start_char": 89,
-        "end_char": 93,
-        "label": "I-Concept"
-      },
-      {
-        "token": "xác",
-        "start_char": 94,
-        "end_char": 97,
-        "label": "I-Concept"
-      },
-      {
-        "token": "định,",
-        "start_char": 98,
-        "end_char": 103,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 104,
-        "end_char": 108,
-        "label": "O"
-      },
-      {
-        "token": "lập",
-        "start_char": 109,
-        "end_char": 112,
-        "label": "O"
-      },
-      {
-        "token": "theo",
-        "start_char": 113,
-        "end_char": 117,
-        "label": "O"
-      },
-      {
-        "token": "từng",
-        "start_char": 118,
-        "end_char": 122,
-        "label": "O"
-      },
-      {
-        "token": "đơn",
-        "start_char": 123,
-        "end_char": 126,
-        "label": "B-Concept"
-      },
-      {
-        "token": "vị",
-        "start_char": 127,
-        "end_char": 129,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hành",
-        "start_char": 130,
-        "end_char": 134,
-        "label": "I-Concept"
-      },
-      {
-        "token": "chính",
-        "start_char": 135,
-        "end_char": 140,
-        "label": "I-Concept"
-      },
-      {
-        "token": "các",
-        "start_char": 141,
-        "end_char": 144,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cấp,",
-        "start_char": 145,
-        "end_char": 149,
-        "label": "O"
-      },
-      {
-        "token": "theo",
-        "start_char": 150,
-        "end_char": 154,
-        "label": "O"
-      },
-      {
-        "token": "từng",
-        "start_char": 155,
-        "end_char": 159,
-        "label": "O"
-      },
-      {
-        "token": "vùng",
-        "start_char": 160,
-        "end_char": 164,
-        "label": "B-Concept"
-      },
-      {
-        "token": "kinh",
-        "start_char": 165,
-        "end_char": 169,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tế",
-        "start_char": 170,
-        "end_char": 172,
-        "label": "I-Concept"
-      },
-      {
-        "token": "-",
-        "start_char": 173,
-        "end_char": 174,
-        "label": "I-Concept"
-      },
-      {
-        "token": "xã",
-        "start_char": 175,
-        "end_char": 177,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hội.",
-        "start_char": 178,
-        "end_char": 182,
-        "label": "I-Concept"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "Hy3sj1NWdU",
-        "text": "Bản đồ hiện trạng sử dụng đất",
-        "start": 2,
-        "end": 32
-      },
-      {
-        "id": "E7YB6ztfrX",
-        "text": "sự phân bố các loại đất",
-        "start": 52,
-        "end": 75
-      },
-      {
-        "id": "9Lkm5iZI_2",
-        "text": "thời điểm xác định",
-        "start": 84,
-        "end": 102
-      },
-      {
-        "id": "pL-IDA1N61",
-        "text": "đơn vị hành chính các cấp",
-        "start": 123,
-        "end": 148
-      },
-      {
-        "id": "Q5MsWApNbC",
-        "text": "vùng kinh tế - xã hội.",
-        "start": 160,
-        "end": 182
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "thể hiện"
-      },
-      {
-        "source": 1,
-        "target": 2,
-        "label": "là"
-      },
-      {
-        "source": 0,
-        "target": 3,
-        "label": "lập"
-      },
-      {
-        "source": 0,
-        "target": 4,
-        "label": "tại"
-      }
-    ]
-  },
-  {
-    "text": "3. Bản đồ quy hoạch sử dụng đất là bản đồ được lập tại thời điểm đầu kỳ quy hoạch, thể hiện nội dung phân bố các loại đất tại thời điểm cuối kỳ quy hoạch của quy hoạch đó.",
-    "tokens": [
-      {
-        "token": "3.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Bản",
-        "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đồ",
-        "start_char": 7,
-        "end_char": 9,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quy",
-        "start_char": 10,
-        "end_char": 13,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch",
-        "start_char": 14,
-        "end_char": 19,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 20,
-        "end_char": 22,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 23,
-        "end_char": 27,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 28,
-        "end_char": 31,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 32,
-        "end_char": 34,
-        "label": "O"
-      },
-      {
-        "token": "bản",
-        "start_char": 35,
-        "end_char": 38,
-        "label": "O"
-      },
-      {
-        "token": "đồ",
-        "start_char": 39,
-        "end_char": 41,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 42,
-        "end_char": 46,
-        "label": "O"
-      },
-      {
-        "token": "lập",
-        "start_char": 47,
-        "end_char": 50,
-        "label": "O"
-      },
-      {
-        "token": "tại",
-        "start_char": 51,
-        "end_char": 54,
-        "label": "O"
-      },
-      {
-        "token": "thời",
-        "start_char": 55,
-        "end_char": 59,
-        "label": "B-Concept"
-      },
-      {
-        "token": "điểm",
-        "start_char": 60,
-        "end_char": 64,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đầu",
-        "start_char": 65,
-        "end_char": 68,
-        "label": "I-Concept"
-      },
-      {
-        "token": "kỳ",
-        "start_char": 69,
-        "end_char": 71,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quy",
-        "start_char": 72,
-        "end_char": 75,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch,",
-        "start_char": 76,
-        "end_char": 82,
-        "label": "O"
-      },
-      {
-        "token": "thể",
-        "start_char": 83,
-        "end_char": 86,
-        "label": "O"
-      },
-      {
-        "token": "hiện",
-        "start_char": 87,
-        "end_char": 91,
-        "label": "O"
-      },
-      {
-        "token": "nội",
-        "start_char": 92,
-        "end_char": 95,
-        "label": "B-Concept"
-      },
-      {
-        "token": "dung",
-        "start_char": 96,
-        "end_char": 100,
-        "label": "I-Concept"
-      },
-      {
-        "token": "phân",
-        "start_char": 101,
-        "end_char": 105,
-        "label": "I-Concept"
-      },
-      {
-        "token": "bố",
-        "start_char": 106,
-        "end_char": 108,
-        "label": "I-Concept"
-      },
-      {
-        "token": "các",
-        "start_char": 109,
-        "end_char": 112,
-        "label": "I-Concept"
-      },
-      {
-        "token": "loại",
-        "start_char": 113,
-        "end_char": 117,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 118,
-        "end_char": 121,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tại",
-        "start_char": 122,
-        "end_char": 125,
-        "label": "O"
-      },
-      {
-        "token": "thời",
-        "start_char": 126,
-        "end_char": 130,
-        "label": "B-Concept"
-      },
-      {
-        "token": "điểm",
-        "start_char": 131,
-        "end_char": 135,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cuối",
-        "start_char": 136,
-        "end_char": 140,
-        "label": "I-Concept"
-      },
-      {
-        "token": "kỳ",
-        "start_char": 141,
-        "end_char": 143,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quy",
-        "start_char": 144,
-        "end_char": 147,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch",
-        "start_char": 148,
-        "end_char": 153,
-        "label": "I-Concept"
-      },
-      {
-        "token": "của",
-        "start_char": 154,
-        "end_char": 157,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quy",
-        "start_char": 158,
-        "end_char": 161,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch",
-        "start_char": 162,
-        "end_char": 167,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đó.",
-        "start_char": 168,
-        "end_char": 171,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "qHjknC-xwH",
-        "text": "Bản đồ quy hoạch sử dụng đất",
-        "start": 3,
-        "end": 31
-      },
-      {
-        "id": "26MoL2n0rd",
-        "text": "thời điểm đầu kỳ quy hoạch",
-        "start": 55,
-        "end": 81
-      },
-      {
-        "id": "462RpvoPuJ",
-        "text": "nội dung phân bố các loại đất",
-        "start": 92,
-        "end": 121
-      },
-      {
-        "id": "sqtm5ZqVWX",
-        "text": "thời điểm cuối kỳ quy hoạch của quy hoạch",
-        "start": 126,
-        "end": 167
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "lập"
-      },
-      {
-        "source": 0,
-        "target": 2,
-        "label": "thể hiện"
-      },
-      {
-        "source": 2,
-        "target": 3,
-        "label": "tại"
-      }
-    ]
-  },
-  {
-    "text": "4. Bảo vệ, cải tạo, phục hồi đất là việc áp dụng các biện pháp quản lý, kỹ thuật, cơ giới, sinh học, hữu cơ tác động vào đất để xử lý đất bị ô nhiễm, phục hồi đất bị thoái hóa.",
-    "tokens": [
-      {
-        "token": "4.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Bảo",
-        "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "vệ,",
-        "start_char": 7,
-        "end_char": 10,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cải",
-        "start_char": 11,
-        "end_char": 14,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tạo,",
-        "start_char": 15,
-        "end_char": 19,
-        "label": "I-Concept"
-      },
-      {
-        "token": "phục",
-        "start_char": 20,
-        "end_char": 24,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hồi",
-        "start_char": 25,
-        "end_char": 28,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 29,
-        "end_char": 32,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 33,
-        "end_char": 35,
-        "label": "O"
-      },
-      {
-        "token": "việc",
-        "start_char": 36,
-        "end_char": 40,
-        "label": "O"
-      },
-      {
-        "token": "áp",
-        "start_char": 41,
-        "end_char": 43,
-        "label": "B-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 44,
-        "end_char": 48,
-        "label": "I-Concept"
-      },
-      {
-        "token": "các",
-        "start_char": 49,
-        "end_char": 52,
-        "label": "I-Concept"
-      },
-      {
-        "token": "biện",
-        "start_char": 53,
-        "end_char": 57,
-        "label": "I-Concept"
-      },
-      {
-        "token": "pháp",
-        "start_char": 58,
-        "end_char": 62,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quản",
-        "start_char": 63,
-        "end_char": 67,
-        "label": "I-Concept"
-      },
-      {
-        "token": "lý,",
-        "start_char": 68,
-        "end_char": 71,
-        "label": "I-Concept"
-      },
-      {
-        "token": "kỹ",
-        "start_char": 72,
-        "end_char": 74,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thuật,",
-        "start_char": 75,
-        "end_char": 81,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cơ",
-        "start_char": 82,
-        "end_char": 84,
-        "label": "I-Concept"
-      },
-      {
-        "token": "giới,",
-        "start_char": 85,
-        "end_char": 90,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sinh",
-        "start_char": 91,
-        "end_char": 95,
-        "label": "I-Concept"
-      },
-      {
-        "token": "học,",
-        "start_char": 96,
-        "end_char": 100,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hữu",
-        "start_char": 101,
-        "end_char": 104,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cơ",
-        "start_char": 105,
-        "end_char": 107,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tác",
-        "start_char": 108,
-        "end_char": 111,
-        "label": "O"
-      },
-      {
-        "token": "động",
-        "start_char": 112,
-        "end_char": 116,
-        "label": "O"
-      },
-      {
-        "token": "vào",
-        "start_char": 117,
-        "end_char": 120,
-        "label": "O"
-      },
-      {
-        "token": "đất",
-        "start_char": 121,
-        "end_char": 124,
-        "label": "O"
-      },
-      {
-        "token": "để",
-        "start_char": 125,
-        "end_char": 127,
-        "label": "O"
-      },
-      {
-        "token": "xử",
-        "start_char": 128,
-        "end_char": 130,
-        "label": "O"
-      },
-      {
-        "token": "lý",
-        "start_char": 131,
-        "end_char": 133,
-        "label": "O"
-      },
-      {
-        "token": "đất",
-        "start_char": 134,
-        "end_char": 137,
-        "label": "B-Concept"
-      },
-      {
-        "token": "bị",
-        "start_char": 138,
-        "end_char": 140,
-        "label": "I-Concept"
-      },
-      {
-        "token": "ô",
-        "start_char": 141,
-        "end_char": 142,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nhiễm,",
-        "start_char": 143,
-        "end_char": 149,
-        "label": "I-Concept"
-      },
-      {
-        "token": "phục",
-        "start_char": 150,
-        "end_char": 154,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hồi",
-        "start_char": 155,
-        "end_char": 158,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 159,
-        "end_char": 162,
-        "label": "I-Concept"
-      },
-      {
-        "token": "bị",
-        "start_char": 163,
-        "end_char": 165,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thoái",
-        "start_char": 166,
-        "end_char": 171,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hóa.",
-        "start_char": 172,
-        "end_char": 176,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "fhYedWB3KG",
-        "text": "Bảo vệ, cải tạo, phục hồi đất",
-        "start": 3,
-        "end": 32
-      },
-      {
-        "id": "cZ-DAaSEgB",
-        "text": "áp dụng các biện pháp quản lý, kỹ thuật, cơ giới, sinh học, hữu cơ",
-        "start": 41,
-        "end": 107
-      },
-      {
-        "id": "Y5mfT2LM2T",
-        "text": "đất bị ô nhiễm, phục hồi đất bị thoái hóa",
-        "start": 134,
-        "end": 175
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "là"
-      },
-      {
-        "source": 0,
-        "target": 2,
-        "label": "tác động"
-      }
-    ]
-  },
-  {
-    "text": "5. Bồi thường về đất là việc Nhà nước trả lại giá trị quyền sử dụng đất của diện tích đất thu hồi cho người có đất thu hồi.",
-    "tokens": [
-      {
-        "token": "5.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Bồi",
-        "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "thường",
-        "start_char": 7,
-        "end_char": 13,
-        "label": "I-Concept"
-      },
-      {
-        "token": "về",
-        "start_char": 14,
-        "end_char": 16,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 17,
-        "end_char": 20,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 21,
-        "end_char": 23,
-        "label": "O"
-      },
-      {
-        "token": "việc",
-        "start_char": 24,
-        "end_char": 28,
-        "label": "O"
-      },
-      {
-        "token": "Nhà",
-        "start_char": 29,
-        "end_char": 32,
-        "label": "B-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 33,
-        "end_char": 37,
-        "label": "I-Concept"
-      },
-      {
-        "token": "trả",
-        "start_char": 38,
-        "end_char": 41,
-        "label": "O"
-      },
-      {
-        "token": "lại",
-        "start_char": 42,
-        "end_char": 45,
-        "label": "O"
-      },
-      {
-        "token": "giá",
-        "start_char": 46,
-        "end_char": 49,
-        "label": "B-Concept"
-      },
-      {
-        "token": "trị",
-        "start_char": 50,
-        "end_char": 53,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quyền",
-        "start_char": 54,
-        "end_char": 59,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 60,
-        "end_char": 62,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 63,
-        "end_char": 67,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 68,
-        "end_char": 71,
-        "label": "I-Concept"
-      },
-      {
-        "token": "của",
-        "start_char": 72,
-        "end_char": 75,
-        "label": "O"
+        "end_char": 8,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đại",
+        "start_char": 9,
+        "end_char": 12,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "diện",
-        "start_char": 76,
-        "end_char": 80,
-        "label": "B-Concept"
+        "start_char": 13,
+        "end_char": 17,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "tích",
-        "start_char": 81,
-        "end_char": 85,
-        "label": "I-Concept"
+        "token": "theo",
+        "start_char": 18,
+        "end_char": 22,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đất",
-        "start_char": 86,
-        "end_char": 89,
-        "label": "I-Concept"
+        "token": "pháp",
+        "start_char": 23,
+        "end_char": 27,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "thu",
-        "start_char": 90,
-        "end_char": 93,
-        "label": "I-Concept"
+        "token": "luật",
+        "start_char": 28,
+        "end_char": 32,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "hồi",
-        "start_char": 94,
-        "end_char": 97,
-        "label": "I-Concept"
+        "token": "của",
+        "start_char": 33,
+        "end_char": 36,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
       },
       {
-        "token": "cho",
-        "start_char": 98,
-        "end_char": 101,
-        "label": "O"
+        "token": "tổ",
+        "start_char": 37,
+        "end_char": 39,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "người",
-        "start_char": 102,
-        "end_char": 107,
-        "label": "B-Concept"
+        "token": "chức",
+        "start_char": 40,
+        "end_char": 44,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "trong",
+        "start_char": 45,
+        "end_char": 50,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nước",
+        "start_char": 51,
+        "end_char": 55,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 55,
+        "end_char": 56,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "tổ",
+        "start_char": 57,
+        "end_char": 59,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chức",
+        "start_char": 60,
+        "end_char": 64,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "kinh",
+        "start_char": 65,
+        "end_char": 69,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tế",
+        "start_char": 70,
+        "end_char": 72,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "có",
-        "start_char": 108,
-        "end_char": 110,
-        "label": "I-Concept"
+        "start_char": 73,
+        "end_char": 75,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "vốn",
+        "start_char": 76,
+        "end_char": 79,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đầu",
+        "start_char": 80,
+        "end_char": 83,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tư",
+        "start_char": 84,
+        "end_char": 86,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nước",
+        "start_char": 87,
+        "end_char": 91,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ngoài",
+        "start_char": 92,
+        "end_char": 97,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ";",
+        "start_char": 97,
+        "end_char": 98,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "người",
+        "start_char": 99,
+        "end_char": 104,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đứng",
+        "start_char": 105,
+        "end_char": 109,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đầu",
+        "start_char": 110,
+        "end_char": 113,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "của",
+        "start_char": 114,
+        "end_char": 117,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tổ",
+        "start_char": 118,
+        "end_char": 120,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chức",
+        "start_char": 121,
+        "end_char": 125,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nước",
+        "start_char": 126,
+        "end_char": 130,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ngoài",
+        "start_char": 131,
+        "end_char": 136,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "có",
+        "start_char": 137,
+        "end_char": 139,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "chức",
+        "start_char": 140,
+        "end_char": 144,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "năng",
+        "start_char": 145,
+        "end_char": 149,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "ngoại",
+        "start_char": 150,
+        "end_char": 155,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "giao",
+        "start_char": 156,
+        "end_char": 160,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đối",
+        "start_char": 161,
+        "end_char": 164,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "với",
+        "start_char": 165,
+        "end_char": 168,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "việc",
+        "start_char": 169,
+        "end_char": 173,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 174,
+        "end_char": 176,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 177,
+        "end_char": 181,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "đất",
-        "start_char": 111,
-        "end_char": 114,
-        "label": "I-Concept"
+        "start_char": 182,
+        "end_char": 185,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "thu",
-        "start_char": 115,
-        "end_char": 118,
-        "label": "I-Concept"
+        "token": "của",
+        "start_char": 186,
+        "end_char": 189,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
       },
       {
-        "token": "hồi.",
-        "start_char": 119,
-        "end_char": 123,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "OQEOCYPFP3",
-        "text": "Bồi thường về đất",
-        "start": 3,
-        "end": 20
+        "token": "tổ",
+        "start_char": 190,
+        "end_char": 192,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "qLE4HF8NN8",
-        "text": "Nhà nước",
-        "start": 29,
-        "end": 37
+        "token": "chức",
+        "start_char": 193,
+        "end_char": 197,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "QqsqFP-5th",
-        "text": "giá trị quyền sử dụng đất",
-        "start": 46,
-        "end": 71
+        "token": "mình",
+        "start_char": 198,
+        "end_char": 202,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "iqx6FzGtda",
-        "text": "diện tích đất thu hồi",
-        "start": 76,
-        "end": 97
-      },
-      {
-        "id": "Km4dbCTXAz",
-        "text": "người có đất thu hồi",
-        "start": 102,
-        "end": 122
+        "token": ".",
+        "start_char": 202,
+        "end_char": 203,
+        "concept_label": "O",
+        "relation_label": "O"
       }
     ],
     "relations": [
       {
-        "source": 0,
-        "target": 1,
-        "label": "là"
+        "concept1_start": 3,
+        "relation_start": 33,
+        "concept2_start": 37
       },
       {
-        "source": 1,
-        "target": 2,
-        "label": "trả lại"
+        "concept1_start": 3,
+        "relation_start": 33,
+        "concept2_start": 57
       },
       {
-        "source": 2,
-        "target": 3,
-        "label": "xác định"
+        "concept1_start": 99,
+        "relation_start": 137,
+        "concept2_start": 150
       },
       {
-        "source": 2,
-        "target": 4,
-        "label": "cho"
+        "concept1_start": 150,
+        "relation_start": 161,
+        "concept2_start": 169
+      },
+      {
+        "concept1_start": 169,
+        "relation_start": 186,
+        "concept2_start": 190
       }
     ]
   },
   {
-    "text": "6. Cá nhân trực tiếp sản xuất nông nghiệp là cá nhân đã được Nhà nước giao đất, cho thuê đất, công nhận quyền sử dụng đất nông nghiệp; nhận chuyển quyền sử dụng đất nông nghiệp mà có thu nhập từ sản xuất nông nghiệp trên đất đó theo quy định của Chính phủ.",
+    "text": "2. Chủ tịch Ủy ban nhân dân cấp xã đối với việc sử dụng đất nông nghiệp vào mục đích công ích; đất phi nông nghiệp đã giao cho Ủy ban nhân dân cấp xã để sử dụng vào mục đích xây dựng trụ sở Ủy ban nhân dân, các công trình công cộng phục vụ hoạt động văn hóa, giáo dục, y tế, thể dục, thể thao, vui chơi, giải trí, chợ, nghĩa trang và công trình công cộng khác của xã, phường, thị trấn; đất tôn giáo, đất tín ngưỡng chưa giao quản lý, sử dụng.",
     "tokens": [
       {
-        "token": "6.",
+        "token": "2",
         "start_char": 0,
+        "end_char": 1,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 1,
         "end_char": 2,
-        "label": "O"
+        "concept_label": "O",
+        "relation_label": "O"
       },
       {
-        "token": "Cá",
+        "token": "Chủ",
         "start_char": 3,
-        "end_char": 5,
-        "label": "B-Concept"
+        "end_char": 6,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tịch",
+        "start_char": 7,
+        "end_char": 11,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "Ủy",
+        "start_char": 12,
+        "end_char": 14,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ban",
+        "start_char": 15,
+        "end_char": 18,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "nhân",
-        "start_char": 6,
-        "end_char": 10,
-        "label": "I-Concept"
+        "start_char": 19,
+        "end_char": 23,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "trực",
-        "start_char": 11,
-        "end_char": 15,
-        "label": "I-Concept"
+        "token": "dân",
+        "start_char": 24,
+        "end_char": 27,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "tiếp",
-        "start_char": 16,
-        "end_char": 20,
-        "label": "I-Concept"
+        "token": "cấp",
+        "start_char": 28,
+        "end_char": 31,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "sản",
-        "start_char": 21,
-        "end_char": 24,
-        "label": "I-Concept"
-      },
-      {
-        "token": "xuất",
-        "start_char": 25,
-        "end_char": 29,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nông",
-        "start_char": 30,
+        "token": "xã",
+        "start_char": 32,
         "end_char": 34,
-        "label": "I-Concept"
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "nghiệp",
+        "token": "đối",
         "start_char": 35,
-        "end_char": 41,
-        "label": "I-Concept"
+        "end_char": 38,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
       },
       {
-        "token": "là",
-        "start_char": 42,
-        "end_char": 44,
-        "label": "O"
+        "token": "với",
+        "start_char": 39,
+        "end_char": 42,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
-        "token": "cá",
-        "start_char": 45,
+        "token": "việc",
+        "start_char": 43,
         "end_char": 47,
-        "label": "O"
-      },
-      {
-        "token": "nhân",
-        "start_char": 48,
-        "end_char": 52,
-        "label": "O"
-      },
-      {
-        "token": "đã",
-        "start_char": 53,
-        "end_char": 55,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 56,
-        "end_char": 60,
-        "label": "O"
-      },
-      {
-        "token": "Nhà",
-        "start_char": 61,
-        "end_char": 64,
-        "label": "B-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 65,
-        "end_char": 69,
-        "label": "I-Concept"
-      },
-      {
-        "token": "giao",
-        "start_char": 70,
-        "end_char": 74,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất,",
-        "start_char": 75,
-        "end_char": 79,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cho",
-        "start_char": 80,
-        "end_char": 83,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thuê",
-        "start_char": 84,
-        "end_char": 88,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất,",
-        "start_char": 89,
-        "end_char": 93,
-        "label": "I-Concept"
-      },
-      {
-        "token": "công",
-        "start_char": 94,
-        "end_char": 98,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nhận",
-        "start_char": 99,
-        "end_char": 103,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quyền",
-        "start_char": 104,
-        "end_char": 109,
-        "label": "I-Concept"
+        "concept_label": "B-Concept",
+        "relation_label": "O"
       },
       {
         "token": "sử",
-        "start_char": 110,
-        "end_char": 112,
-        "label": "I-Concept"
+        "start_char": 48,
+        "end_char": 50,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "dụng",
-        "start_char": 113,
-        "end_char": 117,
-        "label": "I-Concept"
+        "start_char": 51,
+        "end_char": 55,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "đất",
-        "start_char": 118,
-        "end_char": 121,
-        "label": "I-Concept"
+        "start_char": 56,
+        "end_char": 59,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "nông",
-        "start_char": 122,
+        "start_char": 60,
+        "end_char": 64,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nghiệp",
+        "start_char": 65,
+        "end_char": 71,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "vào",
+        "start_char": 72,
+        "end_char": 75,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "mục",
+        "start_char": 76,
+        "end_char": 79,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đích",
+        "start_char": 80,
+        "end_char": 84,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "công",
+        "start_char": 85,
+        "end_char": 89,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ích",
+        "start_char": 90,
+        "end_char": 93,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ";",
+        "start_char": 93,
+        "end_char": 94,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 95,
+        "end_char": 98,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "phi",
+        "start_char": 99,
+        "end_char": 102,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nông",
+        "start_char": 103,
+        "end_char": 107,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nghiệp",
+        "start_char": 108,
+        "end_char": 114,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đã",
+        "start_char": 115,
+        "end_char": 117,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "giao",
+        "start_char": 118,
+        "end_char": 122,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "cho",
+        "start_char": 123,
         "end_char": 126,
-        "label": "I-Concept"
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
-        "token": "nghiệp;",
+        "token": "Ủy",
         "start_char": 127,
-        "end_char": 134,
-        "label": "O"
+        "end_char": 129,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "nhận",
-        "start_char": 135,
-        "end_char": 139,
-        "label": "O"
+        "token": "ban",
+        "start_char": 130,
+        "end_char": 133,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "chuyển",
-        "start_char": 140,
+        "token": "nhân",
+        "start_char": 134,
+        "end_char": 138,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dân",
+        "start_char": 139,
+        "end_char": 142,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cấp",
+        "start_char": 143,
         "end_char": 146,
-        "label": "O"
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "quyền",
+        "token": "xã",
         "start_char": 147,
+        "end_char": 149,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "để",
+        "start_char": 150,
         "end_char": 152,
-        "label": "B-Concept"
+        "concept_label": "O",
+        "relation_label": "B-Relation"
       },
       {
         "token": "sử",
         "start_char": 153,
         "end_char": 155,
-        "label": "I-Concept"
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
         "token": "dụng",
         "start_char": 156,
         "end_char": 160,
-        "label": "I-Concept"
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
-        "token": "đất",
+        "token": "vào",
         "start_char": 161,
         "end_char": 164,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nông",
-        "start_char": 165,
-        "end_char": 169,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nghiệp",
-        "start_char": 170,
-        "end_char": 176,
-        "label": "I-Concept"
-      },
-      {
-        "token": "mà",
-        "start_char": 177,
-        "end_char": 179,
-        "label": "O"
-      },
-      {
-        "token": "có",
-        "start_char": 180,
-        "end_char": 182,
-        "label": "O"
-      },
-      {
-        "token": "thu",
-        "start_char": 183,
-        "end_char": 186,
-        "label": "O"
-      },
-      {
-        "token": "nhập",
-        "start_char": 187,
-        "end_char": 191,
-        "label": "O"
-      },
-      {
-        "token": "từ",
-        "start_char": 192,
-        "end_char": 194,
-        "label": "O"
-      },
-      {
-        "token": "sản",
-        "start_char": 195,
-        "end_char": 198,
-        "label": "B-Concept"
-      },
-      {
-        "token": "xuất",
-        "start_char": 199,
-        "end_char": 203,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nông",
-        "start_char": 204,
-        "end_char": 208,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nghiệp",
-        "start_char": 209,
-        "end_char": 215,
-        "label": "I-Concept"
-      },
-      {
-        "token": "trên",
-        "start_char": 216,
-        "end_char": 220,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 221,
-        "end_char": 224,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đó",
-        "start_char": 225,
-        "end_char": 227,
-        "label": "O"
-      },
-      {
-        "token": "theo",
-        "start_char": 228,
-        "end_char": 232,
-        "label": "O"
-      },
-      {
-        "token": "quy",
-        "start_char": 233,
-        "end_char": 236,
-        "label": "B-Concept"
-      },
-      {
-        "token": "định",
-        "start_char": 237,
-        "end_char": 241,
-        "label": "I-Concept"
-      },
-      {
-        "token": "của",
-        "start_char": 242,
-        "end_char": 245,
-        "label": "I-Concept"
-      },
-      {
-        "token": "Chính",
-        "start_char": 246,
-        "end_char": 251,
-        "label": "I-Concept"
-      },
-      {
-        "token": "phủ.",
-        "start_char": 252,
-        "end_char": 256,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "r0A2Yz4l2w",
-        "text": "Cá nhân trực tiếp sản xuất nông nghiệp",
-        "start": 3,
-        "end": 41
-      },
-      {
-        "id": "qBpF8NVSWe",
-        "text": "Nhà nước giao đất, cho thuê đất, công nhận quyền sử dụng đất nông nghiệp",
-        "start": 61,
-        "end": 133
-      },
-      {
-        "id": "IlocvpRQWY",
-        "text": "quyền sử dụng đất nông nghiệp",
-        "start": 147,
-        "end": 176
-      },
-      {
-        "id": "cdP5TkglM0",
-        "text": "sản xuất nông nghiệp trên đất",
-        "start": 195,
-        "end": 224
-      },
-      {
-        "id": "-CiEQ2ErAh",
-        "text": "quy định của Chính phủ",
-        "start": 233,
-        "end": 255
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "đã được"
-      },
-      {
-        "source": 0,
-        "target": 2,
-        "label": "xác nhận"
-      },
-      {
-        "source": 0,
-        "target": 3,
-        "label": "đã được"
-      },
-      {
-        "source": 3,
-        "target": 4,
-        "label": "theo"
-      }
-    ]
-  },
-  {
-    "text": "7. Chi phí đầu tư vào đất còn lại là chi phí hợp lý mà người sử dụng đất đã đầu tư trực tiếp vào đất phù hợp với mục đích sử dụng đất nhưng đến thời điểm Nhà nước thu hồi đất còn chưa thu hồi hết.",
-    "tokens": [
-      {
-        "token": "7.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Chi",
-        "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "phí",
-        "start_char": 7,
-        "end_char": 10,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đầu",
-        "start_char": 11,
-        "end_char": 14,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tư",
-        "start_char": 15,
-        "end_char": 17,
-        "label": "I-Concept"
-      },
-      {
-        "token": "vào",
-        "start_char": 18,
-        "end_char": 21,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 22,
-        "end_char": 25,
-        "label": "I-Concept"
-      },
-      {
-        "token": "còn",
-        "start_char": 26,
-        "end_char": 29,
-        "label": "I-Concept"
-      },
-      {
-        "token": "lại",
-        "start_char": 30,
-        "end_char": 33,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 34,
-        "end_char": 36,
-        "label": "O"
-      },
-      {
-        "token": "chi",
-        "start_char": 37,
-        "end_char": 40,
-        "label": "B-Concept"
-      },
-      {
-        "token": "phí",
-        "start_char": 41,
-        "end_char": 44,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hợp",
-        "start_char": 45,
-        "end_char": 48,
-        "label": "I-Concept"
-      },
-      {
-        "token": "lý",
-        "start_char": 49,
-        "end_char": 51,
-        "label": "I-Concept"
-      },
-      {
-        "token": "mà",
-        "start_char": 52,
-        "end_char": 54,
-        "label": "O"
-      },
-      {
-        "token": "người",
-        "start_char": 55,
-        "end_char": 60,
-        "label": "B-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 61,
-        "end_char": 63,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 64,
-        "end_char": 68,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 69,
-        "end_char": 72,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đã",
-        "start_char": 73,
-        "end_char": 75,
-        "label": "O"
-      },
-      {
-        "token": "đầu",
-        "start_char": 76,
-        "end_char": 79,
-        "label": "B-Concept"
-      },
-      {
-        "token": "tư",
-        "start_char": 80,
-        "end_char": 82,
-        "label": "I-Concept"
-      },
-      {
-        "token": "trực",
-        "start_char": 83,
-        "end_char": 87,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tiếp",
-        "start_char": 88,
-        "end_char": 92,
-        "label": "I-Concept"
-      },
-      {
-        "token": "vào",
-        "start_char": 93,
-        "end_char": 96,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 97,
-        "end_char": 100,
-        "label": "I-Concept"
-      },
-      {
-        "token": "phù",
-        "start_char": 101,
-        "end_char": 104,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hợp",
-        "start_char": 105,
-        "end_char": 108,
-        "label": "I-Concept"
-      },
-      {
-        "token": "với",
-        "start_char": 109,
-        "end_char": 112,
-        "label": "I-Concept"
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
         "token": "mục",
-        "start_char": 113,
-        "end_char": 116,
-        "label": "I-Concept"
+        "start_char": 165,
+        "end_char": 168,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
         "token": "đích",
-        "start_char": 117,
-        "end_char": 121,
-        "label": "I-Concept"
+        "start_char": 169,
+        "end_char": 173,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
       },
       {
-        "token": "sử",
-        "start_char": 122,
-        "end_char": 124,
-        "label": "I-Concept"
+        "token": "xây",
+        "start_char": 174,
+        "end_char": 177,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "dụng",
-        "start_char": 125,
-        "end_char": 129,
-        "label": "I-Concept"
+        "token": "dựng",
+        "start_char": 178,
+        "end_char": 182,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đất",
-        "start_char": 130,
-        "end_char": 133,
-        "label": "I-Concept"
+        "token": "trụ",
+        "start_char": 183,
+        "end_char": 186,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "nhưng",
-        "start_char": 134,
-        "end_char": 139,
-        "label": "O"
+        "token": "sở",
+        "start_char": 187,
+        "end_char": 189,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đến",
-        "start_char": 140,
-        "end_char": 143,
-        "label": "O"
+        "token": "Ủy",
+        "start_char": 190,
+        "end_char": 192,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "thời",
-        "start_char": 144,
-        "end_char": 148,
-        "label": "O"
-      },
-      {
-        "token": "điểm",
-        "start_char": 149,
-        "end_char": 153,
-        "label": "O"
-      },
-      {
-        "token": "Nhà",
-        "start_char": 154,
-        "end_char": 157,
-        "label": "B-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 158,
-        "end_char": 162,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thu",
-        "start_char": 163,
-        "end_char": 166,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hồi",
-        "start_char": 167,
-        "end_char": 170,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 171,
-        "end_char": 174,
-        "label": "I-Concept"
-      },
-      {
-        "token": "còn",
-        "start_char": 175,
-        "end_char": 178,
-        "label": "O"
-      },
-      {
-        "token": "chưa",
-        "start_char": 179,
-        "end_char": 183,
-        "label": "O"
-      },
-      {
-        "token": "thu",
-        "start_char": 184,
-        "end_char": 187,
-        "label": "O"
-      },
-      {
-        "token": "hồi",
-        "start_char": 188,
-        "end_char": 191,
-        "label": "O"
-      },
-      {
-        "token": "hết.",
-        "start_char": 192,
+        "token": "ban",
+        "start_char": 193,
         "end_char": 196,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "yTwB_RNlGW",
-        "text": "Chi phí đầu tư vào đất còn lại",
-        "start": 3,
-        "end": 33
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "sKYj3kYbB2",
-        "text": "chi phí hợp lý",
-        "start": 37,
-        "end": 51
+        "token": "nhân",
+        "start_char": 197,
+        "end_char": 201,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "Wud4UsYNmp",
-        "text": "người sử dụng đất",
-        "start": 55,
-        "end": 72
+        "token": "dân",
+        "start_char": 202,
+        "end_char": 205,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "BlDZLaXmvk",
-        "text": "đầu tư trực tiếp vào đất phù hợp với mục đích sử dụng đất",
-        "start": 76,
-        "end": 133
-      },
-      {
-        "id": "vk1LNnUV0x",
-        "text": "Nhà nước thu hồi đất",
-        "start": 154,
-        "end": 174
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "là"
-      },
-      {
-        "source": 1,
-        "target": 2,
-        "label": "đầu tư"
-      },
-      {
-        "source": 2,
-        "target": 3,
-        "label": "đầu tư"
-      },
-      {
-        "source": 0,
-        "target": 4,
-        "label": "đến"
-      }
-    ]
-  },
-  {
-    "text": "8. Chỉ tiêu sử dụng đất là diện tích đất của từng loại đất được xác định trong quy hoạch, kế hoạch sử dụng đất các cấp do cơ quan nhà nước có thẩm quyền xác định để phân bổ trong quá trình lập quy hoạch, kế hoạch sử dụng đất.",
-    "tokens": [
-      {
-        "token": "8.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Chỉ",
-        "start_char": 3,
-        "end_char": 6,
-        "label": "B-Concept"
-      },
-      {
-        "token": "tiêu",
-        "start_char": 7,
-        "end_char": 11,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 12,
-        "end_char": 14,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 15,
-        "end_char": 19,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 20,
-        "end_char": 23,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 24,
-        "end_char": 26,
-        "label": "O"
-      },
-      {
-        "token": "diện",
-        "start_char": 27,
-        "end_char": 31,
-        "label": "B-Concept"
-      },
-      {
-        "token": "tích",
-        "start_char": 32,
-        "end_char": 36,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 37,
-        "end_char": 40,
-        "label": "I-Concept"
-      },
-      {
-        "token": "của",
-        "start_char": 41,
-        "end_char": 44,
-        "label": "I-Concept"
-      },
-      {
-        "token": "từng",
-        "start_char": 45,
-        "end_char": 49,
-        "label": "I-Concept"
-      },
-      {
-        "token": "loại",
-        "start_char": 50,
-        "end_char": 54,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 55,
-        "end_char": 58,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 59,
-        "end_char": 63,
-        "label": "O"
-      },
-      {
-        "token": "xác",
-        "start_char": 64,
-        "end_char": 67,
-        "label": "O"
-      },
-      {
-        "token": "định",
-        "start_char": 68,
-        "end_char": 72,
-        "label": "O"
-      },
-      {
-        "token": "trong",
-        "start_char": 73,
-        "end_char": 78,
-        "label": "O"
-      },
-      {
-        "token": "quy",
-        "start_char": 79,
-        "end_char": 82,
-        "label": "B-Concept"
-      },
-      {
-        "token": "hoạch,",
-        "start_char": 83,
-        "end_char": 89,
-        "label": "I-Concept"
-      },
-      {
-        "token": "kế",
-        "start_char": 90,
-        "end_char": 92,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch",
-        "start_char": 93,
-        "end_char": 98,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 99,
-        "end_char": 101,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 102,
-        "end_char": 106,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 107,
-        "end_char": 110,
-        "label": "I-Concept"
+        "token": ",",
+        "start_char": 205,
+        "end_char": 206,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "các",
-        "start_char": 111,
-        "end_char": 114,
-        "label": "O"
+        "start_char": 207,
+        "end_char": 210,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "cấp",
-        "start_char": 115,
-        "end_char": 118,
-        "label": "O"
-      },
-      {
-        "token": "do",
-        "start_char": 119,
-        "end_char": 121,
-        "label": "O"
-      },
-      {
-        "token": "cơ",
-        "start_char": 122,
-        "end_char": 124,
-        "label": "B-Concept"
-      },
-      {
-        "token": "quan",
-        "start_char": 125,
-        "end_char": 129,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nhà",
-        "start_char": 130,
-        "end_char": 133,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 134,
-        "end_char": 138,
-        "label": "I-Concept"
-      },
-      {
-        "token": "có",
-        "start_char": 139,
-        "end_char": 141,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thẩm",
-        "start_char": 142,
-        "end_char": 146,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quyền",
-        "start_char": 147,
-        "end_char": 152,
-        "label": "I-Concept"
-      },
-      {
-        "token": "xác",
-        "start_char": 153,
-        "end_char": 156,
-        "label": "O"
-      },
-      {
-        "token": "định",
-        "start_char": 157,
-        "end_char": 161,
-        "label": "O"
-      },
-      {
-        "token": "để",
-        "start_char": 162,
-        "end_char": 164,
-        "label": "O"
-      },
-      {
-        "token": "phân",
-        "start_char": 165,
-        "end_char": 169,
-        "label": "B-Concept"
-      },
-      {
-        "token": "bổ",
-        "start_char": 170,
-        "end_char": 172,
-        "label": "I-Concept"
-      },
-      {
-        "token": "trong",
-        "start_char": 173,
-        "end_char": 178,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quá",
-        "start_char": 179,
-        "end_char": 182,
-        "label": "I-Concept"
+        "token": "công",
+        "start_char": 211,
+        "end_char": 215,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "trình",
-        "start_char": 183,
-        "end_char": 188,
-        "label": "I-Concept"
-      },
-      {
-        "token": "lập",
-        "start_char": 189,
-        "end_char": 192,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quy",
-        "start_char": 193,
-        "end_char": 196,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch,",
-        "start_char": 197,
-        "end_char": 203,
-        "label": "I-Concept"
-      },
-      {
-        "token": "kế",
-        "start_char": 204,
-        "end_char": 206,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hoạch",
-        "start_char": 207,
-        "end_char": 212,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 213,
-        "end_char": 215,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
         "start_char": 216,
-        "end_char": 220,
-        "label": "I-Concept"
+        "end_char": 221,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đất.",
-        "start_char": 221,
-        "end_char": 225,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "aFOcafa5n2",
-        "text": "Chỉ tiêu sử dụng đất",
-        "start": 3,
-        "end": 23
-      },
-      {
-        "id": "u1zcQVBqu-",
-        "text": "diện tích đất của từng loại",
-        "start": 27,
-        "end": 54
-      },
-      {
-        "id": "8jFFxmVxgR",
-        "text": "quy hoạch, kế hoạch sử dụng đất",
-        "start": 79,
-        "end": 110
-      },
-      {
-        "id": "tvymF2R9-A",
-        "text": "cơ quan nhà nước có thẩm quyền",
-        "start": 122,
-        "end": 152
-      },
-      {
-        "id": "sZZ1xUqr7z",
-        "text": "phân bổ trong quá trình lập quy hoạch, kế hoạch sử dụng đất",
-        "start": 165,
-        "end": 224
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "là"
-      },
-      {
-        "source": 1,
-        "target": 2,
-        "label": "xác định"
-      },
-      {
-        "source": 2,
-        "target": 3,
-        "label": "xác định"
-      },
-      {
-        "source": 0,
-        "target": 4,
-        "label": "là"
-      }
-    ]
-  },
-  {
-    "text": "9. Chiếm đất là việc sử dụng đất do Nhà nước đã quản lý mà chưa được cơ quan nhà nước có thẩm quyền cho phép hoặc sử dụng đất của người sử dụng đất hợp pháp khác mà chưa được người đó cho phép.",
-    "tokens": [
-      {
-        "token": "9.",
-        "start_char": 0,
-        "end_char": 2,
-        "label": "O"
-      },
-      {
-        "token": "Chiếm",
-        "start_char": 3,
-        "end_char": 8,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 9,
-        "end_char": 12,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 13,
-        "end_char": 15,
-        "label": "O"
-      },
-      {
-        "token": "việc",
-        "start_char": 16,
-        "end_char": 20,
-        "label": "O"
-      },
-      {
-        "token": "sử",
-        "start_char": 21,
-        "end_char": 23,
-        "label": "O"
-      },
-      {
-        "token": "dụng",
-        "start_char": 24,
-        "end_char": 28,
-        "label": "O"
-      },
-      {
-        "token": "đất",
-        "start_char": 29,
-        "end_char": 32,
-        "label": "B-Concept"
-      },
-      {
-        "token": "do",
-        "start_char": 33,
-        "end_char": 35,
-        "label": "O"
-      },
-      {
-        "token": "Nhà",
-        "start_char": 36,
-        "end_char": 39,
-        "label": "B-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 40,
-        "end_char": 44,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đã",
-        "start_char": 45,
-        "end_char": 47,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quản",
-        "start_char": 48,
-        "end_char": 52,
-        "label": "I-Concept"
-      },
-      {
-        "token": "lý",
-        "start_char": 53,
-        "end_char": 55,
-        "label": "I-Concept"
-      },
-      {
-        "token": "mà",
-        "start_char": 56,
-        "end_char": 58,
-        "label": "O"
-      },
-      {
-        "token": "chưa",
-        "start_char": 59,
-        "end_char": 63,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 64,
-        "end_char": 68,
-        "label": "O"
-      },
-      {
-        "token": "cơ",
-        "start_char": 69,
-        "end_char": 71,
-        "label": "B-Concept"
-      },
-      {
-        "token": "quan",
-        "start_char": 72,
-        "end_char": 76,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nhà",
-        "start_char": 77,
-        "end_char": 80,
-        "label": "I-Concept"
-      },
-      {
-        "token": "nước",
-        "start_char": 81,
-        "end_char": 85,
-        "label": "I-Concept"
-      },
-      {
-        "token": "có",
-        "start_char": 86,
-        "end_char": 88,
-        "label": "I-Concept"
-      },
-      {
-        "token": "thẩm",
-        "start_char": 89,
-        "end_char": 93,
-        "label": "I-Concept"
-      },
-      {
-        "token": "quyền",
-        "start_char": 94,
-        "end_char": 99,
-        "label": "I-Concept"
-      },
-      {
-        "token": "cho",
-        "start_char": 100,
-        "end_char": 103,
-        "label": "O"
-      },
-      {
-        "token": "phép",
-        "start_char": 104,
-        "end_char": 108,
-        "label": "O"
-      },
-      {
-        "token": "hoặc",
-        "start_char": 109,
-        "end_char": 113,
-        "label": "O"
-      },
-      {
-        "token": "sử",
-        "start_char": 114,
-        "end_char": 116,
-        "label": "O"
-      },
-      {
-        "token": "dụng",
-        "start_char": 117,
-        "end_char": 121,
-        "label": "O"
-      },
-      {
-        "token": "đất",
-        "start_char": 122,
-        "end_char": 125,
-        "label": "O"
-      },
-      {
-        "token": "của",
-        "start_char": 126,
-        "end_char": 129,
-        "label": "O"
-      },
-      {
-        "token": "người",
-        "start_char": 130,
-        "end_char": 135,
-        "label": "B-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 136,
-        "end_char": 138,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 139,
-        "end_char": 143,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 144,
-        "end_char": 147,
-        "label": "I-Concept"
-      },
-      {
-        "token": "hợp",
-        "start_char": 148,
-        "end_char": 151,
-        "label": "I-Concept"
-      },
-      {
-        "token": "pháp",
-        "start_char": 152,
-        "end_char": 156,
-        "label": "I-Concept"
-      },
-      {
-        "token": "khác",
-        "start_char": 157,
-        "end_char": 161,
-        "label": "O"
-      },
-      {
-        "token": "mà",
-        "start_char": 162,
-        "end_char": 164,
-        "label": "O"
-      },
-      {
-        "token": "chưa",
-        "start_char": 165,
-        "end_char": 169,
-        "label": "O"
-      },
-      {
-        "token": "được",
-        "start_char": 170,
-        "end_char": 174,
-        "label": "O"
-      },
-      {
-        "token": "người",
-        "start_char": 175,
-        "end_char": 180,
-        "label": "O"
-      },
-      {
-        "token": "đó",
-        "start_char": 181,
-        "end_char": 183,
-        "label": "O"
-      },
-      {
-        "token": "cho",
-        "start_char": 184,
-        "end_char": 187,
-        "label": "O"
-      },
-      {
-        "token": "phép.",
-        "start_char": 188,
-        "end_char": 193,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "IJ4iOTVosv",
-        "text": "Chiếm đất",
-        "start": 3,
-        "end": 12
-      },
-      {
-        "id": "p3J4emirgN",
-        "text": "đất",
-        "start": 29,
-        "end": 32
-      },
-      {
-        "id": "WJiQbeGkCI",
-        "text": "Nhà nước đã quản lý",
-        "start": 36,
-        "end": 55
-      },
-      {
-        "id": "U8EFBqwdSb",
-        "text": "cơ quan nhà nước có thẩm quyền",
-        "start": 69,
-        "end": 99
-      },
-      {
-        "id": "59Yye7nUxm",
-        "text": "người sử dụng đất hợp pháp",
-        "start": 130,
-        "end": 156
-      }
-    ],
-    "relations": [
-      {
-        "source": 0,
-        "target": 1,
-        "label": "sử dụng"
-      },
-      {
-        "source": 1,
-        "target": 2,
-        "label": "đã được"
-      },
-      {
-        "source": 1,
-        "target": 4,
-        "label": "không cho phép"
-      },
-      {
-        "source": 1,
-        "target": 3,
-        "label": "không cho phép"
-      }
-    ]
-  },
-  {
-    "text": "10. Chủ đầu tư dự án đầu tư có sử dụng đất (sau đây gọi là chủ đầu tư) là nhà đầu tư theo quy định của pháp luật về đầu tư, pháp luật có liên quan đã được lựa chọn để thực hiện dự án đầu tư có sử dụng đất và được giao đất, cho thuê đất, chuyển mục đích sử dụng đất theo quy định của Luật này.",
-    "tokens": [
-      {
-        "token": "10.",
-        "start_char": 0,
-        "end_char": 3,
-        "label": "O"
-      },
-      {
-        "token": "Chủ",
-        "start_char": 4,
-        "end_char": 7,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đầu",
-        "start_char": 8,
-        "end_char": 11,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tư",
-        "start_char": 12,
-        "end_char": 14,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dự",
-        "start_char": 15,
-        "end_char": 17,
-        "label": "I-Concept"
-      },
-      {
-        "token": "án",
-        "start_char": 18,
-        "end_char": 20,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đầu",
-        "start_char": 21,
-        "end_char": 24,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tư",
-        "start_char": 25,
-        "end_char": 27,
-        "label": "I-Concept"
-      },
-      {
-        "token": "có",
-        "start_char": 28,
-        "end_char": 30,
-        "label": "I-Concept"
-      },
-      {
-        "token": "sử",
-        "start_char": 31,
-        "end_char": 33,
-        "label": "I-Concept"
-      },
-      {
-        "token": "dụng",
-        "start_char": 34,
-        "end_char": 38,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đất",
-        "start_char": 39,
-        "end_char": 42,
-        "label": "I-Concept"
-      },
-      {
-        "token": "(sau",
-        "start_char": 43,
-        "end_char": 47,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đây",
-        "start_char": 48,
-        "end_char": 51,
-        "label": "I-Concept"
-      },
-      {
-        "token": "gọi",
-        "start_char": 52,
-        "end_char": 55,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 56,
-        "end_char": 58,
-        "label": "I-Concept"
-      },
-      {
-        "token": "chủ",
-        "start_char": 59,
-        "end_char": 62,
-        "label": "I-Concept"
-      },
-      {
-        "token": "đầu",
-        "start_char": 63,
-        "end_char": 66,
-        "label": "I-Concept"
-      },
-      {
-        "token": "tư)",
-        "start_char": 67,
-        "end_char": 70,
-        "label": "I-Concept"
-      },
-      {
-        "token": "là",
-        "start_char": 71,
-        "end_char": 73,
-        "label": "O"
-      },
-      {
-        "token": "nhà",
-        "start_char": 74,
-        "end_char": 77,
-        "label": "B-Concept"
-      },
-      {
-        "token": "đầu",
-        "start_char": 78,
-        "end_char": 81,
-        "label": "I-Concept"
+        "token": "công",
+        "start_char": 222,
+        "end_char": 226,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "tư",
-        "start_char": 82,
-        "end_char": 84,
-        "label": "I-Concept"
+        "token": "cộng",
+        "start_char": 227,
+        "end_char": 231,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "theo",
-        "start_char": 85,
-        "end_char": 89,
-        "label": "I-Concept"
+        "token": "phục",
+        "start_char": 232,
+        "end_char": 236,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "quy",
-        "start_char": 90,
-        "end_char": 93,
-        "label": "I-Concept"
+        "token": "vụ",
+        "start_char": 237,
+        "end_char": 239,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "định",
-        "start_char": 94,
-        "end_char": 98,
-        "label": "I-Concept"
+        "token": "hoạt",
+        "start_char": 240,
+        "end_char": 244,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "của",
-        "start_char": 99,
-        "end_char": 102,
-        "label": "I-Concept"
+        "token": "động",
+        "start_char": 245,
+        "end_char": 249,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "pháp",
-        "start_char": 103,
-        "end_char": 107,
-        "label": "I-Concept"
+        "token": "văn",
+        "start_char": 250,
+        "end_char": 253,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "luật",
-        "start_char": 108,
-        "end_char": 112,
-        "label": "I-Concept"
+        "token": "hóa",
+        "start_char": 254,
+        "end_char": 257,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "về",
-        "start_char": 113,
-        "end_char": 115,
-        "label": "I-Concept"
+        "token": ",",
+        "start_char": 257,
+        "end_char": 258,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đầu",
-        "start_char": 116,
-        "end_char": 119,
-        "label": "I-Concept"
+        "token": "giáo",
+        "start_char": 259,
+        "end_char": 263,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "tư,",
-        "start_char": 120,
-        "end_char": 123,
-        "label": "I-Concept"
+        "token": "dục",
+        "start_char": 264,
+        "end_char": 267,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "pháp",
-        "start_char": 124,
-        "end_char": 128,
-        "label": "I-Concept"
+        "token": ",",
+        "start_char": 267,
+        "end_char": 268,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "luật",
-        "start_char": 129,
-        "end_char": 133,
-        "label": "I-Concept"
+        "token": "y",
+        "start_char": 269,
+        "end_char": 270,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "có",
-        "start_char": 134,
-        "end_char": 136,
-        "label": "I-Concept"
+        "token": "tế",
+        "start_char": 271,
+        "end_char": 273,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "liên",
-        "start_char": 137,
-        "end_char": 141,
-        "label": "I-Concept"
+        "token": ",",
+        "start_char": 273,
+        "end_char": 274,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "quan",
-        "start_char": 142,
-        "end_char": 146,
-        "label": "I-Concept"
+        "token": "thể",
+        "start_char": 275,
+        "end_char": 278,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đã",
-        "start_char": 147,
-        "end_char": 149,
-        "label": "O"
+        "token": "dục",
+        "start_char": 279,
+        "end_char": 282,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "được",
-        "start_char": 150,
-        "end_char": 154,
-        "label": "O"
+        "token": ",",
+        "start_char": 282,
+        "end_char": 283,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "lựa",
-        "start_char": 155,
-        "end_char": 158,
-        "label": "O"
+        "token": "thể",
+        "start_char": 284,
+        "end_char": 287,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "chọn",
-        "start_char": 159,
-        "end_char": 163,
-        "label": "O"
+        "token": "thao",
+        "start_char": 288,
+        "end_char": 292,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "để",
-        "start_char": 164,
-        "end_char": 166,
-        "label": "O"
+        "token": ",",
+        "start_char": 292,
+        "end_char": 293,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "thực",
-        "start_char": 167,
-        "end_char": 171,
-        "label": "O"
+        "token": "vui",
+        "start_char": 294,
+        "end_char": 297,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "hiện",
-        "start_char": 172,
-        "end_char": 176,
-        "label": "O"
+        "token": "chơi",
+        "start_char": 298,
+        "end_char": 302,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "dự",
-        "start_char": 177,
-        "end_char": 179,
-        "label": "B-Concept"
+        "token": ",",
+        "start_char": 302,
+        "end_char": 303,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "án",
-        "start_char": 180,
-        "end_char": 182,
-        "label": "I-Concept"
+        "token": "giải",
+        "start_char": 304,
+        "end_char": 308,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đầu",
-        "start_char": 183,
-        "end_char": 186,
-        "label": "I-Concept"
+        "token": "trí",
+        "start_char": 309,
+        "end_char": 312,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "tư",
-        "start_char": 187,
-        "end_char": 189,
-        "label": "I-Concept"
+        "token": ",",
+        "start_char": 312,
+        "end_char": 313,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "có",
-        "start_char": 190,
-        "end_char": 192,
-        "label": "I-Concept"
+        "token": "chợ",
+        "start_char": 314,
+        "end_char": 317,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "sử",
-        "start_char": 193,
-        "end_char": 195,
-        "label": "I-Concept"
+        "token": ",",
+        "start_char": 317,
+        "end_char": 318,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "dụng",
-        "start_char": 196,
-        "end_char": 200,
-        "label": "I-Concept"
+        "token": "nghĩa",
+        "start_char": 319,
+        "end_char": 324,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đất",
-        "start_char": 201,
-        "end_char": 204,
-        "label": "I-Concept"
+        "token": "trang",
+        "start_char": 325,
+        "end_char": 330,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "và",
-        "start_char": 205,
-        "end_char": 207,
-        "label": "O"
+        "start_char": 331,
+        "end_char": 333,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "được",
-        "start_char": 208,
-        "end_char": 212,
-        "label": "O"
+        "token": "công",
+        "start_char": 334,
+        "end_char": 338,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "giao",
-        "start_char": 213,
-        "end_char": 217,
-        "label": "O"
+        "token": "trình",
+        "start_char": 339,
+        "end_char": 344,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "đất,",
-        "start_char": 218,
-        "end_char": 222,
-        "label": "O"
+        "token": "công",
+        "start_char": 345,
+        "end_char": 349,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "cho",
-        "start_char": 223,
-        "end_char": 226,
-        "label": "O"
+        "token": "cộng",
+        "start_char": 350,
+        "end_char": 354,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "thuê",
-        "start_char": 227,
-        "end_char": 231,
-        "label": "O"
-      },
-      {
-        "token": "đất,",
-        "start_char": 232,
-        "end_char": 236,
-        "label": "O"
-      },
-      {
-        "token": "chuyển",
-        "start_char": 237,
-        "end_char": 243,
-        "label": "O"
-      },
-      {
-        "token": "mục",
-        "start_char": 244,
-        "end_char": 247,
-        "label": "O"
-      },
-      {
-        "token": "đích",
-        "start_char": 248,
-        "end_char": 252,
-        "label": "O"
-      },
-      {
-        "token": "sử",
-        "start_char": 253,
-        "end_char": 255,
-        "label": "O"
-      },
-      {
-        "token": "dụng",
-        "start_char": 256,
-        "end_char": 260,
-        "label": "O"
-      },
-      {
-        "token": "đất",
-        "start_char": 261,
-        "end_char": 264,
-        "label": "O"
-      },
-      {
-        "token": "theo",
-        "start_char": 265,
-        "end_char": 269,
-        "label": "O"
-      },
-      {
-        "token": "quy",
-        "start_char": 270,
-        "end_char": 273,
-        "label": "O"
-      },
-      {
-        "token": "định",
-        "start_char": 274,
-        "end_char": 278,
-        "label": "O"
+        "token": "khác",
+        "start_char": 355,
+        "end_char": 359,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
         "token": "của",
-        "start_char": 279,
-        "end_char": 282,
-        "label": "O"
+        "start_char": 360,
+        "end_char": 363,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "Luật",
-        "start_char": 283,
-        "end_char": 287,
-        "label": "O"
+        "token": "xã",
+        "start_char": 364,
+        "end_char": 366,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "token": "này.",
-        "start_char": 288,
-        "end_char": 292,
-        "label": "O"
-      }
-    ],
-    "concepts": [
-      {
-        "id": "hUHGtQr6l_",
-        "text": "Chủ đầu tư dự án đầu tư có sử dụng đất (sau đây gọi là chủ đầu tư)",
-        "start": 4,
-        "end": 70
+        "token": ",",
+        "start_char": 366,
+        "end_char": 367,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "9IcPD8HewH",
-        "text": "nhà đầu tư theo quy định của pháp luật về đầu tư, pháp luật có liên quan",
-        "start": 74,
-        "end": 146
+        "token": "phường",
+        "start_char": 368,
+        "end_char": 374,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
       },
       {
-        "id": "uAE078A-ww",
-        "text": "dự án đầu tư có sử dụng đất",
-        "start": 177,
-        "end": 204
+        "token": ",",
+        "start_char": 374,
+        "end_char": 375,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "thị",
+        "start_char": 376,
+        "end_char": 379,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "trấn",
+        "start_char": 380,
+        "end_char": 384,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ";",
+        "start_char": 384,
+        "end_char": 385,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 386,
+        "end_char": 389,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tôn",
+        "start_char": 390,
+        "end_char": 393,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "giáo",
+        "start_char": 394,
+        "end_char": 398,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 398,
+        "end_char": 399,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 400,
+        "end_char": 403,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tín",
+        "start_char": 404,
+        "end_char": 407,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ngưỡng",
+        "start_char": 408,
+        "end_char": 414,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chưa",
+        "start_char": 415,
+        "end_char": 419,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "giao",
+        "start_char": 420,
+        "end_char": 424,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "quản",
+        "start_char": 425,
+        "end_char": 429,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "lý",
+        "start_char": 430,
+        "end_char": 432,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 432,
+        "end_char": 433,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 434,
+        "end_char": 436,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 437,
+        "end_char": 441,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 441,
+        "end_char": 442,
+        "concept_label": "O",
+        "relation_label": "O"
       }
     ],
     "relations": [
       {
-        "source": 0,
-        "target": 1,
-        "label": "là"
+        "concept1_start": 3,
+        "relation_start": 35,
+        "concept2_start": 43
       },
       {
-        "source": 0,
-        "target": 2,
-        "label": "thực hiện"
+        "concept1_start": 43,
+        "relation_start": 72,
+        "concept2_start": 76
+      },
+      {
+        "concept1_start": 95,
+        "relation_start": 115,
+        "concept2_start": 127
+      },
+      {
+        "concept1_start": 95,
+        "relation_start": 150,
+        "concept2_start": 174
+      },
+      {
+        "concept1_start": 386,
+        "relation_start": 415,
+        "concept2_start": 425
+      },
+      {
+        "concept1_start": 400,
+        "relation_start": 415,
+        "concept2_start": 425
+      }
+    ]
+  },
+  {
+    "text": "3. Người đại diện cho cộng đồng dân cư là trưởng thôn, làng, ấp, bản, bon, buôn, phum, sóc, tổ dân phố và điểm dân cư tương tự hoặc người được cộng đồng dân cư thỏa thuận cử ra.",
+    "tokens": [
+      {
+        "token": "3",
+        "start_char": 0,
+        "end_char": 1,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 1,
+        "end_char": 2,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "Người",
+        "start_char": 3,
+        "end_char": 8,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đại",
+        "start_char": 9,
+        "end_char": 12,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "diện",
+        "start_char": 13,
+        "end_char": 17,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cho",
+        "start_char": 18,
+        "end_char": 21,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cộng",
+        "start_char": 22,
+        "end_char": 26,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đồng",
+        "start_char": 27,
+        "end_char": 31,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dân",
+        "start_char": 32,
+        "end_char": 35,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cư",
+        "start_char": 36,
+        "end_char": 38,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "là",
+        "start_char": 39,
+        "end_char": 41,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "trưởng",
+        "start_char": 42,
+        "end_char": 48,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "thôn",
+        "start_char": 49,
+        "end_char": 53,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 53,
+        "end_char": 54,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "làng",
+        "start_char": 55,
+        "end_char": 59,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 59,
+        "end_char": 60,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "ấp",
+        "start_char": 61,
+        "end_char": 63,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 63,
+        "end_char": 64,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "bản",
+        "start_char": 65,
+        "end_char": 68,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 68,
+        "end_char": 69,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "bon",
+        "start_char": 70,
+        "end_char": 73,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 73,
+        "end_char": 74,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "buôn",
+        "start_char": 75,
+        "end_char": 79,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 79,
+        "end_char": 80,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "phum",
+        "start_char": 81,
+        "end_char": 85,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 85,
+        "end_char": 86,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "sóc",
+        "start_char": 87,
+        "end_char": 90,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 90,
+        "end_char": 91,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "tổ",
+        "start_char": 92,
+        "end_char": 94,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dân",
+        "start_char": 95,
+        "end_char": 98,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "phố",
+        "start_char": 99,
+        "end_char": 102,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "và",
+        "start_char": 103,
+        "end_char": 105,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "điểm",
+        "start_char": 106,
+        "end_char": 110,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dân",
+        "start_char": 111,
+        "end_char": 114,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cư",
+        "start_char": 115,
+        "end_char": 117,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tương",
+        "start_char": 118,
+        "end_char": 123,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "tự",
+        "start_char": 124,
+        "end_char": 126,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "hoặc",
+        "start_char": 127,
+        "end_char": 131,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "người",
+        "start_char": 132,
+        "end_char": 137,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "được",
+        "start_char": 138,
+        "end_char": 142,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cộng",
+        "start_char": 143,
+        "end_char": 147,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đồng",
+        "start_char": 148,
+        "end_char": 152,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dân",
+        "start_char": 153,
+        "end_char": 156,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cư",
+        "start_char": 157,
+        "end_char": 159,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "thỏa",
+        "start_char": 160,
+        "end_char": 164,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "thuận",
+        "start_char": 165,
+        "end_char": 170,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cử",
+        "start_char": 171,
+        "end_char": 173,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ra",
+        "start_char": 174,
+        "end_char": 176,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 176,
+        "end_char": 177,
+        "concept_label": "O",
+        "relation_label": "O"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "text": "4. Người đại diện tổ chức tôn giáo, tổ chức tôn giáo trực thuộc đối với việc sử dụng đất của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc.",
+    "tokens": [
+      {
+        "token": "4",
+        "start_char": 0,
+        "end_char": 1,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 1,
+        "end_char": 2,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "Người",
+        "start_char": 3,
+        "end_char": 8,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đại",
+        "start_char": 9,
+        "end_char": 12,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "diện",
+        "start_char": 13,
+        "end_char": 17,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tổ",
+        "start_char": 18,
+        "end_char": 20,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chức",
+        "start_char": 21,
+        "end_char": 25,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tôn",
+        "start_char": 26,
+        "end_char": 29,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "giáo",
+        "start_char": 30,
+        "end_char": 34,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 34,
+        "end_char": 35,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "tổ",
+        "start_char": 36,
+        "end_char": 38,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chức",
+        "start_char": 39,
+        "end_char": 43,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tôn",
+        "start_char": 44,
+        "end_char": 47,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "giáo",
+        "start_char": 48,
+        "end_char": 52,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "trực",
+        "start_char": 53,
+        "end_char": 57,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "thuộc",
+        "start_char": 58,
+        "end_char": 63,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đối",
+        "start_char": 64,
+        "end_char": 67,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "với",
+        "start_char": 68,
+        "end_char": 71,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "việc",
+        "start_char": 72,
+        "end_char": 76,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 77,
+        "end_char": 79,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 80,
+        "end_char": 84,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 85,
+        "end_char": 88,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "của",
+        "start_char": 89,
+        "end_char": 92,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "tổ",
+        "start_char": 93,
+        "end_char": 95,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chức",
+        "start_char": 96,
+        "end_char": 100,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tôn",
+        "start_char": 101,
+        "end_char": 104,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "giáo",
+        "start_char": 105,
+        "end_char": 109,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 109,
+        "end_char": 110,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "tổ",
+        "start_char": 111,
+        "end_char": 113,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chức",
+        "start_char": 114,
+        "end_char": 118,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "tôn",
+        "start_char": 119,
+        "end_char": 122,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "giáo",
+        "start_char": 123,
+        "end_char": 127,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "trực",
+        "start_char": 128,
+        "end_char": 132,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "thuộc",
+        "start_char": 133,
+        "end_char": 138,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 138,
+        "end_char": 139,
+        "concept_label": "O",
+        "relation_label": "O"
+      }
+    ],
+    "relations": [
+      {
+        "concept1_start": 3,
+        "relation_start": 64,
+        "concept2_start": 93
+      },
+      {
+        "concept1_start": 36,
+        "relation_start": 64,
+        "concept2_start": 93
+      },
+      {
+        "concept1_start": 72,
+        "relation_start": 89,
+        "concept2_start": 93
+      },
+      {
+        "concept1_start": 72,
+        "relation_start": 89,
+        "concept2_start": 111
+      }
+    ]
+  },
+  {
+    "text": "5. Cá nhân, người gốc Việt Nam định cư ở nước ngoài đối với việc sử dụng đất của mình.",
+    "tokens": [
+      {
+        "token": "5",
+        "start_char": 0,
+        "end_char": 1,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 1,
+        "end_char": 2,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "Cá",
+        "start_char": 3,
+        "end_char": 5,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nhân",
+        "start_char": 6,
+        "end_char": 10,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": ",",
+        "start_char": 10,
+        "end_char": 11,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "người",
+        "start_char": 12,
+        "end_char": 17,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "gốc",
+        "start_char": 18,
+        "end_char": 21,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "Việt",
+        "start_char": 22,
+        "end_char": 26,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "Nam",
+        "start_char": 27,
+        "end_char": 30,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "định",
+        "start_char": 31,
+        "end_char": 35,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cư",
+        "start_char": 36,
+        "end_char": 38,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ở",
+        "start_char": 39,
+        "end_char": 40,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nước",
+        "start_char": 41,
+        "end_char": 45,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "ngoài",
+        "start_char": 46,
+        "end_char": 51,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đối",
+        "start_char": 52,
+        "end_char": 55,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "với",
+        "start_char": 56,
+        "end_char": 59,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "việc",
+        "start_char": 60,
+        "end_char": 64,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 65,
+        "end_char": 67,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 68,
+        "end_char": 72,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 73,
+        "end_char": 76,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "của",
+        "start_char": 77,
+        "end_char": 80,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "mình",
+        "start_char": 81,
+        "end_char": 85,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 85,
+        "end_char": 86,
+        "concept_label": "O",
+        "relation_label": "O"
+      }
+    ],
+    "relations": [
+      {
+        "concept1_start": 3,
+        "relation_start": 52,
+        "concept2_start": 60
+      }
+    ]
+  },
+  {
+    "text": "6. Người có chung quyền sử dụng đất hoặc người đại diện cho nhóm người có chung quyền sử dụng đất đối với việc sử dụng đất đó.",
+    "tokens": [
+      {
+        "token": "6",
+        "start_char": 0,
+        "end_char": 1,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 1,
+        "end_char": 2,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": "Người",
+        "start_char": 3,
+        "end_char": 8,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "có",
+        "start_char": 9,
+        "end_char": 11,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chung",
+        "start_char": 12,
+        "end_char": 17,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "quyền",
+        "start_char": 18,
+        "end_char": 23,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 24,
+        "end_char": 26,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 27,
+        "end_char": 31,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 32,
+        "end_char": 35,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "hoặc",
+        "start_char": 36,
+        "end_char": 40,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "người",
+        "start_char": 41,
+        "end_char": 46,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đại",
+        "start_char": 47,
+        "end_char": 50,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "diện",
+        "start_char": 51,
+        "end_char": 55,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "cho",
+        "start_char": 56,
+        "end_char": 59,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "nhóm",
+        "start_char": 60,
+        "end_char": 64,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "người",
+        "start_char": 65,
+        "end_char": 70,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "có",
+        "start_char": 71,
+        "end_char": 73,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "chung",
+        "start_char": 74,
+        "end_char": 79,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "quyền",
+        "start_char": 80,
+        "end_char": 85,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 86,
+        "end_char": 88,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 89,
+        "end_char": 93,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 94,
+        "end_char": 97,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đối",
+        "start_char": 98,
+        "end_char": 101,
+        "concept_label": "O",
+        "relation_label": "B-Relation"
+      },
+      {
+        "token": "với",
+        "start_char": 102,
+        "end_char": 105,
+        "concept_label": "O",
+        "relation_label": "I-Relation"
+      },
+      {
+        "token": "việc",
+        "start_char": 106,
+        "end_char": 110,
+        "concept_label": "B-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "sử",
+        "start_char": 111,
+        "end_char": 113,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "dụng",
+        "start_char": 114,
+        "end_char": 118,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đất",
+        "start_char": 119,
+        "end_char": 122,
+        "concept_label": "I-Concept",
+        "relation_label": "O"
+      },
+      {
+        "token": "đó",
+        "start_char": 123,
+        "end_char": 125,
+        "concept_label": "O",
+        "relation_label": "O"
+      },
+      {
+        "token": ".",
+        "start_char": 125,
+        "end_char": 126,
+        "concept_label": "O",
+        "relation_label": "O"
+      }
+    ],
+    "relations": [
+      {
+        "concept1_start": 3,
+        "relation_start": 98,
+        "concept2_start": 106
+      },
+      {
+        "concept1_start": 41,
+        "relation_start": 98,
+        "concept2_start": 106
+      },
+      {
+        "concept1_start": 3,
+        "relation_start": 36,
+        "concept2_start": 41
       }
     ]
   }

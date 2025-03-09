@@ -1,0 +1,1203 @@
+[
+  {
+    "id": 98,
+    "annotations": [
+      {
+        "id": 13,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 32,
+              "text": "Người đại diện theo pháp luật",
+              "labels": ["Concept"]
+            },
+            "id": "DpV41hI1Ve",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 37,
+              "end": 55,
+              "text": "tổ chức trong nước",
+              "labels": ["Concept"]
+            },
+            "id": "-xh3n5dwPM",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 57,
+              "end": 97,
+              "text": "tổ chức kinh tế có vốn đầu tư nước ngoài",
+              "labels": ["Concept"]
+            },
+            "id": "kOEzi23ngO",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 99,
+              "end": 136,
+              "text": "người đứng đầu của tổ chức nước ngoài",
+              "labels": ["Concept"]
+            },
+            "id": "kCVBG8qHh8",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 33,
+              "end": 36,
+              "text": "của",
+              "labels": ["Relation"]
+            },
+            "id": "q28gG93xJJ",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 150,
+              "end": 160,
+              "text": "ngoại giao",
+              "labels": ["Concept"]
+            },
+            "id": "DYidBTa8Mk",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 137,
+              "end": 149,
+              "text": "có chức năng",
+              "labels": ["Relation"]
+            },
+            "id": "t3e44EK12G",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 161,
+              "end": 168,
+              "text": "đối với",
+              "labels": ["Relation"]
+            },
+            "id": "EKzOQwdz7W",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 169,
+              "end": 185,
+              "text": "việc sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "OilED-Vtju",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 190,
+              "end": 202,
+              "text": "tổ chức mình",
+              "labels": ["Concept"]
+            },
+            "id": "FR6SlRdpsq",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 186,
+              "end": 189,
+              "text": "của",
+              "labels": ["Relation"]
+            },
+            "id": "r-_wqSXvDn",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "DpV41hI1Ve",
+            "to_id": "q28gG93xJJ",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "q28gG93xJJ",
+            "to_id": "-xh3n5dwPM",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "q28gG93xJJ",
+            "to_id": "kOEzi23ngO",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "kCVBG8qHh8",
+            "to_id": "t3e44EK12G",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "t3e44EK12G",
+            "to_id": "DYidBTa8Mk",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "DYidBTa8Mk",
+            "to_id": "EKzOQwdz7W",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "EKzOQwdz7W",
+            "to_id": "OilED-Vtju",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "OilED-Vtju",
+            "to_id": "r-_wqSXvDn",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "r-_wqSXvDn",
+            "to_id": "FR6SlRdpsq",
+            "type": "relation",
+            "direction": "right"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-04T03:54:47.319049Z",
+        "updated_at": "2025-03-04T04:04:33.305978Z",
+        "draft_created_at": "2025-03-04T03:54:30.024226Z",
+        "lead_time": 2302.536,
+        "prediction": {},
+        "result_count": 12,
+        "unique_id": "949ff775-8103-4f0d-a8ac-2b0ee26cb3be",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 98,
+        "project": 3,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "cfcf54b2-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "1. Người đại diện theo pháp luật của tổ chức trong nước, tổ chức kinh tế có vốn đầu tư nước ngoài; người đứng đầu của tổ chức nước ngoài có chức năng ngoại giao đối với việc sử dụng đất của tổ chức mình."
+    },
+    "meta": {},
+    "created_at": "2025-03-04T03:25:47.669227Z",
+    "updated_at": "2025-03-04T04:04:33.362614Z",
+    "inner_id": 1,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 3,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 100,
+    "annotations": [
+      {
+        "id": 14,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 34,
+              "text": "Chủ tịch Ủy ban nhân dân cấp xã",
+              "labels": ["Concept"]
+            },
+            "id": "XBYcupkUlg",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 43,
+              "end": 71,
+              "text": "việc sử dụng đất nông nghiệp",
+              "labels": ["Concept"]
+            },
+            "id": "LLjMH72nJq",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 76,
+              "end": 93,
+              "text": "mục đích công ích",
+              "labels": ["Concept"]
+            },
+            "id": "h2Lwg2fuwN",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 95,
+              "end": 114,
+              "text": "đất phi nông nghiệp",
+              "labels": ["Concept"]
+            },
+            "id": "YPxWOaziWG",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 127,
+              "end": 149,
+              "text": "Ủy ban nhân dân cấp xã",
+              "labels": ["Concept"]
+            },
+            "id": "v8XiZ5jTAZ",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 174,
+              "end": 384,
+              "text": "xây dựng trụ sở Ủy ban nhân dân, các công trình công cộng phục vụ hoạt động văn hóa, giáo dục, y tế, thể dục, thể thao, vui chơi, giải trí, chợ, nghĩa trang và công trình công cộng khác của xã, phường, thị trấn",
+              "labels": ["Concept"]
+            },
+            "id": "l5LINDhLXC",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 386,
+              "end": 398,
+              "text": "đất tôn giáo",
+              "labels": ["Concept"]
+            },
+            "id": "EBMi4fftTY",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 400,
+              "end": 414,
+              "text": "đất tín ngưỡng",
+              "labels": ["Concept"]
+            },
+            "id": "IGxgAply0_",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 425,
+              "end": 441,
+              "text": "quản lý, sử dụng",
+              "labels": ["Concept"]
+            },
+            "id": "Ut1uB6WqgD",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 35,
+              "end": 42,
+              "text": "đối với",
+              "labels": ["Relation"]
+            },
+            "id": "GHRQLbXmLn",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 72,
+              "end": 75,
+              "text": "vào",
+              "labels": ["Relation"]
+            },
+            "id": "3c14kTukLp",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 115,
+              "end": 126,
+              "text": "đã giao cho",
+              "labels": ["Relation"]
+            },
+            "id": "2OZA3eGXMt",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 150,
+              "end": 173,
+              "text": "để sử dụng vào mục đích",
+              "labels": ["Relation"]
+            },
+            "id": "gBUHbErjb7",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 415,
+              "end": 424,
+              "text": "chưa giao",
+              "labels": ["Relation"]
+            },
+            "id": "vzOgXLOBD-",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "XBYcupkUlg",
+            "to_id": "GHRQLbXmLn",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "GHRQLbXmLn",
+            "to_id": "LLjMH72nJq",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "LLjMH72nJq",
+            "to_id": "3c14kTukLp",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "3c14kTukLp",
+            "to_id": "h2Lwg2fuwN",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "YPxWOaziWG",
+            "to_id": "2OZA3eGXMt",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "2OZA3eGXMt",
+            "to_id": "v8XiZ5jTAZ",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "YPxWOaziWG",
+            "to_id": "gBUHbErjb7",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "gBUHbErjb7",
+            "to_id": "l5LINDhLXC",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "EBMi4fftTY",
+            "to_id": "vzOgXLOBD-",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "vzOgXLOBD-",
+            "to_id": "Ut1uB6WqgD",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "IGxgAply0_",
+            "to_id": "vzOgXLOBD-",
+            "type": "relation",
+            "direction": "right"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-04T04:12:12.172218Z",
+        "updated_at": "2025-03-04T07:04:35.247865Z",
+        "draft_created_at": "2025-03-04T04:09:56.311005Z",
+        "lead_time": 423.68000000000006,
+        "prediction": {},
+        "result_count": 15,
+        "unique_id": "e613d1d6-ea24-4a67-9881-c64fc04e6d4f",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 100,
+        "project": 3,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "cfcf54b2-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "2. Chủ tịch Ủy ban nhân dân cấp xã đối với việc sử dụng đất nông nghiệp vào mục đích công ích; đất phi nông nghiệp đã giao cho Ủy ban nhân dân cấp xã để sử dụng vào mục đích xây dựng trụ sở Ủy ban nhân dân, các công trình công cộng phục vụ hoạt động văn hóa, giáo dục, y tế, thể dục, thể thao, vui chơi, giải trí, chợ, nghĩa trang và công trình công cộng khác của xã, phường, thị trấn; đất tôn giáo, đất tín ngưỡng chưa giao quản lý, sử dụng."
+    },
+    "meta": {},
+    "created_at": "2025-03-04T03:25:47.669227Z",
+    "updated_at": "2025-03-04T07:04:35.299398Z",
+    "inner_id": 3,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 3,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 102,
+    "annotations": [
+      {
+        "id": 15,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 38,
+              "text": "Người đại diện cho cộng đồng dân cư",
+              "labels": ["Concept"]
+            },
+            "id": "_SxNZCQQnD",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 42,
+              "end": 53,
+              "text": "trưởng thôn",
+              "labels": ["Concept"]
+            },
+            "id": "4ZRurYorXy",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 55,
+              "end": 59,
+              "text": "làng",
+              "labels": ["Concept"]
+            },
+            "id": "F3-tlraqXZ",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 61,
+              "end": 63,
+              "text": "ấp",
+              "labels": ["Concept"]
+            },
+            "id": "gND6Civ5-P",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 65,
+              "end": 68,
+              "text": "bản",
+              "labels": ["Concept"]
+            },
+            "id": "XwrXDSpDeE",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 70,
+              "end": 73,
+              "text": "bon",
+              "labels": ["Concept"]
+            },
+            "id": "BlaxujKPJC",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 75,
+              "end": 79,
+              "text": "buôn",
+              "labels": ["Concept"]
+            },
+            "id": "qWtaxwuBkU",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 81,
+              "end": 85,
+              "text": "phum",
+              "labels": ["Concept"]
+            },
+            "id": "xXUSeNb2D_",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 87,
+              "end": 90,
+              "text": "sóc",
+              "labels": ["Concept"]
+            },
+            "id": "wRUtSz6jKK",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 92,
+              "end": 102,
+              "text": "tổ dân phố",
+              "labels": ["Concept"]
+            },
+            "id": "bxEEWH0t86",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 106,
+              "end": 117,
+              "text": "điểm dân cư",
+              "labels": ["Concept"]
+            },
+            "id": "Hq560D7b2v",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 132,
+              "end": 176,
+              "text": "người được cộng đồng dân cư thỏa thuận cử ra",
+              "labels": ["Concept"]
+            },
+            "id": "MD4yKEA6y-",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 39,
+              "end": 41,
+              "text": "là",
+              "labels": ["Relation"]
+            },
+            "id": "p6UPl5HyJ9",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 103,
+              "end": 105,
+              "text": "và",
+              "labels": ["Relation"]
+            },
+            "id": "TFOvDHc_Nl",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 127,
+              "end": 131,
+              "text": "hoặc",
+              "labels": ["Relation"]
+            },
+            "id": "rO_6vPVdJO",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-04T07:08:54.845650Z",
+        "updated_at": "2025-03-04T07:08:54.845650Z",
+        "draft_created_at": "2025-03-04T07:07:14.045294Z",
+        "lead_time": 222.197,
+        "prediction": {},
+        "result_count": 15,
+        "unique_id": "fc782631-6029-408a-95a8-dd3f6b57771a",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 102,
+        "project": 3,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "cfcf54b2-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "3. Người đại diện cho cộng đồng dân cư là trưởng thôn, làng, ấp, bản, bon, buôn, phum, sóc, tổ dân phố và điểm dân cư tương tự hoặc người được cộng đồng dân cư thỏa thuận cử ra."
+    },
+    "meta": {},
+    "created_at": "2025-03-04T03:25:47.669227Z",
+    "updated_at": "2025-03-04T07:08:54.879148Z",
+    "inner_id": 5,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 3,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 104,
+    "annotations": [
+      {
+        "id": 16,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 34,
+              "text": "Người đại diện tổ chức tôn giáo",
+              "labels": ["Concept"]
+            },
+            "id": "Dbbe-eaCuw",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 36,
+              "end": 63,
+              "text": "tổ chức tôn giáo trực thuộc",
+              "labels": ["Concept"]
+            },
+            "id": "x6iVcWylLA",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 72,
+              "end": 88,
+              "text": "việc sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "y39VQRGHut",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 111,
+              "end": 138,
+              "text": "tổ chức tôn giáo trực thuộc",
+              "labels": ["Concept"]
+            },
+            "id": "XsxfGFfEeG",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 64,
+              "end": 71,
+              "text": "đối với",
+              "labels": ["Relation"]
+            },
+            "id": "AuS4f2Ixny",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 89,
+              "end": 92,
+              "text": "của",
+              "labels": ["Relation"]
+            },
+            "id": "iXcFurIYA5",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 93,
+              "end": 109,
+              "text": "tổ chức tôn giáo",
+              "labels": ["Concept"]
+            },
+            "id": "n--Fw_8XUS",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "Dbbe-eaCuw",
+            "to_id": "AuS4f2Ixny",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "AuS4f2Ixny",
+            "to_id": "n--Fw_8XUS",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "x6iVcWylLA",
+            "to_id": "AuS4f2Ixny",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "y39VQRGHut",
+            "to_id": "iXcFurIYA5",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "iXcFurIYA5",
+            "to_id": "n--Fw_8XUS",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "iXcFurIYA5",
+            "to_id": "XsxfGFfEeG",
+            "type": "relation",
+            "direction": "right"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-04T07:13:16.631346Z",
+        "updated_at": "2025-03-04T07:13:16.631346Z",
+        "draft_created_at": "2025-03-04T07:10:05.602858Z",
+        "lead_time": 252.242,
+        "prediction": {},
+        "result_count": 8,
+        "unique_id": "fc2c0791-12e5-4f10-af41-245664714894",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 104,
+        "project": 3,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "cfcf54b2-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "4. Người đại diện tổ chức tôn giáo, tổ chức tôn giáo trực thuộc đối với việc sử dụng đất của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc."
+    },
+    "meta": {},
+    "created_at": "2025-03-04T03:25:47.669227Z",
+    "updated_at": "2025-03-04T07:13:16.670204Z",
+    "inner_id": 7,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 3,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 106,
+    "annotations": [
+      {
+        "id": 17,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 51,
+              "text": "Cá nhân, người gốc Việt Nam định cư ở nước ngoài",
+              "labels": ["Concept"]
+            },
+            "id": "uWg50LWudk",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 60,
+              "end": 76,
+              "text": "việc sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "SHOPbJpWfB",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 52,
+              "end": 59,
+              "text": "đối với",
+              "labels": ["Relation"]
+            },
+            "id": "JdQU6Se23j",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "uWg50LWudk",
+            "to_id": "JdQU6Se23j",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "JdQU6Se23j",
+            "to_id": "SHOPbJpWfB",
+            "type": "relation",
+            "direction": "right"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-04T07:15:58.904183Z",
+        "updated_at": "2025-03-04T07:15:58.904183Z",
+        "draft_created_at": "2025-03-04T07:15:21.691652Z",
+        "lead_time": 154.071,
+        "prediction": {},
+        "result_count": 4,
+        "unique_id": "7f8b04b1-b4b6-4e38-8cc7-eebdb91b7105",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 106,
+        "project": 3,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "cfcf54b2-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "5. Cá nhân, người gốc Việt Nam định cư ở nước ngoài đối với việc sử dụng đất của mình."
+    },
+    "meta": {},
+    "created_at": "2025-03-04T03:25:47.669227Z",
+    "updated_at": "2025-03-04T07:15:58.934861Z",
+    "inner_id": 9,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 3,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 108,
+    "annotations": [
+      {
+        "id": 18,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 3,
+              "end": 35,
+              "text": "Người có chung quyền sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "WytY-Nfv30",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 41,
+              "end": 97,
+              "text": "người đại diện cho nhóm người có chung quyền sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "9Pm2LTYpfs",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 106,
+              "end": 122,
+              "text": "việc sử dụng đất",
+              "labels": ["Concept"]
+            },
+            "id": "WsaJOvjMss",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 98,
+              "end": 105,
+              "text": "đối với",
+              "labels": ["Relation"]
+            },
+            "id": "Ua6qYS2CX1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 36,
+              "end": 40,
+              "text": "hoặc",
+              "labels": ["Relation"]
+            },
+            "id": "7Ney2kjhLE",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "from_id": "WytY-Nfv30",
+            "to_id": "Ua6qYS2CX1",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "Ua6qYS2CX1",
+            "to_id": "WsaJOvjMss",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "9Pm2LTYpfs",
+            "to_id": "Ua6qYS2CX1",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "WytY-Nfv30",
+            "to_id": "7Ney2kjhLE",
+            "type": "relation",
+            "direction": "right"
+          },
+          {
+            "from_id": "7Ney2kjhLE",
+            "to_id": "9Pm2LTYpfs",
+            "type": "relation",
+            "direction": "right"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-03-04T07:19:30.159414Z",
+        "updated_at": "2025-03-04T07:19:30.159414Z",
+        "draft_created_at": "2025-03-04T07:17:26.739941Z",
+        "lead_time": 207.038,
+        "prediction": {},
+        "result_count": 6,
+        "unique_id": "4d0eee61-1ca5-4f94-8b91-be9b4e6e5d69",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 108,
+        "project": 3,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "cfcf54b2-datatest.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "6. Người có chung quyền sử dụng đất hoặc người đại diện cho nhóm người có chung quyền sử dụng đất đối với việc sử dụng đất đó."
+    },
+    "meta": {},
+    "created_at": "2025-03-04T03:25:47.669227Z",
+    "updated_at": "2025-03-04T07:19:30.184206Z",
+    "inner_id": 11,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 3,
+    "updated_by": 1,
+    "comment_authors": []
+  }
+]

@@ -4,9 +4,12 @@
 # def simple_tokenize_with_spans(text):
 #     """
 #     Tokenize văn bản sử dụng biểu thức chính quy, tính toán chỉ số bắt đầu và kết thúc cho mỗi token.
+#     Tách riêng các dấu ngắt câu khỏi từ.
 #     """
 #     tokens_with_info = []
-#     for match in re.finditer(r'\S+', text):
+#     # Biểu thức: \w+ tìm các từ; [^\w\s] tìm các ký tự không phải chữ, không phải khoảng trắng (dấu câu)
+#     pattern = r'\w+|[^\w\s]'
+#     for match in re.finditer(pattern, text):
 #         token = match.group()
 #         start = match.start()
 #         end = match.end()
@@ -19,17 +22,15 @@
 
 # def get_concepts(annotations):
 #     """
-#     Trích xuất các concept từ annotation.
-#     Mỗi concept được lấy từ phần annotation kiểu "labels" có nhãn "Concept".
-#     Trả về một dictionary mapping: id concept -> thông tin (text, start, end)
+#     Trích xuất các annotation của concept (nhãn "Concept").
+#     Trả về dictionary mapping: id -> {text, start, end}
 #     """
 #     concepts = {}
 #     for ann in annotations:
 #         for res in ann.get("result", []):
 #             if res.get("type") == "labels":
 #                 value = res.get("value", {})
-#                 labels = value.get("labels", [])
-#                 if "Concept" in labels:
+#                 if "Concept" in value.get("labels", []):
 #                     cid = res.get("id")
 #                     concepts[cid] = {
 #                         "text": value.get("text"),
@@ -38,38 +39,77 @@
 #                     }
 #     return concepts
 
+# def get_relation_annotations(annotations):
+#     """
+#     Trích xuất các annotation của relation (nhãn "Relation").
+#     Trả về dictionary mapping: relation_id -> {text, start, end}
+#     """
+#     relations = {}
+#     for ann in annotations:
+#         for res in ann.get("result", []):
+#             if res.get("type") == "labels":
+#                 value = res.get("value", {})
+#                 if "Relation" in value.get("labels", []):
+#                     rid = res.get("id")
+#                     relations[rid] = {
+#                         "text": value.get("text"),
+#                         "start": value.get("start"),
+#                         "end": value.get("end")
+#                     }
+#     return relations
+
 # def get_relations(annotations):
 #     """
-#     Trích xuất các quan hệ giữa concept từ annotation.
-#     Mỗi quan hệ có kiểu "relation" với thông tin: from_id, to_id và label (lấy nhãn đầu tiên nếu có nhiều).
+#     Trích xuất các triple quan hệ từ annotations dựa trên thông tin liên kết.
+#     Tạo triple từ source → relation → target dựa trên from_id và to_id.
 #     """
-#     relations = []
+#     concept_dict = get_concepts(annotations)
+#     relation_dict = get_relation_annotations(annotations)
+    
+#     # Dictionary lưu các liên kết cho mỗi relation annotation
+#     relation_connections = {}
+    
 #     for ann in annotations:
 #         for res in ann.get("result", []):
 #             if res.get("type") == "relation":
-#                 relations.append({
-#                     "from_id": res.get("from_id"),
-#                     "to_id": res.get("to_id"),
-#                     "label": res.get("labels", [None])[0]
+#                 from_id = res.get("from_id")
+#                 to_id = res.get("to_id")
+#                 # Nếu from_id là khái niệm và to_id là relation → khái niệm là source
+#                 if from_id in concept_dict and to_id in relation_dict:
+#                     relation_connections.setdefault(to_id, {"sources": [], "targets": []})
+#                     relation_connections[to_id]["sources"].append(from_id)
+#                 # Nếu from_id là relation và to_id là khái niệm → khái niệm là target
+#                 elif from_id in relation_dict and to_id in concept_dict:
+#                     relation_connections.setdefault(from_id, {"sources": [], "targets": []})
+#                     relation_connections[from_id]["targets"].append(to_id)
+    
+#     # Tạo danh sách triple
+#     triples = []
+#     for rel_id, conn in relation_connections.items():
+#         sources = conn.get("sources", [])
+#         targets = conn.get("targets", [])
+#         for source in sources:
+#             for target in targets:
+#                 triples.append({
+#                     "source_id": source,
+#                     "relation_id": rel_id,
+#                     "target_id": target
 #                 })
-#     return relations
+#     return triples
 
-# def assign_bio_labels(tokens_with_info, concepts):
+# def assign_bio_labels(tokens_with_info, spans, prefix):
 #     """
-#     Gán nhãn BIO cho các token dựa trên khoảng span của các concept.
-#       - "B-Concept": Token bắt đầu chính xác tại vị trí bắt đầu của concept.
-#       - "I-Concept": Token nằm trong khoảng của concept nhưng không phải token đầu tiên.
-#       - "O": Token không thuộc bất kỳ concept nào.
+#     Gán nhãn BIO cho các token dựa trên khoảng span của các annotation (concept hoặc relation).
+#     Trường nhãn được lưu với key: prefix.lower() + "_label" (ví dụ: "concept_label").
 #     """
 #     for token in tokens_with_info:
 #         start = token["start_char"]
 #         end = token["end_char"]
-#         label = "O"
-#         for concept in concepts.values():
-#             if start >= concept["start"] and end <= concept["end"]:
-#                 label = "B-Concept" if start == concept["start"] else "I-Concept"
+#         token[prefix.lower() + "_label"] = "O"
+#         for span in spans:
+#             if start >= span["start"] and end <= span["end"]:
+#                 token[prefix.lower() + "_label"] = "B-" + prefix if start == span["start"] else "I-" + prefix
 #                 break
-#         token["label"] = label
 #     return tokens_with_info
 
 # def process_file(input_file, output_file):
@@ -80,50 +120,36 @@
 
 #     for sample in data:
 #         text = sample["data"]["text"]
-#         # Tokenize văn bản bằng hàm đơn giản
 #         tokens = simple_tokenize_with_spans(text)
-        
-#         # Lấy annotation từ sample
 #         annotations = sample.get("annotations", [])
-        
-#         # Trích xuất các concept và quan hệ
-#         concepts = get_concepts(annotations)
-#         relations = get_relations(annotations)
-        
-#         # Gán nhãn BIO cho các token dựa trên khoảng của concept
-#         tokens_with_labels = assign_bio_labels(tokens, concepts)
-        
-#         # Xử lý các concept: sắp xếp theo vị trí và ánh xạ id concept sang chỉ số trong danh sách
-#         sorted_concepts = sorted(concepts.items(), key=lambda x: x[1]["start"])
-#         concept_list = []
-#         concept_id_to_index = {}
-#         for idx, (cid, cinfo) in enumerate(sorted_concepts):
-#             concept_obj = {
-#                 "id": cid,
-#                 "text": cinfo["text"],
-#                 "start": cinfo["start"],
-#                 "end": cinfo["end"]
-#             }
-#             concept_list.append(concept_obj)
-#             concept_id_to_index[cid] = idx
-        
-#         # Xử lý quan hệ: chuyển từ id concept sang chỉ số trong danh sách concept
-#         relation_list = []
-#         for rel in relations:
-#             from_id = rel["from_id"]
-#             to_id = rel["to_id"]
-#             if from_id in concept_id_to_index and to_id in concept_id_to_index:
-#                 relation_list.append({
-#                     "source": concept_id_to_index[from_id],
-#                     "target": concept_id_to_index[to_id],
-#                     "label": rel["label"]
+
+#         # Lấy thông tin annotation của concept và relation
+#         concept_dict = get_concepts(annotations)
+#         relation_dict = get_relation_annotations(annotations)
+
+#         # Gán nhãn BIO cho các token theo concept và relation
+#         tokens = assign_bio_labels(tokens, list(concept_dict.values()), "Concept")
+#         tokens = assign_bio_labels(tokens, list(relation_dict.values()), "Relation")
+
+#         # Lấy các triple quan hệ
+#         relation_triples = get_relations(annotations)
+#         relations_output = []
+#         for triple in relation_triples:
+#             src_id = triple["source_id"]
+#             rel_id = triple["relation_id"]
+#             tgt_id = triple["target_id"]
+#             if src_id in concept_dict and tgt_id in concept_dict and rel_id in relation_dict:
+#                 relations_output.append({
+#                     "concept1_start": concept_dict[src_id]["start"],
+#                     "relation_start": relation_dict[rel_id]["start"],
+#                     "concept2_start": concept_dict[tgt_id]["start"]
 #                 })
-        
+
+#         # Xây dựng đối tượng đầu ra
 #         output_sample = {
 #             "text": text,
-#             "tokens": tokens_with_labels,
-#             "concepts": concept_list,
-#             "relations": relation_list
+#             "tokens": tokens,
+#             "relations": relations_output
 #         }
 #         output_data.append(output_sample)
 
@@ -131,69 +157,109 @@
 #         json.dump(output_data, f, ensure_ascii=False, indent=2)
 
 # if __name__ == "__main__":
-#     input_file = "VNCoreNLP/project-1-at-2025-03-02-21-03-d26b9afe.json"  # File annotation đầu vào
+#     input_file = "VNCoreNLP/project-3-at-2025-03-04-14-19-54a45aef.json"  # File annotation đầu vào
 #     output_file = "VNCoreNLP/output.json"  # File đầu ra với cấu trúc mới
 #     process_file(input_file, output_file)
-  
+
+    
     
 # ###################################################
 
-# Chuyển file thành cấu trúc CoNLL để phục vụ cho việc huấn luyện 
+# import json
+
+# def convert_to_conll_with_offset(input_json, output_txt):
+#     """
+#     Đọc file JSON với cấu trúc:
+#       - tokens: danh sách các token (mỗi token có các trường: token, start_char, end_char, concept_label, relation_label)
+#       - relations: danh sách các quan hệ dạng triple (concept1_start, relation_start, concept2_start)
+#     Xuất ra file ConLL mở rộng với 6 cột:
+#       token_index, token, concept_label, relation_label, start_char, end_char
+#     Và block "# Relations:" theo định dạng:
+#       Header nhóm: concept1_start <tab> relation_start
+#       Sau đó, mỗi dòng: relation_start <tab> concept2_start (cho tất cả concept2_start của nhóm)
+#     """
+#     with open(input_json, 'r', encoding='utf-8') as f:
+#         data = json.load(f)
+        
+#     with open(output_txt, 'w', encoding='utf-8') as f_out:
+#         for sample in data:
+#             tokens = sample.get("tokens", [])
+#             for idx, token in enumerate(tokens, start=1):
+#                 token_text = token.get("token", "")
+#                 concept_label = token.get("concept_label", "O")
+#                 relation_label = token.get("relation_label", "O")
+#                 start_char = token.get("start_char", -1)
+#                 end_char = token.get("end_char", -1)
+#                 f_out.write(f"{idx}\t{token_text}\t{concept_label}\t{relation_label}\t{start_char}\t{end_char}\n")
+#             f_out.write("\n")
+            
+#             # Nhóm các quan hệ theo key (concept1_start, relation_start)
+#             relation_groups = {}
+#             for rel in sample.get("relations", []):
+#                 c1 = int(rel.get("concept1_start", 0))
+#                 r = int(rel.get("relation_start", 0))
+#                 c2 = int(rel.get("concept2_start", 0))
+#                 key = (c1, r)
+#                 if key not in relation_groups:
+#                     relation_groups[key] = []
+#                 if c2 not in relation_groups[key]:
+#                     relation_groups[key].append(c2)
+            
+#             f_out.write("# Relations:\n")
+#             for (concept1_start, relation_start), concept2_list in relation_groups.items():
+#                 # In header nhóm một lần
+#                 f_out.write(f"{concept1_start}\t{relation_start}\n")
+#                 for concept2 in concept2_list:
+#                     f_out.write(f"{relation_start}\t{concept2}\n")
+#                 f_out.write("\n")
+#             f_out.write("\n")
+
+# if __name__ == "__main__":
+#     input_json = "VNCoreNLP/output.json"  # JSON gốc
+#     output_txt = "training_data.conll"    # File ConLL đầu ra
+#     convert_to_conll_with_offset(input_json, output_txt)
+
+
+######################################
 
 import json
 
-def convert_to_conll(input_json, output_txt):
+def convert_to_conll_with_offset(input_json, output_txt):
     """
-    Đọc file JSON với cấu trúc gồm:
-      - text: văn bản gốc.
-      - tokens: danh sách các token (mỗi token có các trường: token, start_char, end_char, label).
-      - concepts: danh sách các concept (mỗi concept có: id, text, start, end).
-      - relations: danh sách các quan hệ giữa concept (mỗi quan hệ có: source, target, label),
-        trong đó source và target là chỉ số (0-index) của concept trong danh sách concepts.
-    
-    Xuất ra file định dạng CoNLL mở rộng với định dạng:
-      (1) Các dòng token: token_index <tab> token <tab> label.
-      (2) Dòng trống.
-      (3) Dòng "# Concepts:" và các dòng liệt kê concept: concept_index <tab> concept_text <tab> start <tab> end.
-      (4) Dòng trống.
-      (5) Dòng "# Relations:" và các dòng liệt kê quan hệ: source_index <tab> target_index <tab> relation_label.
-      (6) Dòng trống phân cách các mẫu.
+    Đọc file JSON với cấu trúc:
+      - tokens: danh sách các token (mỗi token có các trường: token, start_char, end_char, concept_label, relation_label)
+      - relations: danh sách các quan hệ dạng triple (concept1_start, relation_start, concept2_start)
+    Xuất ra file ConLL mở rộng với 6 cột:
+      token_index, token, concept_label, relation_label, start_char, end_char
+    Và block "# Relations:" với mỗi triple trên một dòng:
+      concept1_start <tab> relation_start <tab> concept2_start
     """
     with open(input_json, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    
+        
     with open(output_txt, 'w', encoding='utf-8') as f_out:
         for sample in data:
-            # Ghi token của câu
+            # In phần token
             tokens = sample.get("tokens", [])
             for idx, token in enumerate(tokens, start=1):
                 token_text = token.get("token", "")
-                label = token.get("label", "O")
-                f_out.write(f"{idx}\t{token_text}\t{label}\n")
+                concept_label = token.get("concept_label", "O")
+                relation_label = token.get("relation_label", "O")
+                start_char = token.get("start_char", -1)
+                end_char = token.get("end_char", -1)
+                f_out.write(f"{idx}\t{token_text}\t{concept_label}\t{relation_label}\t{start_char}\t{end_char}\n")
             f_out.write("\n")
             
-            # Ghi thông tin các concept
-            f_out.write("# Concepts:\n")
-            concepts = sample.get("concepts", [])
-            for idx, concept in enumerate(concepts):
-                concept_text = concept.get("text", "")
-                start = concept.get("start", "")
-                end = concept.get("end", "")
-                f_out.write(f"{idx}\t{concept_text}\t{start}\t{end}\n")
-            f_out.write("\n")
-            
-            # Ghi thông tin các quan hệ
+            # In phần quan hệ dưới dạng triple
             f_out.write("# Relations:\n")
-            relations = sample.get("relations", [])
-            for rel in relations:
-                source = rel.get("source", "")
-                target = rel.get("target", "")
-                rel_label = rel.get("label", "")
-                f_out.write(f"{source}\t{target}\t{rel_label}\n")
-            f_out.write("\n\n")  # Dòng trống phân cách các mẫu
+            for rel in sample.get("relations", []):
+                c1 = int(rel.get("concept1_start", 0))
+                r = int(rel.get("relation_start", 0))
+                c2 = int(rel.get("concept2_start", 0))
+                f_out.write(f"{c1}\t{r}\t{c2}\n")
+            f_out.write("\n")
 
 if __name__ == "__main__":
-    input_json = "VNCoreNLP/output.json"         # File JSON đầu vào (theo cấu trúc đã có)
-    output_txt = "training_data.conll"   # File đầu ra theo định dạng CoNLL mở rộng
-    convert_to_conll(input_json, output_txt)
-
+    input_json = "VNCoreNLP/output.json"  # JSON gốc
+    output_txt = "training_data.conll"    # File ConLL đầu ra
+    convert_to_conll_with_offset(input_json, output_txt)
