@@ -1,9 +1,4 @@
 from django.urls import path
-<<<<<<< Updated upstream
-from api.views.getFile import get_pdf
-from .views import upFileViews
-from api.views.upFileViews import FileUploadView
-=======
 from api.views.getFile import get_pdf,getFile,dele_file
 from api.views.component import process_pdf, search_components, bulk_update_components, del_components
 from api.views.upFileViews import FileUploadView
@@ -15,13 +10,10 @@ from api.views.gRel import suggest_gRel2, init_gRel,search_grel,update_grel
 from api.views.suggestConc import init_suggestconc
 from api.views.suggerstRel import init_suggestrelation
 
->>>>>>> Stashed changes
 
 urlpatterns = [
     path('upload', FileUploadView.as_view(), name='file-upload'),
     path('files/<int:file_id>/', get_pdf, name='get-pdf'),
-<<<<<<< Updated upstream
-=======
     path('delete-file/<int:id>/', dele_file, name='get-pdf'),
     path('delete-component/<int:id>', del_components, name='get_components'),
     path('process-pdf', process_pdf, name='process_pdf'), # xong rồi
@@ -45,14 +37,13 @@ urlpatterns = [
     path('init-grelation/<int:idLaw>/<int:idSuggest>/', init_suggestrelation, name='init_suggestrelation'), # xong
     path('init-grel/', init_gRel, name='init_gRel'), # xong
     path('search-grel/', search_grel, name='search_grel'), # xong
-    path('update_grel/<int:grel_id>/', update_grel, name='update_grel'), # xong
-    path('update_gconc/<int:gconc_id>/', update_gconc, name='update_gconc'), # xong
-    path('search_gconc/', update_gconc, name='update_gconc'), # xong
+    path('update-grel/<int:grel_id>/', update_grel, name='update_grel'), # xong
+    path('update-gconc/<int:gconc_id>/', update_gconc, name='update_gconc'), # xong
+    path('search-gconc/', get_gconc_list, name='update_gconc'), # xong
     path('init-gconc/', init_gConc, name='init_gConc'), # xong
 
 
 
 
 
->>>>>>> Stashed changes
 ]

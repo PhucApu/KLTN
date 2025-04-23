@@ -11,11 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< Updated upstream
-
-=======
 # ALLOWED_HOSTS = ['*']
->>>>>>> Stashed changes
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,11 +25,7 @@ SECRET_KEY = "django-insecure-5hi1!tsxe)t=jxs9xo#-m=+@ohr8t+@hlg^rctq(!*1fac#oy)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< Updated upstream
-ALLOWED_HOSTS = []
-=======
 ALLOWED_HOSTS = ['*']
->>>>>>> Stashed changes
 
 
 # Application definition
@@ -85,12 +77,6 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-<<<<<<< Updated upstream
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-=======
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.sqlite3",
@@ -109,7 +95,6 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
->>>>>>> Stashed changes
     }
 }
 

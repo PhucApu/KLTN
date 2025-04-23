@@ -8,6 +8,7 @@ from ..models.relEle import relEle
 from ..models.gRel import gRel
 from ..models.suggertRel import SuggestRel
 from rest_framework.response import Response
+from ..serializers.gRelSerializer import gRelSerializer
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.db.models.expressions import RawSQL
@@ -21,7 +22,7 @@ def init_gRel(request):
         fileitem = file.objects.get(id=data.get('idLaw'))
     except:
         return JsonResponse({"message": 'Các thao tác trước chưa được xử lý'}, status=400)
-    relEleLstItem = relEle.objects.filter(idLaw = data.get('idLaw'))
+    relEleLstItem = relEle.objects.filter(IdLaw = data.get('idLaw'))
     
     if not relEleLstItem.exists():
             return JsonResponse({"message": 'Các thao tác trước chưa được xử lý'}, status=400)
@@ -34,30 +35,37 @@ def init_gRel(request):
         try:
             for conceleItem in relEleLstItem:
                 item = gRel.objects.filter(id=conceleItem.similar).first()
-                if item:
-                    item.lstRel = item.lstRel + [conceleItem.relation]
-                    item.lstidlaw = item.lstidlaw + [conceleItem.IdLaw]
-                    item.meaning = item.meaning if item.meaning else conceleItem.Meaning
-                    item.descendants = item.descendants + conceleItem.descendants
-                    item.lstgConcO = item.lstgConcO + [conceleItem.concO.id]
-                    item.lstgConcS = item.lstgConcS + [conceleItem.concS.id]
-                    item.update_concs =item.update_concs + [conceleItem.concS.id]
-                    item.update_conco = item.update_conco [conceleItem.concO.id]
+                if item:    
+                    item.lstRel.append(conceleItem.relation)
+                    item.lstidlaw.append(conceleItem.IdLaw.id)
+                    item.meaning if item.meaning else conceleItem.Meaning
+                    item.descendants.append(conceleItem.descendants)
+                    item.lstgConcO.append(conceleItem.concO.id)
+                    item.lstgConcS.append(conceleItem.concS.id)
+                    item.update_concs.append(conceleItem.concS.id)
+                    item.update_conco.append(conceleItem.concO.id)
                     item.updaterel = 1
                     item.save()
                 else:
-                    gRel.objects.create(
-                        id = conceleItem.similar,
-                        lstidlaw = [conceleItem.IdLaw],
-                        lstRel = [conceleItem.relation],
-                        meaning = conceleItem.Meaning,
-                        descendants = conceleItem.descendants,
-                        lstgConcS = [conceleItem.concS.id],
-                        lstgConcO = [conceleItem.concO.id],
-                        update_concs = [conceleItem.concS.id],
-                        update_conco = [conceleItem.concO.id],
-                    )
-        except:
+                    kwargs = {
+                        'lstidlaw': [conceleItem.IdLaw.id],
+                        'lstRel': [conceleItem.relation],
+                        'meaning': conceleItem.Meaning,
+                        'descendants': conceleItem.descendants,
+                        'lstgConcS': [conceleItem.concS.id],
+                        'lstgConcO': [conceleItem.concO.id],
+                        'update_concs': [conceleItem.concS.id],
+                        'update_conco': [conceleItem.concO.id],
+                    }
+                    si = conceleItem.similar
+                    if si:
+                        kwargs['id'] = si
+                    
+                    newgrel = gRel.objects.create(**kwargs)
+                    conceleItem.similar = newgrel.id 
+                    conceleItem.save()
+        except Exception as e:
+            print(e)
             return JsonResponse({"message": 'Lỗi tạo thực thể'}, status=400)
 
     return JsonResponse({"message": 'Thành công'}, status=200)
@@ -79,7 +87,7 @@ def search_grel(request):
         if rel:
             queryset = queryset.annotate(
             match=RawSQL(
-            "JSON_SEARCH(lstRel, 'all', %s) IS NOT NULL",
+            "JSON_SEARCH(LOWER(lstRel), 'all', LOWER(%s)) IS NOT NULL",
             [f"%{rel}%"]
             )
             ).filter(match=True)
@@ -124,33 +132,40 @@ def suggest_gRel2(request):
     id = data.get('id')
     result = list()
     lstgrel = gRel.objects.all()
-    similar1 = SuggestRel.objects.filter(id1_id=id).values('relation2','similar_index')
-    similar2 = SuggestRel.objects.filter(id2_id=id).values('relation1','similar_index')
-    similar1 = similar1.annotate(
-            match=RawSQL(
-            "JSON_SEARCH(lstRel, 'all', %s) IS NOT NULL",
-            [f"%{rela}%"]
-            )
-            ).filter(match=True)
-    similar2 = similar2.annotate(
-            match=RawSQL(
-            "JSON_SEARCH(lstRel, 'all', %s) IS NOT NULL",
-            [f"%{rela}%"]
-            )
-            ).filter(match=True)
+    similar = SuggestRel.objects.all()
+    if id:
+        similar1 = similar.filter(id1_id=id).values('relation2','similar_index')
+        similar2 = similar.filter(id2_id=id).values('relation1','similar_index')
+    else:
+        return JsonResponse({'message': "Không truyền id"},status = 400)
     similar = {}
-
-    for item in similar1:
-        similar[item['relation2']] = item['similar_index']
-
-    for item in similar2:
-        similar[item['relation1']] = item['similar_index']
+    if similar1:
+        for item in similar1:
+            similar[item['relation2']] = item['similar_index']
+    if similar2:
+        for item in similar2:
+            similar[item['relation1']] = item['similar_index']
+    if rela:
+        lstgrel = lstgrel.annotate(
+            match=RawSQL(
+            "JSON_SEARCH(lstRel, 'all', %s) IS NOT NULL",
+            [f"%{rela}%"]
+            )
+            ).filter(match=True)
+    # similar2 = similar2.annotate(
+    #         match=RawSQL(
+    #         "JSON_SEARCH(lstConC, 'all', %s) IS NOT NULL",
+    #         [f"%{rela}%"]
+    #         )
+    #         ).filter(match=True)
+    
     for grel in lstgrel:
         max_similar = 0
         for key,value in similar.items():
-            if key in grel.lstRel:
+            if key in grel.lstRel and max_similar < value:
                 max_similar = value
-        result.append({'object': grel, 'similar': max_similar})
+        result.append({'object': gRelSerializer(grel).data, 'similar': max_similar})
+    result.sort(key=lambda x: x['similar'], reverse=True)
     return JsonResponse(result,safe=False,status = 200)
     
 @csrf_exempt
@@ -168,6 +183,6 @@ def update_grel(request, grel_id):
         # grel.update_conco = request.data.get('update_conco', grel.update_conco)
         grel.updaterel = 1
         grel.save()
-        return Response({"message": "Updated successfully"}, status=status.HTTP_200_OK)
+        return Response({"message": "Thành công"}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)

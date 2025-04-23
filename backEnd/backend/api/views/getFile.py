@@ -1,14 +1,4 @@
 from django.http import FileResponse, Http404
-<<<<<<< Updated upstream
-from django.shortcuts import get_object_or_404
-from ..models.upFile import UpFile
-
-def get_pdf(request, file_id=4):
-    pdf_file = get_object_or_404(UpFile, id=file_id)
-    
-
-    return FileResponse(pdf_file.file.open('rb'), content_type='application/pdf')
-=======
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from ..models.file import file
@@ -101,4 +91,3 @@ def updateuse(request, id, number):
             fileitem.save()
         return True
     return False
->>>>>>> Stashed changes

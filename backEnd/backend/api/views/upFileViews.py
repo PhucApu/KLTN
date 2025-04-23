@@ -1,11 +1,4 @@
 import magic #pip install python-magic
-<<<<<<< Updated upstream
-from rest_framework.views import APIView 
-from rest_framework.response import Response 
-from rest_framework.parsers import MultiPartParser, FormParser 
-from rest_framework import status
-from ..models.upFile import UpFile
-=======
 from rest_framework.views import APIView
 from ..models.component import component 
 from rest_framework.response import Response 
@@ -19,7 +12,6 @@ from django.http import JsonResponse
 from ..models.file import file
 
 # from ..models.file import UpFile
->>>>>>> Stashed changes
 from ..serializers.upFileSerializer import UpFileSerializer
 
 class FileUploadView(APIView):
@@ -35,8 +27,5 @@ class FileUploadView(APIView):
         
         return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-<<<<<<< Updated upstream
-=======
 
       
->>>>>>> Stashed changes

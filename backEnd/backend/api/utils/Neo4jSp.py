@@ -1,9 +1,12 @@
 import os
+from docx import Document
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
 from ..models.gConc import GConc
 from ..models.gRel import gRel
 import pandas as pd
+import pypandoc
+from django.db.models import Q
 # kiểm tra sự tồn tại của 01 node
 def relationship_exists(driver, rel_id):
     query = """
@@ -113,16 +116,132 @@ def run_query(driver, query):
     
 def export_jsonfields_to_excel(file_path='data.xlsx'):
     # Lấy danh sách JSON từ mỗi model
-    data_gconc_list = list(GConc.objects.values_list('lstConC', flat=True))
-    data_grel_list = list(gRel.objects.values_list('lstRel', flat=True))
-    lstconc = set()
-    lstgrel = set()
-    for item in data_gconc_list:
-        lstconc.add(item)
-    for item in data_grel_list:
-        lstgrel.add(item)
+    file1 = "listconcept.docx"
+    file2 = "listrelation.docx"
+    merged_file = "merged.docx"
+    pdf_file = "merged.pdf"
+    if not os.path.exists(file1):
+        create_docx_with_table(file1,"Concept")
+
+    if not os.path.exists(file2):
+        create_docx_with_table(file2,'Relation')
     
-    data = pd.DataFrame({
-        'concept': list(lstconc),
-        'relation': list(lstgrel)
-    }).to_csv(file_path)
+    lstNode = GConc.objects.filter(updateNeo4j = 1)
+    for item in lstNode:
+            pass
+
+def create_docx_with_table(filename,header):
+    try:
+        doc = Document()
+        table = doc.add_table(rows=2, cols=1)
+        table.style = 'Table Grid'
+        table.cell(0, 0).text = header
+        table.cell(1, 0).text = ""
+        doc.save(filename)
+    except Exception as e:
+        return False
+    return False
+
+def merge_documents(file1, file2, output_file):
+    try:
+        doc1 = Document(file1)
+        doc2 = Document(file2)
+        for element in doc2.element.body:
+            doc1.element.body.append(element)
+        doc1.save(output_file)
+        return output_file
+    except Exception as e:
+        print(e)
+        return False
+
+def convert_to_pdf(input_docx, output_pdf):
+    try:
+        pypandoc.convert_file(input_docx, 'pdf', outputfile=output_pdf)
+        return output_pdf
+    except Exception as e:
+        print("Lỗi khi chuyển sang PDF:", e)
+        return False
+    
+from docx import Document
+
+def read_second_row_from_table(filename):
+    doc = Document(filename)
+    table = doc.tables[0]  # lấy bảng đầu tiên
+    if len(table.rows) >= 2:
+        text = table.rows[1].cells[0].text
+        result = set(item.strip() for item in text.split(','))
+        return result
+    else:
+        return False
+
+def overload():
+    filename1 = "listconcept.docx"
+    if os.path.exists(filename1):
+        doc = Document(filename1)
+    else:
+        doc = Document()
+        doc.add_table(rows=2, cols=1) 
+
+    if doc.tables:
+        table = doc.tables[0]
+    else:
+        print("File không có bảng nào, đang tạo bảng mới...")
+        table = doc.add_table(rows=2, cols=1)
+        table.style = 'Table Grid'
+
+    
+    items = set()
+    while len(table.rows) < 2:
+        table.add_row()
+    table.cell(0,0).text= 'concept'
+    text = table.cell(1,0).text
+    if text:
+        items = set(item.strip() for item in text.split(','))
+    lstNode = GConc.objects.filter(updateNeo4j = 1)
+    for node in lstNode:
+        items.update(set(node.lstConC))
+    lstNode = GConc.objects.filter(updateNeo4j = 2)
+    for node in lstNode:
+        items.update(set(node.lstConC))
+    table.rows[1].cells[0].text = ','.join(items)
+    doc.save(filename1)
+
+    filename2 = "listrelation.docx"
+    if os.path.exists(filename2):
+        doc = Document(filename2)
+    else:
+        doc = Document()
+        doc.add_table(rows=2, cols=1) 
+
+    if doc.tables:
+        table = doc.tables[0]
+    else:
+        print("File không có bảng nào, đang tạo bảng mới...")
+        table = doc.add_table(rows=2, cols=1)
+        table.style = 'Table Grid'
+
+    
+    items = set()
+    while len(table.rows) < 2:
+        table.add_row()
+    table.cell(0,0).text= 'relation'
+    text = table.cell(1,0).text
+    if text:
+        items = set(item.strip() for item in text.split(','))
+    lstRelation = gRel.objects.filter(updaterel = 1)
+    for relation in lstRelation:
+        items.update(set(relation.lstRel))
+    lstRelation = gRel.objects.exclude(Q(update_concs=None)| Q(update_concs=[]))
+    for relation in lstRelation:
+        items.update(set(relation.lstRel))
+    table.rows[1].cells[0].text = ','.join(items)
+    doc.save(filename2)
+
+    word_merge = merge_documents(file1=filename1, filename2 = filename2,output_file= 'merge_content.docx')
+    pdf_merge = convert_to_pdf(input_docx=word_merge,output_pdf= "merge_content.pdf")
+    return True
+
+
+
+    
+    
