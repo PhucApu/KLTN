@@ -69,7 +69,7 @@ def init_rel_conc(request, idLaw):
 
 
 @csrf_exempt
-@api_view(['GET'])
+@api_view(['POST'])
 def get_relele_list(request):
     data = request.data
     

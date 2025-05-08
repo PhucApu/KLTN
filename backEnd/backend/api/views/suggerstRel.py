@@ -47,13 +47,16 @@ def init_suggestrelation(request, idLaw, idSuggest):
 @api_view(['POST'])
 def get_suggest_rel(request):
     data=request.data
-    filter1 = SuggestRel.objects.filter(id1_id = data.get('id'), relation1__icontains = data.get('rel'))
-    filter2 = SuggestRel.objects.filter(id2_id = data.get('id'), relation2__icontains = data.get('rel'))
-    combined = (filter1 | filter2).distinct()
-
-    serializer = relEleSerializer(combined, many=True)
-
-    return JsonResponse(serializer.data, status=200)
-    
+    try:
+        idlaw = relEle.objects.filter(id=data.get("id")).first().IdLaw
+        filter1 = SuggestRel.objects.filter(id1_id = data.get('id'), relation2__icontains = data.get('rel'),id1__IdLaw = idlaw,id2__IdLaw = idlaw).values("id2","relation2","similar_index")
+        filter2 = SuggestRel.objects.filter(id2_id = data.get('id'), relation1__icontains = data.get('rel'),id1__IdLaw = idlaw,id2__IdLaw = idlaw).values("id1","relation1","similar_index")
+        filter1 = [{"id":item["id2"],"relation":item["relation2"], "similar": item["similar_index"]} for item in filter1]
+        filter2 = [{"id":item["id1"],"relation":item["relation1"], "similar": item["similar_index"]} for item in filter2]
+        combine = [dict(t) for t in {tuple(d.items()) for d in (filter1 + filter2)}]
+        combine.sort(key=lambda x: x['similar'], reverse=True)
+        return JsonResponse(combine,safe=False, status=200)
+    except:
+        return JsonResponse({"message": "Truyền đầy đủ coi"}, status=200)
 
         

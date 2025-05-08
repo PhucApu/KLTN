@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "api",
-    
+    'rest_framework_simplejwt.token_blacklist',
     
 ]
 
@@ -145,3 +145,23 @@ import os
 MEDIA_URL = '/media/'  # URL để truy cập file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Thư mục lưu file
 
+# Cấu hình để Django biết dùng model User mình tự tạo
+AUTH_USER_MODEL = 'api.User'  # app tên 'api', model tên 'User'
+
+# Cấu hình authentication mặc định cho Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+# Simple JWT settings (optional, nếu bạn muốn tùy chỉnh thời gian token)
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Token sống 60 phút
+    'REFRESH_TOKEN_LIFETIME': timedelta(hours=24),     # Refresh sống sau 24h
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}

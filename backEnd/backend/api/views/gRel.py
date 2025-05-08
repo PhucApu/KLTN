@@ -12,6 +12,8 @@ from ..serializers.gRelSerializer import gRelSerializer
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.db.models.expressions import RawSQL
+from django.db.models import Max
+
 
 
 @csrf_exempt
@@ -186,3 +188,43 @@ def update_grel(request, grel_id):
         return Response({"message": "Thành công"}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    
+@csrf_exempt
+@api_view(['POST'])
+def update_similar_rel(request):
+    data = request.data.get('lst')
+    if not isinstance(data, list):
+        return JsonResponse({"message": "request là một list."}, status=400)
+    elif not data:
+        return JsonResponse({"message": "request rỗng"}, status=400)
+    data= set(data)
+    similar = set()
+    groub_similar = dict()
+    for item in data:
+        conceptitem = relEle.objects.filter(id = item).values_list("relation","similar")
+        if not conceptitem:
+            return JsonResponse({"message": "id không tồn tại"}, status=400)
+        if conceptitem:
+             similar.add(conceptitem)
+    for conC1, similar_index in similar:
+        if similar:
+            gr = None
+        else:
+            gr = gRel.objects.filter(id=similar_index)
+        if gr:
+             groub_similar[similar_index] = f"{groub_similar.get(similar_index,"")+ "," if similar_index in groub_similar else ""}{conC1}"
+    
+    len_groub_similar = len(groub_similar)
+    if len_groub_similar  > 1:
+         list_conc = [value for key,value in groub_similar ]
+         return JsonResponse({"message": f"các phần tử {list_conc} thuộc {len_groub_similar} khác nhau"}, status=401)
+    if len_groub_similar == 1:
+        similar_index = groub_similar.keys()[0]
+        for item in data: 
+            gRel.objects.filter(id=item).update(similar=similar_index)
+    if len_groub_similar == 0:
+        update_similar = relEle.objects.aggregate(Max('similar'))['similar__max']
+        for item in data:
+            relEle.objects.filter(id=item).update(similar = update_similar)
+    return JsonResponse({"message": f"thành công {data}"},status=200)
+    

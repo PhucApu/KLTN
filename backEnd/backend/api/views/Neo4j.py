@@ -15,7 +15,7 @@ from ..models.gRel import gRel
 from ..models.component import component
 import pandas as pd
 from ..serializers.suggestConcSerializer import SuggestConc
-from ..utils.Neo4jSp import create_node, update_node_by_id, create_relationship,run_query, remove_descendants_from_relationships,remove_descendants,update_relationship
+from ..utils.Neo4jSp import create_node, update_node_by_id, create_relationship,run_query, remove_descendants_from_relationships,remove_descendants,update_relationship, overload
 from ..utils.neo4j_driver import driver, close_driver
 
 @csrf_exempt
@@ -38,27 +38,31 @@ def node():
         lstNode = GConc.objects.filter(updateNeo4j = 2)
         for item in lstNode:
             prop = {'lstConC': item.lstConC, 'meaning': item.meaning,'descendants': item.descendants}
-            update_node_by_id(driver=driver, node_id=item.id , properties=prop)
+            update_node_by_id(driver=driver, node_id=item.id , updates=prop)
             item.updateNeo4j = 0
             item.save()
         return True
         
-    except:
+    except Exception as e:
+        print("conc", e)
         return False
     
 def relation():
     try:
         lstrel = gRel.objects.exclude(Q(update_concs=None)| Q(update_concs=[]))
+        
         for item in lstrel:
             prop = {'relation_id' : item.id,'lstRel': item.lstRel, 'meaning': item.meaning,'descendants': item.descendants}
-            for count in range(item.update_conco):
+            for count in range(len(item.update_conco)):
+                print("4")
+
                 create_relationship(driver=driver,start_node_id=item.update_concs[count], end_node_id=item.update_conco[count],rel_properties=prop)
             item.update_conco = []
             item.update_concs = []
             item.save()
         lstrel = gRel.objects.filter(updaterel = 1)
         for item in lstrel:
-            for count in range(item.update_conco):
+            for count in range(len(item.update_conco)):
                 prop = {'relation_id' : item.id,'lstRel': item.lstRel, 'meaning': item.meaning,'descendants': item.descendants}
                 update_relationship(driver=driver,rel_id=item.id,rel_properties=prop)
             item.update_conco = []
@@ -66,60 +70,64 @@ def relation():
             item.updaterel=0
             item.save()
         return True
-    except:
+    except Exception as e:
+        print("relation")
+        print(e)
         return False
     
 @csrf_exempt
-@api_view(['GET'])
+@api_view(['POST'])
 def init_graph_data(request):
-    if node() and relation():
+    if overload() and node() and relation():
         return JsonResponse({'message': 'Thành công'}, status = 200)
     else:
         return JsonResponse({'message': 'Lỗi trong quá trình tạo node'}, status = 400)
 
 @csrf_exempt
-@api_view(['GET'])
+@api_view(['POST'])
 def graph_data(request):
     data = request.data.get('neo4j')
+    result = [1]
     if data:
         query = data
     else:
-        query = "MATCH (n)-[r]->(m) RETURN n, r, m LIMIT 50"
+        query = "MATCH (n)-[r]->(m) RETURN n, properties(r) as r, m LIMIT 100"
+    
     try:
-        result = run_query(query)
-    except:
-        JsonResponse({'message': 'Lỗi câu query'}, status = 400)
+        result = run_query(driver=driver,query=query)
+    except Exception as e:
+        print(e)
+        return JsonResponse({'message': 'Lỗi câu query'}, status = 400)
     nodes = {}
     edges = []
+    try:
+        for record in result:
+            n = record["n"]
+            m = record["m"]
+            r = record["r"]
+            
+            nodes[str(n["node_id"])] = {
+                "id": str(n["node_id"]),
+                "properties": dict(n)
+            }
 
-    for record in result:
-        n = record["n"]
-        m = record["m"]
-        r = record["r"]
+            nodes[str(m["node_id"])] = {
+                "id": str(m["node_id"]),
+                "properties": dict(m)
+            }
 
-        nodes[str(n.id)] = {
-            "id": str(n.id),
-            "label": n.labels[0],
-            "properties": dict(n)
-        }
+            edges.append({
+                "source": str(n["node_id"]),
+                "target": str(m["node_id"]),
+                "properties": r
+            })
 
-        nodes[str(m.id)] = {
-            "id": str(m.id),
-            "label": m.labels[0],
-            "properties": dict(m)
-        }
-
-        edges.append({
-            "source": str(n.id),
-            "target": str(m.id),
-            "label": r.type,
-            "properties": dict(r)
-        })
-
-    return JsonResponse({
-        "nodes": list(nodes.values()),
-        "edges": edges
-    }, status = 200)
-
+        return JsonResponse({
+                "nodes": list(nodes.values()),
+                "edges": edges
+            }, status = 200)
+    except Exception as e:
+            print(e)
+            return JsonResponse({"message": "Lỗi trả về"}, status = 400)
 
     

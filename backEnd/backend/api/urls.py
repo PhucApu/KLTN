@@ -5,12 +5,14 @@ from api.views.upFileViews import FileUploadView
 from api.views.gTextView import create_gtext, update_gtext, delete_gtext, search_gtext, init_gtext
 from api.views.concEle import get_concele_list, update_concele
 from api.views.relEle import init_rel_conc,get_relele_list, update_relele
-from api.views.gConc import suggest_gconc,get_gconc_list,update_gconc,init_gConc
-from api.views.gRel import suggest_gRel2, init_gRel,search_grel,update_grel
-from api.views.suggestConc import init_suggestconc
-from api.views.suggerstRel import init_suggestrelation
-
-
+from api.views.gConc import suggest_gconc,get_gconc_list,update_gconc,init_gConc, update_similar_conc
+from api.views.gRel import suggest_gRel2, init_gRel,search_grel,update_grel, update_similar_rel
+from api.views.suggestConc import init_suggestconc, get_suggest_conc
+from api.views.Neo4j import init_graph_data,graph_data
+from api.views.suggerstRel import init_suggestrelation, get_suggest_rel
+from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
+from api.views.user import user_create,user_detail,user_update,search_users,me_detail,logout_view
+from api.views.Ans import Ans
 urlpatterns = [
     path('upload', FileUploadView.as_view(), name='file-upload'),
     path('files/<int:file_id>/', get_pdf, name='get-pdf'),
@@ -41,7 +43,21 @@ urlpatterns = [
     path('update-gconc/<int:gconc_id>/', update_gconc, name='update_gconc'), # xong
     path('search-gconc/', get_gconc_list, name='update_gconc'), # xong
     path('init-gconc/', init_gConc, name='init_gConc'), # xong
-
+    path('init-graph/', init_graph_data, name='init_graph_data'), # xong
+    path('graph-data/', graph_data, name='graph_data'), # xong
+    path('get-suggest-conc/', get_suggest_conc, name='get_suggest_conc'), # xong
+    path('get-suggest-rel/', get_suggest_rel, name='get_suggest_rel'), # xong
+    path('update-similar-rel/', update_similar_rel, name='update_similar_rel'), # xong
+    path('update-similar-conc/', update_similar_conc, name='update_similar_conc'), # xong
+    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('user-create/', user_create, name='user_create'),
+    path('user-update/', user_update, name='user_update'),
+    path('user-detail/', user_detail, name='user_detail'),
+    path('search-user/', search_users, name='search_users'),
+    path('me-detail/', me_detail, name='me_detail'),
+    path('logout/', logout_view, name='logout_view'),
+    path('ans/', Ans, name='Ans'),
 
 
 

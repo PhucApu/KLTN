@@ -56,11 +56,16 @@ def init_suggestconc(request, idLaw, idSuggest):
 @api_view(['POST'])
 def get_suggest_conc(request):
     data=request.data
-    filter1 = SuggestConc.objects.filter(id1_id = data.get('id'), conc1__icontains = data.get('conc'))
-    filter2 = SuggestConc.objects.filter(id2_id = data.get('id'), conc2__icontains = data.get('conc'))
-    combined = (filter1 | filter2).distinct()
+    try:
+        idlaw = Concele.objects.filter(id=data.get("id")).first().IdLaw
+        filter1 = SuggestConc.objects.filter(id1_id = data.get('id'), conc2__icontains = data.get('conc'),id1__IdLaw = idlaw,id2__IdLaw = idlaw).values("id2","conc2","similar_index")
+        filter2 = SuggestConc.objects.filter(id2_id = data.get('id'), conc1__icontains = data.get('conc'),id2__IdLaw = idlaw,id1__IdLaw = idlaw).values("id1","conc1","similar_index")
+        filter1 = [{"id":item["id2"],"conc":item["conc2"], "similar": item["similar_index"]} for item in filter1]
+        filter2 = [{"id":item["id1"],"conc":item["conc1"], "similar": item["similar_index"]} for item in filter2]
+        combine = [dict(t) for t in {tuple(d.items()) for d in (filter1 + filter2)}]
+        combine.sort(key=lambda x: x['similar'], reverse=True)
+        return JsonResponse(combine,safe=False, status=200)
+    except:
+        return JsonResponse({"message": "Truyền đầy đủ coi"}, status=200)
 
-    serializer = SuggestConc(combined, many=True)
-
-    return JsonResponse(serializer.data, status=200)
     

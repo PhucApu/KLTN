@@ -4,10 +4,13 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
 from ..models.gConc import GConc
 from ..models.gRel import gRel
+from docx2pdf import convert
 import pandas as pd
 import pypandoc
 from django.db.models import Q
 # kiểm tra sự tồn tại của 01 node
+import os
+from django.conf import settings
 def relationship_exists(driver, rel_id):
     query = """
     MATCH ()-[r]->()
@@ -116,8 +119,8 @@ def run_query(driver, query):
     
 def export_jsonfields_to_excel(file_path='data.xlsx'):
     # Lấy danh sách JSON từ mỗi model
-    file1 = "listconcept.docx"
-    file2 = "listrelation.docx"
+    file1 = os.path.join(settings.MEDIA_ROOT, "listconcept.docx")
+    file2 = os.path.join(settings.MEDIA_ROOT, "listrelation.docx")
     merged_file = "merged.docx"
     pdf_file = "merged.pdf"
     if not os.path.exists(file1):
@@ -143,16 +146,14 @@ def create_docx_with_table(filename,header):
     return False
 
 def merge_documents(file1, file2, output_file):
-    try:
         doc1 = Document(file1)
         doc2 = Document(file2)
+        doc1.add_paragraph("")
         for element in doc2.element.body:
             doc1.element.body.append(element)
         doc1.save(output_file)
         return output_file
-    except Exception as e:
-        print(e)
-        return False
+    
 
 def convert_to_pdf(input_docx, output_pdf):
     try:
@@ -175,15 +176,18 @@ def read_second_row_from_table(filename):
         return False
 
 def overload():
-    filename1 = "listconcept.docx"
+    filename1 = os.path.join(settings.MEDIA_ROOT,  "listconcept.docx")
     if os.path.exists(filename1):
         doc = Document(filename1)
     else:
         doc = Document()
-        doc.add_table(rows=2, cols=1) 
+        doc.add_table(rows=2, cols=1)
+         
 
     if doc.tables:
         table = doc.tables[0]
+        table.style = 'Table Grid'
+
     else:
         print("File không có bảng nào, đang tạo bảng mới...")
         table = doc.add_table(rows=2, cols=1)
@@ -206,7 +210,7 @@ def overload():
     table.rows[1].cells[0].text = ','.join(items)
     doc.save(filename1)
 
-    filename2 = "listrelation.docx"
+    filename2 = os.path.join(settings.MEDIA_ROOT, "listrelation.docx")
     if os.path.exists(filename2):
         doc = Document(filename2)
     else:
@@ -215,6 +219,8 @@ def overload():
 
     if doc.tables:
         table = doc.tables[0]
+        table.style = 'Table Grid'
+
     else:
         print("File không có bảng nào, đang tạo bảng mới...")
         table = doc.add_table(rows=2, cols=1)
@@ -237,8 +243,8 @@ def overload():
     table.rows[1].cells[0].text = ','.join(items)
     doc.save(filename2)
 
-    word_merge = merge_documents(file1=filename1, filename2 = filename2,output_file= 'merge_content.docx')
-    pdf_merge = convert_to_pdf(input_docx=word_merge,output_pdf= "merge_content.pdf")
+    word_merge = merge_documents(file1=filename1, file2 = filename2,output_file= os.path.join(settings.MEDIA_ROOT, 'merge_content.docx'))
+    pdf_merge = convert(word_merge,os.path.join(settings.MEDIA_ROOT, "merge_content.pdf"))
     return True
 
 

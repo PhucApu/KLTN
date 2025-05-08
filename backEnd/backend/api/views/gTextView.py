@@ -83,7 +83,7 @@ def init_gtext(request, idLaw):
                                 Relation= itemTrip[1],
                                 ConcO=itemTrip[2]
                             )
-    except fileitem.DoesNotExist:
+    except :
         return JsonResponse({'message': 'Không tồn tại file tương ứng'}, status = 400)
     serializer = gTextSerializer(Gtext.objects.filter(idLaw = idLaw), many=True)
     # if serializer.is_valid():

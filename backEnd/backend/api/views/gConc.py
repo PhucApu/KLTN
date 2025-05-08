@@ -12,8 +12,7 @@ from rest_framework import status
 from ..serializers.gConcSerializer import gConcSerializer
 from ..models.suggestConc import SuggestConc
 from django.db.models.expressions import RawSQL
-
-
+from django.db.models import Max
 # Khỏi tạo gConc => trả về thành công 200, không thành công 400
 @csrf_exempt
 @api_view(['POST'])
@@ -38,7 +37,7 @@ def init_gConc(request):
                 item = GConc.objects.filter(id=conceleItem.similar).first()
                 if item:
                     item.lstConC.append(conceleItem.conC)
-                    item.lstidlaw.append(conceleItem.IdLaw)
+                    item.lstidlaw.append(conceleItem.IdLaw.id)
                     item.meaning = item.meaning if item.meaning else conceleItem.Meaning
                     item.descendants.append(conceleItem.descendants)
                     item.updateNeo4j = 2
@@ -56,6 +55,7 @@ def init_gConc(request):
                     newgconc = GConc.objects.create(**kwargs)
                     conceleItem.similar = newgconc.id
                     conceleItem.save()
+                    
         except Exception as e:
             print(e)
             return JsonResponse({"message": 'Lỗi tạo thực thể'}, status=400)
@@ -195,3 +195,44 @@ def suggest_gconc(request):
     result.sort(key=lambda x: x['similar'], reverse=True)
     return JsonResponse(result,safe=False,status = 200)
     
+@csrf_exempt
+@api_view(['GET'])
+def update_similar_conc(request):
+    data = request.data.get('lst')
+    if not isinstance(data, list):
+        return JsonResponse({"message": "request là một list."}, status=400)
+    elif not data:
+        return JsonResponse({"message": "request rỗng"}, status=400)
+    data= set(data)
+    similar = set()
+    groub_similar = dict()
+    for item in data:
+        conceptitem = Concele.objects.filter(id = item).values_list("conC","similar")
+        if not conceptitem:
+            return JsonResponse({"message": f" {item} không tồn tại"}, status=400)
+        if conceptitem:
+             similar.add(conceptitem)
+    for conC1, similar_index in similar:
+        if similar_index:
+            gr = None
+        else:
+            gr = GConc.objects.filter(id=similar_index)
+        if gr:
+             groub_similar[similar_index] = f"{groub_similar.get(similar_index,"")+ "," if similar_index in groub_similar else ""}{conC1}"
+    
+    len_groub_similar = len(groub_similar)
+    if len_groub_similar  > 1:
+         list_conc = [value for key,value in groub_similar ]
+         return JsonResponse({"message": f"các phần tử {list_conc} thuộc {len_groub_similar} khác nhau"}, status=400)
+    if len_groub_similar == 1:
+        similar_index = groub_similar.keys()[0]
+        for item in data: 
+            Concele.objects.filter(id=item).update(similar=similar_index)
+    if len_groub_similar == 0:
+        update_similar = Concele.objects.aggregate(Max('similar'))['similar__max']
+        for item in data:
+            Concele.objects.filter(id=item).update(similar = update_similar + 1)
+    return JsonResponse({"message": f"thành công {data}"},status=200)
+        
+        
+     

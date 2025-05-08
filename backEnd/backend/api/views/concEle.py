@@ -8,7 +8,7 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
-@api_view(['GET'])
+@api_view(['POST'])
 def get_concele_list(request):
     data = request.data
     concele = Concele.objects.all()
