@@ -58,6 +58,8 @@ urlpatterns = [
     path('me-detail/', me_detail, name='me_detail'),
     path('logout/', logout_view, name='logout_view'),
     path('ans/', Ans, name='Ans'),
+    path('update-similar-rel/', update_similar_rel, name='update_similar_rel'),
+    path('update-similar-conc/', update_similar_conc, name='update_similar_conc'),
 
 
 

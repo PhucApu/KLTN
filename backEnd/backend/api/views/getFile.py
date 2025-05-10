@@ -8,10 +8,11 @@ from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from ..utils.neo4j_driver import driver
 from ..models.component import component
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from ..utils.Neo4jSp import remove_descendants_from_relationships
 from ..models.gConc import GConc
-
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
 
 
 def get_pdf(request, file_id):
@@ -21,7 +22,7 @@ def get_pdf(request, file_id):
     return FileResponse(pdf_file.file.open('rb'), content_type='application/pdf')
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 def getFile(request):
     query_params = json.loads(request.body)
     search_filters = Q()
@@ -50,7 +51,7 @@ def getFile(request):
     return JsonResponse(serializer.data, status=200, safe=False)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def dele_file(request,id):
     # data = request.data
@@ -78,7 +79,7 @@ def dele_file(request,id):
 
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def updateuse(request, id, number):
     item = file.objects.filter(id=id)

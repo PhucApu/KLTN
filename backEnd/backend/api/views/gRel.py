@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
 from ..models.file import file
 from ..models.relEle import relEle
@@ -13,10 +13,11 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.db.models.expressions import RawSQL
 from django.db.models import Max
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
 
 
-
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def init_gRel(request):
     data=request.data
@@ -72,7 +73,7 @@ def init_gRel(request):
 
     return JsonResponse({"message": 'Thành công'}, status=200)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def search_grel(request):
     try:
@@ -126,7 +127,7 @@ def search_grel(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def suggest_gRel2(request):
     data = request.data 
@@ -170,7 +171,7 @@ def suggest_gRel2(request):
     result.sort(key=lambda x: x['similar'], reverse=True)
     return JsonResponse(result,safe=False,status = 200)
     
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['PUT'])
 def update_grel(request, grel_id):
     grel = get_object_or_404(gRel, id=grel_id)
@@ -189,7 +190,7 @@ def update_grel(request, grel_id):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def update_similar_rel(request):
     data = request.data.get('lst')
@@ -206,24 +207,23 @@ def update_similar_rel(request):
             return JsonResponse({"message": "id không tồn tại"}, status=400)
         if conceptitem:
              similar.add(conceptitem)
-    for conC1, similar_index in similar:
-        if similar:
-            gr = None
-        else:
+    for qs in similar:
+        for conC1, similar_index in qs:
+            
             gr = gRel.objects.filter(id=similar_index)
-        if gr:
-             groub_similar[similar_index] = f"{groub_similar.get(similar_index,"")+ "," if similar_index in groub_similar else ""}{conC1}"
+            if gr:
+                groub_similar[similar_index] = f"{groub_similar.get(similar_index,"")+ "," if similar_index in groub_similar else ""}{conC1}"
     
     len_groub_similar = len(groub_similar)
     if len_groub_similar  > 1:
-         list_conc = [value for key,value in groub_similar ]
+         list_conc = [value for key,value in groub_similar.items() ]
          return JsonResponse({"message": f"các phần tử {list_conc} thuộc {len_groub_similar} khác nhau"}, status=401)
     if len_groub_similar == 1:
-        similar_index = groub_similar.keys()[0]
+        similar_index = list(groub_similar.keys())[0]
         for item in data: 
-            gRel.objects.filter(id=item).update(similar=similar_index)
+            relEle.objects.filter(id=item).update(similar=similar_index)
     if len_groub_similar == 0:
-        update_similar = relEle.objects.aggregate(Max('similar'))['similar__max']
+        update_similar = relEle.objects.aggregate(Max('similar'))['similar__max']+1
         for item in data:
             relEle.objects.filter(id=item).update(similar = update_similar)
     return JsonResponse({"message": f"thành công {data}"},status=200)

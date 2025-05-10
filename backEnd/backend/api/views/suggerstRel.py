@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
 from ..models.file import file
 from ..models.relEle import relEle
@@ -10,9 +10,10 @@ from ..models.suggertRel import SuggestRel
 from ..utils.suggest import get_unseen_pairs
 from ..utils.synonyms import synonyms
 from ..serializers.relEleSerializer import relEleSerializer
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
 
-
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def init_suggestrelation(request, idLaw, idSuggest):
     try:
@@ -34,16 +35,18 @@ def init_suggestrelation(request, idLaw, idSuggest):
     exit_id_list = [[row['id1'], row['id2']] for row in exit_id_list]
     not_exit_id_list = get_unseen_pairs(id_pairs,exit_id_list)
     for item in not_exit_id_list:
+        relation11 = relEle.objects.filter(id=item[0]).first().relation
+        relation22 = relEle.objects.filter(id=item[1]).first().relation
         SuggestRel.objects.create(
             id1=relEle.objects.get(id=item[0]),
             id2=relEle.objects.get(id=item[1]),
-            relation1 = relEle.objects.filter(id=item[0]).first().relation,
-            relation2 = relEle.objects.filter(id=item[1]).first().relation,
-            similar_index = synonyms(),
+            relation1 = relation11,
+            relation2 = relation22,
+            similar_index = synonyms(text1=relation11,text2=relation22),
         )
     return JsonResponse({"message": 'Thành công'}, status=200)
     
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def get_suggest_rel(request):
     data=request.data

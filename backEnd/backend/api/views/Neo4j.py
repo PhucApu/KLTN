@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
 from ..models.file import file
 from ..models.concEle import Concele
@@ -17,8 +17,9 @@ import pandas as pd
 from ..serializers.suggestConcSerializer import SuggestConc
 from ..utils.Neo4jSp import create_node, update_node_by_id, create_relationship,run_query, remove_descendants_from_relationships,remove_descendants,update_relationship, overload
 from ..utils.neo4j_driver import driver, close_driver
-
-@csrf_exempt
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def dele_graph(request):
     data=request.data
@@ -75,7 +76,7 @@ def relation():
         print(e)
         return False
     
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def init_graph_data(request):
     if overload() and node() and relation():
@@ -83,7 +84,7 @@ def init_graph_data(request):
     else:
         return JsonResponse({'message': 'Lỗi trong quá trình tạo node'}, status = 400)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def graph_data(request):
     data = request.data.get('neo4j')

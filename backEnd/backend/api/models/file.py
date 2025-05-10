@@ -67,9 +67,9 @@ class file(models.Model):
 
                 except Exception as e:
                     print(f"Lỗi khi xử lý file: {e}")
-                    shutil.rmtree(new_folder) 
-                finally:
-                    shutil.rmtree(os.path.join(temp_file_founder, 'None'))
+                    # shutil.rmtree(new_folder) 
+                # finally:
+                    # shutil.rmtree(os.path.join(temp_file_founder, 'None'))
     class Meta:
         db_table = "File"
 

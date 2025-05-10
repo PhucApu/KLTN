@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
 from ..models.file import file
 from ..models.concEle import Concele
@@ -13,8 +13,10 @@ from ..serializers.gConcSerializer import gConcSerializer
 from ..models.suggestConc import SuggestConc
 from django.db.models.expressions import RawSQL
 from django.db.models import Max
-# Khỏi tạo gConc => trả về thành công 200, không thành công 400
-@csrf_exempt
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
+
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def init_gConc(request):
     data=request.data
@@ -67,7 +69,7 @@ def init_gConc(request):
 
 
 # Lấy danh sách hoặc tìm kiếm theo meaning, idLaw trong lstidlaw, conc trong lstconc
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def get_gconc_list(request):
     meaning = request.data.get('meaning', None)    
@@ -105,7 +107,7 @@ def get_gconc_list(request):
 
 
 # Lấy chi tiết 1 bản ghi GConc
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def get_gconc_detail(request, pk):
     try:
@@ -116,7 +118,7 @@ def get_gconc_detail(request, pk):
         return Response({'message': 'Không tìm thấy'}, status=status.HTTP_400_BAD_REQUEST)
 
 # Tạo mới GConc
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def create_gconc(request):
     serializer = gConcSerializer(data=request.data)
@@ -126,7 +128,7 @@ def create_gconc(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Cập nhật GConc
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['PUT'])
 def update_gconc(request, gconc_id):
     try:
@@ -141,7 +143,7 @@ def update_gconc(request, gconc_id):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Xoá GConc
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['DELETE'])
 def delete_gconc(request, pk):
     try:
@@ -151,7 +153,7 @@ def delete_gconc(request, pk):
     except GConc.DoesNotExist:
         return Response({'message': 'Không tìm thấy'}, status=status.HTTP_400_BAD_REQUEST)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def suggest_gconc(request):
     data = request.data 
@@ -195,8 +197,8 @@ def suggest_gconc(request):
     result.sort(key=lambda x: x['similar'], reverse=True)
     return JsonResponse(result,safe=False,status = 200)
     
-@csrf_exempt
-@api_view(['GET'])
+@permission_classes([IsAdmin])  
+@api_view(['POST'])
 def update_similar_conc(request):
     data = request.data.get('lst')
     if not isinstance(data, list):
@@ -212,20 +214,20 @@ def update_similar_conc(request):
             return JsonResponse({"message": f" {item} không tồn tại"}, status=400)
         if conceptitem:
              similar.add(conceptitem)
-    for conC1, similar_index in similar:
-        if similar_index:
-            gr = None
-        else:
+    for qs in similar:
+        for conC1, similar_index in qs:
+            
             gr = GConc.objects.filter(id=similar_index)
-        if gr:
-             groub_similar[similar_index] = f"{groub_similar.get(similar_index,"")+ "," if similar_index in groub_similar else ""}{conC1}"
+            if gr:
+                groub_similar[similar_index] = f"{groub_similar.get(similar_index,"")+ "," if similar_index in groub_similar else ""}{conC1}"
     
     len_groub_similar = len(groub_similar)
+    print(groub_similar)
     if len_groub_similar  > 1:
-         list_conc = [value for key,value in groub_similar ]
+         list_conc = [value for key,value in groub_similar.items() ]
          return JsonResponse({"message": f"các phần tử {list_conc} thuộc {len_groub_similar} khác nhau"}, status=400)
     if len_groub_similar == 1:
-        similar_index = groub_similar.keys()[0]
+        similar_index = list(groub_similar.keys())[0]
         for item in data: 
             Concele.objects.filter(id=item).update(similar=similar_index)
     if len_groub_similar == 0:

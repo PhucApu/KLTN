@@ -243,11 +243,17 @@ def overload():
     table.rows[1].cells[0].text = ','.join(items)
     doc.save(filename2)
 
-    word_merge = merge_documents(file1=filename1, file2 = filename2,output_file= os.path.join(settings.MEDIA_ROOT, 'merge_content.docx'))
-    pdf_merge = convert(word_merge,os.path.join(settings.MEDIA_ROOT, "merge_content.pdf"))
+    # word_merge = merge_documents(file1=filename1, file2 = filename2,output_file= os.path.join(settings.MEDIA_ROOT, 'merge_content.docx'))
+    # pdf_merge = convert(word_merge,os.path.join(settings.MEDIA_ROOT, "merge_content.pdf"))
     return True
 
 
+def get_key_phase(filename):
+    filename = os.path.join(settings.MEDIA_ROOT,  filename)
+    doc = Document(filename)
+    table = doc.tables[0]
+    key = table.rows[0].cells[0].text.strip()
+    value = table.rows[1].cells[0].text.strip()
+    data = {key: value}
+    return data
 
-    
-    

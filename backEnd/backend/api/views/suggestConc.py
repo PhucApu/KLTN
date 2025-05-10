@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
 
 from ..models.relEle import relEle
@@ -13,8 +13,9 @@ from ..utils.suggest import get_unseen_pairs
 from ..utils.synonyms import synonyms
 from ..models.concEle import Concele
 from ..serializers.suggestConcSerializer import SuggestConcSerializer
-
-@csrf_exempt
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def init_suggestconc(request, idLaw, idSuggest):
     try:
@@ -35,15 +36,15 @@ def init_suggestconc(request, idLaw, idSuggest):
         exit_id_list = list(SuggestConc.objects.values('id1','id2'))
         exit_id_list = [[row['id1'], row['id2']] for row in exit_id_list]
         not_exit_id_list = get_unseen_pairs(id_pairs,exit_id_list)
-        print('sai')
         for item in not_exit_id_list:
-            print(item)
+            conc11 = Concele.objects.filter(id=item[0]).first().conC,
+            conc22 = Concele.objects.filter(id=item[1]).first().conC,
             SuggestConc.objects.create(
                 id1=Concele.objects.get(id=item[0]),
                 id2=Concele.objects.get(id=item[1]),
-                conc1 = Concele.objects.filter(id=item[0]).first().conC,
-                conc2 = Concele.objects.filter(id=item[1]).first().conC,
-                similar_index = synonyms(),
+                conc1 = conc11,
+                conc2 = conc22,
+                similar_index = synonyms(text1=conc11,text2=conc22),
             )
     except Exception as e:
             print(e)
@@ -52,7 +53,7 @@ def init_suggestconc(request, idLaw, idSuggest):
     return JsonResponse({"message": 'Thành công'}, status=200)
     
     
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def get_suggest_conc(request):
     data=request.data

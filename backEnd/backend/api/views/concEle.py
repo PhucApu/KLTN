@@ -4,10 +4,11 @@ from rest_framework.response import Response
 from rest_framework import status
 from ..models.concEle import Concele
 from ..serializers.concEleSerializer import concEleSerializer
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.views.decorators.csrf import csrf_exempt
-
-@csrf_exempt
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def get_concele_list(request):
     data = request.data
@@ -25,7 +26,7 @@ def get_concele_list(request):
     return Response(serializer.data, status= status.HTTP_200_OK)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def get_concele_detail(request, id):
     try:
@@ -36,7 +37,7 @@ def get_concele_detail(request, id):
         return Response({'message': 'Không tin thấy dữ liệu'}, status=status.HTTP_400_BAD_REQUEST)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def create_concele(request):
     serializer = concEleSerializer(data=request.data)
@@ -46,7 +47,7 @@ def create_concele(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['PUT'])
 def update_concele(request, id):
     try:
@@ -64,7 +65,7 @@ def update_concele(request, id):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['DELETE'])
 def delete_concele(request, pk):
     try:

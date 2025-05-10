@@ -1,21 +1,22 @@
-import magic #pip install python-magic
+
 from rest_framework.views import APIView
-from ..models.component import component 
+
 from rest_framework.response import Response 
 from rest_framework.parsers import MultiPartParser, FormParser 
 from rest_framework import status
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.decorators import api_view
-from ..utils.Neo4jSp import remove_descendants_from_relationships
-from ..utils.neo4j_driver import driver
-from django.http import JsonResponse
-from ..models.file import file
 
+
+from ..permissions.permission import IsAdmin
 # from ..models.file import UpFile
 from ..serializers.upFileSerializer import UpFileSerializer
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)  # Cho phép xử lý file upload
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAdmin]
+    parser_classes = (MultiPartParser, FormParser)
 
     def post(self, request, *args, **kwargs):
     

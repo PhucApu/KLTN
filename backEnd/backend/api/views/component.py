@@ -10,10 +10,12 @@ from ..models.component import component
 from ..utils.parseLawStructure import parse_law_structure
 from ..utils.isShorten import is_shorten
 from ..utils.isTheory import is_theory
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,permission_classes
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
 
-
-@csrf_exempt
+@api_view(['POST'])
+@permission_classes([IsAdmin])  
 def process_pdf(request):
     data = json.loads(request.body)
     file_id = data.get("id")
@@ -50,7 +52,7 @@ def process_pdf(request):
     return JsonResponse(listCatalogue.data, status=200, safe=False)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 def search_components(request):
     query_params = json.loads(request.body)
     search_filters = Q()
@@ -91,7 +93,7 @@ def search_components(request):
     
     return JsonResponse(serializer.data, status=200, safe=False)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['PUT'])
 def bulk_update_components(request):
     """
@@ -135,7 +137,7 @@ def bulk_update_components(request):
                 print(e)
     return JsonResponse({"Success": "Lưu dữ liệu thành công"}, status=200)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['DELETE'])
 def del_components(request, id):
     data = id

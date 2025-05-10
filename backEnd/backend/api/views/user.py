@@ -4,6 +4,7 @@ from rest_framework import status
 from ..models.user import User
 from ..serializers.userSerializer import UserSerializer
 from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import action
 from django.views.decorators.csrf import csrf_exempt
@@ -49,7 +50,7 @@ def user_detail(request):
 
 # Tìm kiếm người dùng theo tên
 @api_view(['POST'])
-@permission_classes([IsSuperAdmin])
+@permission_classes([IsAdmin])
 def search_users(request):
     query = request.data.get('query', None)  # Lấy từ khóa tìm kiếm từ body của request
     

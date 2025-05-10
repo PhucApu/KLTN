@@ -10,10 +10,11 @@ from ..models.component import component
 from ..models.file import file
 
 from ..utils.textToGText import textToGText
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
-
-@csrf_exempt
+from ..permissions.permission import IsSuperAdmin
+from ..permissions.permission import IsAdmin
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def create_gtext(request):
     serializer = gTextSerializer(data=request.data)
@@ -22,7 +23,7 @@ def create_gtext(request):
         return JsonResponse({'message': 'Thêm mới thành công', 'data': serializer.data}, status=200)
     return JsonResponse(serializer.errors, status=400)
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['PUT'])
 def update_gtext(request, id):
     try:
@@ -37,7 +38,7 @@ def update_gtext(request, id):
     return JsonResponse(serializer.errors, status=400)
 
 @api_view(['DELETE'])
-@csrf_exempt
+@permission_classes([IsAdmin])  
 def delete_gtext(request, id):
     try:
         gtext = Gtext.objects.get(id=id)
@@ -47,7 +48,7 @@ def delete_gtext(request, id):
         return JsonResponse({'message': 'Không tìm thấy gtext'}, status=400)
     
 @api_view(['GET'])
-@csrf_exempt
+@permission_classes([IsAdmin])  
 def search_gtext(request):
     query = request.GET.get('q', '')  # Lấy tham số tìm kiếm từ query string
     if not query:
@@ -58,7 +59,7 @@ def search_gtext(request):
     return JsonResponse(serializer.data)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def init_gtext(request, idLaw):
     try:

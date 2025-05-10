@@ -1,7 +1,5 @@
-from django.db.models import Q
-from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
 from ..models.file import file
 from ..models.concEle import Concele
@@ -11,10 +9,10 @@ from ..models.component import component
 from rest_framework.response import Response
 from rest_framework import status
 from ..serializers.relEleSerializer import relEleSerializer
+from ..permissions.permission import IsAdmin
 
 
-
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def init_rel_conc(request, idLaw):
     try:
@@ -68,7 +66,7 @@ def init_rel_conc(request, idLaw):
     return JsonResponse({'message': 'Khởi tạo thành công'}, status=200)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def get_relele_list(request):
     data = request.data
@@ -85,7 +83,7 @@ def get_relele_list(request):
 
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['GET'])
 def get_relele_detail(request, pk):
     try:
@@ -96,7 +94,7 @@ def get_relele_detail(request, pk):
         return Response({'message': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['POST'])
 def create_relele(request):
     serializer = relEleSerializer(data=request.data)
@@ -106,7 +104,7 @@ def create_relele(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['PUT'])
 def update_relele(request, id):
     try:
@@ -122,7 +120,7 @@ def update_relele(request, id):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@csrf_exempt
+@permission_classes([IsAdmin])  
 @api_view(['DELETE'])
 def delete_relele(request, pk):
     try:
