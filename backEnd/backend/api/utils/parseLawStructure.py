@@ -16,7 +16,7 @@ def parse_law_structure(file_id):
     doc = Document(file_path)
     raw_text = [para.text.strip() for para in doc.paragraphs if para.text.strip()]
     text = "\n".join(raw_text)
-                # Loại bỏ tiêu đề không cần thiết (Chương, Mục,...)
+
     try:
         nodes = parse_law(text=text, document_name=file_obj.name,parent_id= file_id)
     except Exception as e:
@@ -62,19 +62,22 @@ def parse_law(text, document_name, parent_id):
     node_dict[parent_id] = root_node
     stack.append(("document", root_node))
 
-    level_order = ["document", "chapter", "section", "article", "clause", "point"]
+    
     for line in lines:
         line = line.strip()
+
         if not line:
             continue
 
         # Identify level  ^(Chương\s+[IVXLCDM]+)\.\s*(.*?)
+        
         match_chapter = re.match(r"^(Chương\s+[IVXLCDM]+)\s*\n*\s*(.*?)", line)
         match_section = re.match(r"^(Mục\s+\w+)\.(.*)", line)
         match_article = re.match(r"^(Điều\s+\d+)\.(.*)", line)
         match_clause = re.match(r"^(\d+)\.\s*(.*)", line)
         match_point = re.match(r"^([a-zA-Z])\)\s*(.*)", line)
-    
+        level_order = ["document", "chapter", "section", "article", "clause", "point"]
+
         if match_chapter or match_section:
             continue
         elif match_article:
@@ -83,11 +86,11 @@ def parse_law(text, document_name, parent_id):
         elif match_clause:
             title, content = match_clause.groups()
             level = "clause"
-            title = f"Clause {title.strip()}"
+            title = f"khoản {title.strip()}"
         elif match_point:
             title, content = match_point.groups()
             level = "point"
-            title = f"Point {title.strip()}"
+            title = f"điểm {title.strip()}"
         else:
             # Append content to the last node
             if id_counter != id_first:

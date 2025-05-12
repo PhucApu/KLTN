@@ -3,6 +3,7 @@ from .file import file
 from .gConc import GConc
 class gRel(models.Model):
     # id = models.CharField(primary_key=True, max_length=100)
+    lstid = models.JSONField(default=list)
     lstidlaw = models.JSONField(default=list)
     lstRel = models.JSONField(blank=True, null=True, default=list)
     meaning = models.TextField(blank=True, null=True)

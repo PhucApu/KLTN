@@ -29,8 +29,7 @@ def init_gConc(request):
     if not conceleLstItem.exists():
             return JsonResponse({"message": 'Các thao tác trước chưa được xử lý'}, status=400)
     
-    gConcLstItem = GConc.objects.filter(lstidlaw__contains=[data.get('IdLaw')])
-      
+    gConcLstItem = GConc.objects.filter(lstidlaw__contains=[data.get('idLaw')])
     if gConcLstItem.exists():
         return JsonResponse({"message": 'Thành công'}, status=200)
     with transaction.atomic():
@@ -42,6 +41,7 @@ def init_gConc(request):
                     item.lstidlaw.append(conceleItem.IdLaw.id)
                     item.meaning = item.meaning if item.meaning else conceleItem.Meaning
                     item.descendants.append(conceleItem.descendants)
+                    item.lstid.append(conceleItem.id)
                     item.updateNeo4j = 2
                     item.save()
                 else:
@@ -49,11 +49,15 @@ def init_gConc(request):
                         'lstidlaw': [conceleItem.IdLaw.id],
                         'lstConC': [conceleItem.conC],
                         'meaning': conceleItem.Meaning,
-                        'descendants': conceleItem.descendants
+                        'descendants': conceleItem.descendants,
+                        'lstid': [conceleItem.id]
                     }
                     si = conceleItem.similar
                     if si:
                          kwargs['id'] = si
+                    else:
+                        max = Concele.objects.aggregate(Max('similar'))['similar__max'] or 0
+                        kwargs['id'] = max + 1
                     newgconc = GConc.objects.create(**kwargs)
                     conceleItem.similar = newgconc.id
                     conceleItem.save()
@@ -70,7 +74,7 @@ def init_gConc(request):
 
 # Lấy danh sách hoặc tìm kiếm theo meaning, idLaw trong lstidlaw, conc trong lstconc
 @permission_classes([IsAdmin])  
-@api_view(['GET'])
+@api_view(['POST'])
 def get_gconc_list(request):
     meaning = request.data.get('meaning', None)    
     idlaw = request.data.get('idLaw', None)    
@@ -97,6 +101,7 @@ def get_gconc_list(request):
             results.append({
                 "id": item.id,
                 "meaning": item.meaning,
+                "lstid": item.lstid,
                 "lstidlaw": item.lstidlaw,
                 "lstConc": item.lstConC,
                 "descendants": item.descendants,

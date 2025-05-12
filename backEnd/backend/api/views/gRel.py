@@ -30,12 +30,12 @@ def init_gRel(request):
     if not relEleLstItem.exists():
             return JsonResponse({"message": 'Các thao tác trước chưa được xử lý'}, status=400)
     
-    gRelLstItem = gRel.objects.filter(lstidlaw__contains=[data.get('IdLaw')])
+    gRelLstItem = gRel.objects.filter(lstidlaw__contains=[data.get('idLaw')])
       
     if gRelLstItem.exists():
         return JsonResponse({"message": 'Thành công'}, status=200)
     with transaction.atomic():
-        try:
+        # try:
             for conceleItem in relEleLstItem:
                 item = gRel.objects.filter(id=conceleItem.similar).first()
                 if item:    
@@ -47,6 +47,7 @@ def init_gRel(request):
                     item.lstgConcS.append(conceleItem.concS.id)
                     item.update_concs.append(conceleItem.concS.id)
                     item.update_conco.append(conceleItem.concO.id)
+                    item.lstid.append(conceleItem.id)
                     item.updaterel = 1
                     item.save()
                 else:
@@ -59,17 +60,20 @@ def init_gRel(request):
                         'lstgConcO': [conceleItem.concO.id],
                         'update_concs': [conceleItem.concS.id],
                         'update_conco': [conceleItem.concO.id],
+                        'lstid': [conceleItem.id]
                     }
                     si = conceleItem.similar
                     if si:
                         kwargs['id'] = si
-                    
+                    else:
+                        max = relEle.objects.aggregate(Max('similar'))['similar__max'] or 0
+                        kwargs['id'] = max + 1
                     newgrel = gRel.objects.create(**kwargs)
                     conceleItem.similar = newgrel.id 
                     conceleItem.save()
-        except Exception as e:
-            print(e)
-            return JsonResponse({"message": 'Lỗi tạo thực thể'}, status=400)
+        # except Exception as e:
+        #     print(e)
+        #     return JsonResponse({"message": 'Lỗi tạo thực thể'}, status=400)
 
     return JsonResponse({"message": 'Thành công'}, status=200)
 
@@ -116,6 +120,7 @@ def search_grel(request):
                 "id": item.id,
                 "meaning": item.meaning,
                 "lstidlaw": item.lstidlaw,
+                "lstid": item.lstid,
                 "lstRel": item.lstRel,
                 "descendants": item.descendants,
                 "lstgConcS": item.lstgConcS,

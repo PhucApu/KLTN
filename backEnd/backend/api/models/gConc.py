@@ -3,6 +3,7 @@ from .file import file
 from .concEle import Concele
 class GConc(models.Model):
     # id = models.CharField(primary_key=True, max_length=100)
+    lstid = models.JSONField(default=list)
     lstidlaw = models.JSONField(default=list)
     lstConC = models.JSONField(blank=True, null=True, default=list)
     meaning = models.TextField(blank=True, null=True)

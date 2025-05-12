@@ -57,8 +57,8 @@ def init_rel_conc(request, idLaw):
                         concO = concO1
                     )
     
-    except fileitem.DoesNotExist:
-        return JsonResponse({'message': 'Không tồn tại filetương ứng'}, status = 400)
+    except file.DoesNotExist:
+        return JsonResponse({'message': 'Không tồn tại file tương ứng'}, status = 400)
     except Exception as e:
         print(e)
         return JsonResponse({'message': 'Lỗi hệ thống'}, status = 400)
